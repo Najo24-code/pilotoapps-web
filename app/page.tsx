@@ -26,7 +26,7 @@ const works = [
     img: "/shots/restaurante.webp",
     kind: "Reservas + menú digital",
     name: "Restaurante",
-    desc: "Sitio inmersivo con menú por categorías y reserva de mesa en línea, listo para llenar el local.",
+    desc: "Sitio atractivo con menú por categorías y reserva de mesa en línea, listo para llenar el local.",
     features: ["Reservas en línea", "Menú digital", "Gestión de mesas", "Avisos"],
   },
   {
@@ -102,7 +102,7 @@ export default function Home() {
           {/* Showcase real (reemplaza el dashboard falso) */}
           <Reveal delay={0.15} className="mx-auto mt-16 max-w-4xl md:mt-20">
             <div className="float">
-              <BrowserFrame src="/shots/clinica.webp" alt="Ejemplo de sistema construido por PilotoApps" />
+              <BrowserFrame src="/shots/clinica.webp" alt="Vista de uno de los sistemas de ejemplo de PilotoApps" />
             </div>
           </Reveal>
         </div>
@@ -128,7 +128,7 @@ export default function Home() {
               },
               {
                 t: "Web profesional",
-                d: "Presencia en línea rápida y moderna, lista para que te encuentren y conectada a tu sistema.",
+                d: "Una web rápida y moderna para que tus clientes te encuentren, conectada a tu sistema.",
                 icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
                 ),
@@ -164,8 +164,8 @@ export default function Home() {
               Mira lo que puedo construir para ti.
             </h2>
             <p className="mt-6 text-lg text-slate-400 md:text-xl">
-              Proyectos de muestra, funcionales y navegables. Cada uno es del tipo de sistema que
-              construyo para negocios reales. Ábrelos y pruébalos.
+              Proyectos de ejemplo, funcionales y navegables. Así se ve y funciona lo que puedo
+              construir para tu negocio. Ábrelos y pruébalos.
             </p>
           </Reveal>
 
@@ -254,7 +254,7 @@ export default function Home() {
             {[
               { n: "01", t: "Conversamos", d: "Entiendo tu negocio y qué problema resolver. Te doy alcance y precio claro." },
               { n: "02", t: "Diseño", d: "Defino cómo se verá y funcionará, ajustado a tu forma de trabajar." },
-              { n: "03", t: "Construyo", d: "Desarrollo tu sistema con calidad, manteniéndote al tanto del avance." },
+              { n: "03", t: "Construyo", d: "Programo tu sistema y te mantengo al tanto del avance en cada paso." },
               { n: "04", t: "Lanzo y acompaño", d: "Lo dejo funcionando, te capacito y te doy soporte continuo." },
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
