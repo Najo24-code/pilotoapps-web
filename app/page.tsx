@@ -37,6 +37,22 @@ const works = [
     desc: "Catálogo en línea con stock en tiempo real y cotización rápida, con entrega a domicilio.",
     features: ["Catálogo online", "Stock en vivo", "Cotización", "Domicilio"],
   },
+  {
+    href: "/demos/salon",
+    img: "/shots/salon.webp",
+    kind: "Reservas para salón",
+    name: "Salón & Barbería",
+    desc: "Web con reserva de cita en línea por servicio y estilista, con galería y equipo.",
+    features: ["Reserva por estilista", "Servicios y precios", "Galería", "Recordatorios"],
+  },
+  {
+    href: "/demos/hotel",
+    img: "/shots/hotel.webp",
+    kind: "Reservas de hotel",
+    name: "Hotel boutique",
+    desc: "Sitio de hotel con habitaciones, amenidades y reserva en línea por fechas y huéspedes.",
+    features: ["Reserva por fechas", "Tipos de habitación", "Amenidades", "Galería"],
+  },
 ];
 
 const stack = ["React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL"];
@@ -204,6 +220,56 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* PROYECTOS REALES */}
+      <section id="reales" className="border-t border-white/10 py-28 md:py-40">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="max-w-3xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Proyectos reales</p>
+            <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
+              No solo demos: también software en producción.
+            </h2>
+          </Reveal>
+
+          <Reveal className="mt-20">
+            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-brand">App de préstamos y cobros</p>
+                <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-white md:text-4xl">SuaPréstamos</h3>
+                <p className="mt-5 text-lg leading-relaxed text-slate-400">
+                  App móvil para prestamistas: gestiona clientes, préstamos, cuotas, mora y cobros, con
+                  un dashboard que muestra tu cartera en tiempo real. Diseñada para usarse cada día,
+                  desde el celular.
+                </p>
+                <div className="mt-7 flex flex-wrap gap-2.5">
+                  {["Clientes y garantes", "Cuotas y mora", "Semáforo de cartera", "Reportes", "App Android"].map((f) => (
+                    <span key={f} className="rounded-full border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm text-slate-300">
+                      {f}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-4 py-2 text-sm font-medium text-brand">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                  En camino a Google Play
+                </p>
+              </div>
+
+              <div className="flex justify-center gap-3 sm:gap-4">
+                {[
+                  { src: "/shots/sua-dash.webp", cls: "translate-y-4" },
+                  { src: "/shots/sua-cobros.webp", cls: "-translate-y-2 hidden sm:block" },
+                  { src: "/shots/sua-clientes.webp", cls: "translate-y-6 hidden md:block" },
+                ].map((p) => (
+                  <div key={p.src} className={`w-40 overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900 shadow-2xl shadow-black/50 sm:w-44 ${p.cls}`}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${BP}${p.src}`} alt="Pantalla de SuaPréstamos" loading="lazy" className="h-auto w-full" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
