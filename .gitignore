@@ -1,3 +1,4 @@
+# build scripts / local tooling
 build*.py
 preview.png
 _preview*.png
@@ -5,3 +6,13 @@ _shot_*.png
 __pycache__/
 .DS_Store
 *.log
+
+# next.js
+/node_modules
+/.next/
+/out/
+next-env.d.ts
+
+# misc
+.env*
+*.tsbuildinfo
