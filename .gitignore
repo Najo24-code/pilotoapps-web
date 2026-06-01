@@ -1,5 +1,7 @@
 build.py
+build_demos.py
 preview.png
+_shot_*.png
 __pycache__/
 .DS_Store
 *.log

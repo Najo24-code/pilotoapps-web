@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Terraza - Sabor dominicano con vista al mar. Cocina criolla e internacional en Puerto Plata.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="La Terraza | Sabor dominicano con vista al mar">
+    <meta property="og:description" content="La Terraza - Sabor dominicano con vista al mar. Cocina criolla e internacional en Puerto Plata.">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="La Terraza | Sabor dominicano con vista al mar">
+    <meta name="twitter:description" content="La Terraza - Sabor dominicano con vista al mar. Cocina criolla e internacional en Puerto Plata.">
+    
+    <title>La Terraza | Sabor dominicano con vista al mar</title>
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        /* Focus visible for accessibility */
+        :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+    </style>
+    
+    
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "name": "La Terraza", "servesCuisine": "Cocina criolla e internacional", "address": {"@type": "PostalAddress", "streetAddress": "Malecón 78", "addressLocality": "Puerto Plata", "addressRegion": "", "postalCode": "", "addressCountry": "Rep. Dominicana"}, "priceRange": "$$", "acceptsReservations": true, "telephone": "(809) 555-0200"}</script>
+</head>
+<body class="antialiased text-gray-900 bg-white">
+    <header class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <span class="text-xl font-bold text-gray-900">La Terraza</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex md:items-center md:gap-8">
+                <nav class="flex items-center gap-8"><a href="#" class="text-sm font-medium transition-colors text-blue-600">Inicio</a>
+<a href="#menu" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Menú</a>
+<a href="#reservations" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Reservaciones</a>
+<a href="#contact" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Contacto</a></nav>
+                <a href="#order"><button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold  rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 text-sm py-2 px-4"  >
+    Pedir ahora
+</button></a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button type="button" class="text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200 inline-flex items-center justify-center gap-2" onclick="toggleMobileMenu()"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+        <div class="py-3">
+            <nav class="flex flex-col gap-1"><a href="#" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors bg-blue-50 text-blue-600">Inicio</a>
+<a href="#menu" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Menú</a>
+<a href="#reservations" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Reservaciones</a>
+<a href="#contact" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Contacto</a></nav>
+        </div>
+        <div class="px-4 pt-2 pb-4"><a href="#order" class="block"><button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 w-full"  >
+    Pedir ahora
+</button></a></div>
+    </div>
+</header>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+}
+</script>
+<main><section class="bg-gradient-to-br from-amber-600 to-orange-700 min-h-[80vh] flex items-center" >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full py-16">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
+            La Terraza
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-200 mb-4 max-w-2xl mx-auto">
+            Sabor dominicano con vista al mar
+        </p>
+        <p class="text-amber-200 text-sm mb-6">Lun - Jue: 12:00 - 22:00</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <a href="#order" class="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold text-lg py-4 px-8 rounded-xl min-h-[56px] min-w-[200px] shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                Pedir ahora
+            </a>
+            <a href="#menu" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur text-white font-semibold text-lg py-4 px-8 rounded-xl min-h-[56px] border border-white/30 transition-all">
+                Ver menú
+            </a>
+        </div>
+    </div>
+</section>
+<section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">¿Por qué elegirnos?</h2></div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">🥬</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ingredientes Frescos</h3>
+    <p class="text-gray-600 leading-relaxed">Seleccionamos los mejores ingredientes locales cada día.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">👨‍🍳</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Chef Premiado</h3>
+    <p class="text-gray-600 leading-relaxed">Nuestro chef ha sido reconocido internacionalmente.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">✨</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ambiente Único</h3>
+    <p class="text-gray-600 leading-relaxed">Un espacio diseñado para una experiencia inolvidable.</p>
+</div>
+        </div>
+    </div>
+</section>
+<section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+        <div class="text-4xl md:text-5xl font-bold text-gray-900">15+</div>
+        <div class="text-sm uppercase tracking-wide text-gray-500 mt-2">Años de experiencia</div>
+    </div>
+<div class="text-center">
+        <div class="text-4xl md:text-5xl font-bold text-gray-900">50k+</div>
+        <div class="text-sm uppercase tracking-wide text-gray-500 mt-2">Clientes felices</div>
+    </div>
+<div class="text-center">
+        <div class="text-4xl md:text-5xl font-bold text-gray-900">4.9</div>
+        <div class="text-sm uppercase tracking-wide text-gray-500 mt-2">Rating promedio</div>
+    </div>
+<div class="text-center">
+        <div class="text-4xl md:text-5xl font-bold text-gray-900">100%</div>
+        <div class="text-sm uppercase tracking-wide text-gray-500 mt-2">Ingredientes frescos</div>
+    </div>
+        </div>
+    </div>
+</section>
+<section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">Lo que dicen nuestros clientes</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="flex gap-1 mb-4"><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></div>
+    <blockquote class="text-gray-700 leading-relaxed mb-6">"La mejor experiencia gastronómica que he tenido."</blockquote>
+    <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">M</div>
+        <div>
+            <p class="font-semibold text-gray-900">María García</p>
+            <p class="text-sm text-gray-500">Cliente frecuente</p>
+        </div>
+    </div>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="flex gap-1 mb-4"><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></div>
+    <blockquote class="text-gray-700 leading-relaxed mb-6">"Ambiente increíble y comida excepcional."</blockquote>
+    <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">C</div>
+        <div>
+            <p class="font-semibold text-gray-900">Carlos López</p>
+            <p class="text-sm text-gray-500">Food blogger</p>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+<section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">¿Listo para una experiencia única?</h2>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto mt-4">Reserva tu mesa ahora y disfruta de nuestra cocina</p>
+        <div class="mt-10">
+            <a href="#reservations" class="bg-white text-blue-600 hover:bg-blue-50 font-semibold text-lg py-4 px-10 rounded-xl inline-flex items-center gap-2 shadow-lg transition-all hover:scale-105">
+                Reservar mesa
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Preguntas frecuentes</h2>
+        <div class="divide-y divide-gray-200 border-t border-gray-200">
+            <div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(0)">
+        <span class="text-lg font-medium text-gray-900">¿Puedo reservar mesa en línea?</span>
+        <svg id="faq-icon-0" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-0" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">Sí, elige día, hora y número de personas; te confirmamos al instante.</p>
+    </div>
+</div><div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(1)">
+        <span class="text-lg font-medium text-gray-900">¿Tienen opciones vegetarianas?</span>
+        <svg id="faq-icon-1" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-1" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">Sí, contamos con un menú variado de platos vegetarianos.</p>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleFaq(index) {
+    const answer = document.getElementById('faq-answer-' + index);
+    const icon = document.getElementById('faq-icon-' + index);
+    answer.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+}
+</script></main>
+<footer class="bg-gray-900 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <span class="text-2xl font-bold text-white">La Terraza</span>
+                <div class="mt-6"><ul class="space-y-3 text-gray-300"><li class="flex items-start gap-3"><span class="text-amber-500 mt-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></span><span>Malecón 78, Puerto Plata</span></li> <li class="flex items-center gap-3"><span class="text-amber-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></span><a href="tel:(809)555-0200" class="hover:text-amber-400 transition-colors">(809) 555-0200</a></li> <li class="flex items-center gap-3"><span class="text-amber-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></span><a href="mailto:reservas@laterraza.do" class="hover:text-amber-400 transition-colors">reservas@laterraza.do</a></li></ul></div>
+            </div>
+            <div>
+    <h3 class="text-lg font-semibold text-white mb-4">Horario</h3>
+    <div class="space-y-2"><div class="flex justify-between"><span class="text-gray-400">Lun - Jue</span><span class="text-white">12:00 - 22:00</span></div><div class="flex justify-between"><span class="text-gray-400">Vie - Dom</span><span class="text-white">12:00 - 00:00</span></div></div>
+</div>
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Síguenos</h3>
+                <div class="flex gap-3"><a href="#" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 hover:bg-amber-500 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="#" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 hover:bg-amber-500 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center">
+            <p class="text-gray-500 text-sm">© 2026 La Terraza. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+    
+</body>
+</html>
