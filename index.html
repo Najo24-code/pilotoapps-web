@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistemas de citas, inventario y ventas para PYMEs en República Dominicana. Software a la medida, web profesional y soporte directo.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="PilotoApps | Software a la medida para tu negocio">
+    <meta property="og:description" content="Sistemas de citas, inventario y ventas para PYMEs en República Dominicana. Software a la medida, web profesional y soporte directo.">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PilotoApps | Software a la medida para tu negocio">
+    <meta name="twitter:description" content="Sistemas de citas, inventario y ventas para PYMEs en República Dominicana. Software a la medida, web profesional y soporte directo.">
+    
+    <title>PilotoApps | Software a la medida para tu negocio</title>
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        /* Focus visible for accessibility */
+        :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+    </style>
+    
+    
+</head>
+<body class="antialiased text-gray-900 bg-white">
+    <header class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <span class="text-xl font-bold text-gray-900">PilotoApps</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex md:items-center md:gap-8">
+                <nav class="flex items-center gap-8"><a href="#servicios" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Servicios</a>
+<a href="#proyectos" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Proyectos</a>
+<a href="#planes" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Planes</a>
+<a href="#contacto" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Contacto</a></nav>
+                <a href="#contacto"><button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold  rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 text-sm py-2 px-4"  >
+    Solicitar cotización
+</button></a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button type="button" class="text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200 inline-flex items-center justify-center gap-2" onclick="toggleMobileMenu()"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+        <div class="py-3">
+            <nav class="flex flex-col gap-1"><a href="#servicios" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Servicios</a>
+<a href="#proyectos" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Proyectos</a>
+<a href="#planes" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Planes</a>
+<a href="#contacto" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Contacto</a></nav>
+        </div>
+        <div class="px-4 pt-2 pb-4"><a href="#contacto" class="block"><button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 w-full"  >
+    Solicitar cotización
+</button></a></div>
+    </div>
+</header>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+}
+</script>
+<main><section class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 py-20 md:py-32" >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+            Software a la medida de tu negocio
+        </h1>
+        <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed">
+            Sistemas de citas, inventario y ventas para PYMEs en República Dominicana. Deja atrás el Excel y los cuadernos: gestiona todo desde un panel claro y moderno.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="#contacto"><button type="button" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold  rounded-lg transition-all duration-200 border border-gray-300 text-lg py-4 px-8 shadow-lg"  >
+    Solicitar cotización
+</button></a><a href="#servicios"><button type="button" class="bg-transparent hover:bg-gray-100 text-gray-700 font-medium  rounded-lg transition-all duration-200 text-lg py-4 px-8"  >
+    Ver lo que hago
+</button></a></div>
+    </div>
+</section>
+<div id="servicios"><section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">¿Qué hago por tu negocio?</h2><p class="text-xl text-gray-600 max-w-3xl mx-auto">Sistemas hechos a tu medida, no plantillas genéricas.</p></div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">📅</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Citas y reservas en línea</h3>
+    <p class="text-gray-600 leading-relaxed">Tus clientes agendan solos desde el celular. Ideal para clínicas, salones, talleres y consultorios. Tú lo ves todo en un panel.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">📦</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Inventario y ventas</h3>
+    <p class="text-gray-600 leading-relaxed">Controla stock, productos y ventas en tiempo real. Reportes claros de cómo va tu negocio, sin hojas de cálculo regadas.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">🌐</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Web profesional</h3>
+    <p class="text-gray-600 leading-relaxed">Una presencia en línea rápida y moderna, conectada a tu sistema de gestión. Lista para que tus clientes te encuentren.</p>
+</div>
+        </div>
+    </div>
+</section></div>
+<section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+        <div class="text-4xl md:text-5xl font-bold text-gray-900">Días</div>
+        <div class="text-sm uppercase tracking-wide text-gray-500 mt-2">tiempo de entrega, no meses</div>
+    </div>
+<div class="text-center">
+        <div class="text-4xl md:text-5xl font-bold text-gray-900">100%</div>
+        <div class="text-sm uppercase tracking-wide text-gray-500 mt-2">a tu medida</div>
+    </div>
+<div class="text-center">
+        <div class="text-4xl md:text-5xl font-bold text-gray-900">Trato 1:1</div>
+        <div class="text-sm uppercase tracking-wide text-gray-500 mt-2">hablas directo conmigo</div>
+    </div>
+<div class="text-center">
+        <div class="text-4xl md:text-5xl font-bold text-gray-900">Tuyo</div>
+        <div class="text-sm uppercase tracking-wide text-gray-500 mt-2">el sistema y los datos son tuyos</div>
+    </div>
+        </div>
+    </div>
+</section>
+<div id="proyectos"><section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tipos de proyectos que construyo</h2><p class="text-xl text-gray-600 max-w-3xl mx-auto">Ejemplos reales del tipo de sistemas que entrego.</p></div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">🦷</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Clínica / consultorio</h3>
+    <p class="text-gray-600 leading-relaxed">Pacientes, citas y expedientes en un solo lugar, con recordatorios.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">🔧</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ferretería / tienda</h3>
+    <p class="text-gray-600 leading-relaxed">Inventario, categorías, ventas y movimientos de stock controlados.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">🍽️</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Restaurante / salón</h3>
+    <p class="text-gray-600 leading-relaxed">Reservas de mesas, horarios y disponibilidad gestionadas en línea.</p>
+</div>
+        </div>
+    </div>
+</section></div>
+<div id="planes"><section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Planes claros, sin sorpresas</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-4">Precios de referencia en USD. El precio final depende del alcance; te doy una cotización exacta tras una breve conversación.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+    
+    <h3 class="text-xl font-bold text-gray-900 mb-2">Web Esencial</h3>
+    <div class="flex items-baseline gap-1 mb-6">
+        <span class="text-4xl font-bold text-gray-900">$200</span>
+        <span class="text-gray-500">proyecto</span>
+    </div>
+    <ul class="space-y-3 mb-8"><li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-500">Web profesional de una página</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-500">Formulario de contacto</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-500">Diseño moderno y responsive</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-500">Guía de dominio y hosting</span></li></ul>
+    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all">Lo quiero</button>
+</div>
+<div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl shadow-xl shadow-blue-500/25 text-white relative p-8">
+    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
+    <h3 class="text-xl font-bold text-white mb-2">Sistema de Gestión</h3>
+    <div class="flex items-baseline gap-1 mb-6">
+        <span class="text-4xl font-bold text-white">$650</span>
+        <span class="text-blue-100">proyecto</span>
+    </div>
+    <ul class="space-y-3 mb-8"><li class="flex items-center gap-3"><svg class="w-5 h-5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-blue-100">Citas/reservas O inventario</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-blue-100">Panel de administración</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-blue-100">Acceso seguro con usuarios</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-blue-100">Web profesional incluida</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-blue-100">Capacitación de uso</span></li></ul>
+    <button class="w-full bg-white text-blue-600 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition-all">Empezar</button>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+    
+    <h3 class="text-xl font-bold text-gray-900 mb-2">Negocio Completo</h3>
+    <div class="flex items-baseline gap-1 mb-6">
+        <span class="text-4xl font-bold text-gray-900">$1,200</span>
+        <span class="text-gray-500">proyecto</span>
+    </div>
+    <ul class="space-y-3 mb-8"><li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-500">Gestión + ventas + reportes</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-500">Web profesional</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-500">Múltiples usuarios y roles</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-500">Despliegue y puesta en marcha</span></li><li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-500">1 mes de soporte incluido</span></li></ul>
+    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all">Cotizar</button>
+</div>
+        </div>
+    </div>
+</section></div>
+<section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Preguntas frecuentes</h2>
+        <div class="divide-y divide-gray-200 border-t border-gray-200">
+            <div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(0)">
+        <span class="text-lg font-medium text-gray-900">¿En cuánto tiempo lo entregas?</span>
+        <svg id="faq-icon-0" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-0" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">La mayoría de proyectos están listos en días o pocas semanas, según el alcance. Te doy una fecha clara desde el inicio y la cumplo.</p>
+    </div>
+</div><div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(1)">
+        <span class="text-lg font-medium text-gray-900">¿Trabajas con negocios en República Dominicana?</span>
+        <svg id="faq-icon-1" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-1" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">Sí. Trabajo con PYMEs en todo el país, de forma remota o presencial según la zona.</p>
+    </div>
+</div><div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(2)">
+        <span class="text-lg font-medium text-gray-900">¿El sistema queda a mi nombre?</span>
+        <svg id="faq-icon-2" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-2" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">Totalmente. El sistema y todos los datos son tuyos. Te entrego todo y te explico cómo usarlo.</p>
+    </div>
+</div><div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(3)">
+        <span class="text-lg font-medium text-gray-900">¿Incluye dominio y hosting?</span>
+        <svg id="faq-icon-3" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-3" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">Te guío para conseguirlos y dejo todo configurado y funcionando. El costo del hosting y el dominio es aparte y queda a tu nombre.</p>
+    </div>
+</div><div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(4)">
+        <span class="text-lg font-medium text-gray-900">¿Das soporte después de entregar?</span>
+        <svg id="faq-icon-4" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-4" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">Sí. Ofrezco soporte y mejoras continuas. Acordamos el plan que mejor te convenga.</p>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleFaq(index) {
+    const answer = document.getElementById('faq-answer-' + index);
+    const icon = document.getElementById('faq-icon-' + index);
+    answer.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+}
+</script>
+<div id="contacto"><section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">¿Listo para ordenar tu negocio?</h2>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto mt-4">Cuéntame qué necesitas y te respondo con una propuesta. Escríbeme a pilotoapps.dev@gmail.com</p>
+        <div class="mt-10">
+            <a href="mailto:pilotoapps.dev@gmail.com?subject=Quiero%20un%20sistema%20para%20mi%20negocio" class="bg-white text-blue-600 hover:bg-blue-50 font-semibold text-lg py-4 px-10 rounded-xl inline-flex items-center gap-2 shadow-lg transition-all hover:scale-105">
+                ✉️  pilotoapps.dev@gmail.com
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section></div></main>
+<footer class="bg-gray-900 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
+            <div class="col-span-2 md:col-span-1">
+    <span class="text-xl font-bold text-white">PilotoApps</span>
+    <p class="text-gray-400 mt-4 max-w-xs">Software a la medida para PYMEs en República Dominicana. Citas, inventario, ventas y web profesional.</p>
+    
+</div>
+            <div>
+    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Servicios</h3>
+    <ul class="space-y-3"><li><a href="#servicios" class="text-gray-400 hover:text-white transition-colors">Citas y reservas</a></li><li><a href="#servicios" class="text-gray-400 hover:text-white transition-colors">Inventario y ventas</a></li><li><a href="#servicios" class="text-gray-400 hover:text-white transition-colors">Web profesional</a></li></ul>
+</div><div>
+    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Enlaces</h3>
+    <ul class="space-y-3"><li><a href="#proyectos" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li><li><a href="#planes" class="text-gray-400 hover:text-white transition-colors">Planes</a></li><li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li></ul>
+</div><div>
+    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contacto</h3>
+    <ul class="space-y-3"><li><a href="mailto:pilotoapps.dev@gmail.com?subject=Quiero%20un%20sistema%20para%20mi%20negocio" class="text-gray-400 hover:text-white transition-colors">pilotoapps.dev@gmail.com</a></li></ul>
+</div>
+            
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+            <p class="text-gray-500 text-sm text-center">© 2026 PilotoApps. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+    
+</body>
+</html>
