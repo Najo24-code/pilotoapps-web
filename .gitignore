@@ -1,6 +1,6 @@
-build.py
-build_demos.py
+build*.py
 preview.png
+_preview*.png
 _shot_*.png
 __pycache__/
 .DS_Store
