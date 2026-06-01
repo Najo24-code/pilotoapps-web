@@ -7,80 +7,54 @@ html {
 }
 
 [id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 6rem;
+}
+
+body {
+  background: #020617;
 }
 
 ::selection {
-  background: #6366f1;
-  color: #fff;
+  background: #bef264;
+  color: #020617;
 }
 
-/* Texto con degradado (hero/proceso) */
-.grad-text {
-  background: linear-gradient(110deg, #a78bfa, #818cf8 40%, #22d3ee);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Fondo de puntos del hero */
+/* Fondo de puntos sutil */
 .dotgrid {
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.07) 1px, transparent 0);
-  background-size: 32px 32px;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 38px 38px;
 }
 
 /* Aparición al hacer scroll */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(30px);
   transition:
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.in {
   opacity: 1;
   transform: none;
 }
 
-/* Flotación del mockup */
+/* Flotación suave */
 @keyframes float {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-14px);
+    transform: translateY(-12px);
   }
 }
 .float {
-  animation: float 7s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
-/* Crecimiento de barras */
-@keyframes grow {
-  from {
-    height: 0;
-  }
-}
-.bar {
-  animation: grow 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Borde con degradado */
-.ring-grad {
-  position: relative;
-}
-.ring-grad::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(130deg, rgba(167, 139, 250, 0.6), rgba(34, 211, 238, 0.3), transparent);
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+/* Marco de navegador para las capturas */
+.browser {
+  box-shadow:
+    0 50px 100px -20px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
 }

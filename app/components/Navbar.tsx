@@ -4,9 +4,9 @@ import { useState } from "react";
 
 const LINKS = [
   { href: "#servicios", label: "Servicios" },
+  { href: "#trabajos", label: "Trabajos" },
+  { href: "#sobre", label: "Sobre mí" },
   { href: "#proceso", label: "Proceso" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#planes", label: "Planes" },
 ];
 
 export default function Navbar() {
@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mt-3 flex h-16 items-center justify-between rounded-2xl border border-white/10 bg-slate-900/60 px-4 backdrop-blur-xl">
           <a href="#inicio" className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand">
               <svg
                 className="h-5 w-5 text-slate-950"
                 fill="none"
@@ -45,7 +45,7 @@ export default function Navbar() {
 
           <a
             href="#contacto"
-            className="hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-slate-200 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-brand-300 sm:inline-flex"
           >
             Hablemos
           </a>
@@ -77,7 +77,7 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="block py-2 font-semibold text-cyan-300"
+            className="block py-2 font-semibold text-brand"
           >
             Hablemos
           </a>

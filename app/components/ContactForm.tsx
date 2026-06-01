@@ -5,7 +5,7 @@ import { useState } from "react";
 const ENDPOINT = "https://formsubmit.co/ajax/pilotoapps.dev@gmail.com";
 
 const inputClass =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none transition focus:border-transparent focus:ring-2 focus:ring-violet-500";
+  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none transition focus:border-transparent focus:ring-2 focus:ring-brand";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
@@ -32,7 +32,7 @@ export default function ContactForm() {
   if (status === "ok") {
     return (
       <div className="py-10 text-center">
-        <span className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-violet-500/15 text-violet-300">
+        <span className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-brand/15 text-brand">
           <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
           </svg>
@@ -68,7 +68,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 py-4 font-semibold text-white shadow-lg shadow-indigo-500/30 transition-all hover:scale-[1.01] disabled:opacity-60"
+        className="w-full rounded-full bg-brand py-4 font-semibold text-slate-950 shadow-lg shadow-brand/20 transition-all hover:bg-brand-300 disabled:opacity-60"
       >
         {status === "sending" ? "Enviando..." : "Enviar mensaje"}
       </button>
