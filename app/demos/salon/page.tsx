@@ -2,168 +2,219 @@
 
 import { useState } from "react";
 
+/* ── Tokens (moda editorial, dark chic) — near-black + blush + champán ──── */
+const TOKENS = {
+  "--bg": "#0F0B0E",
+  "--bg-2": "#151013",
+  "--panel": "#1B141A",
+  "--line": "#322631",
+  "--cream": "#F4ECEF",
+  "--muted": "#B7A6B0",
+  "--faint": "#7E6C77",
+  "--rose": "#E68AA6",
+  "--rose-deep": "#C75E7E",
+  "--gold": "#D8B98C",
+} as React.CSSProperties;
+
+const SCOPED_CSS = `
+.sb { background: var(--bg); color: var(--cream); font-family: var(--font-body), system-ui, sans-serif; }
+.sb .display { font-family: var(--font-display), Georgia, serif; }
+.sb ::selection { background: var(--rose); color: #1a0f14; }
+.sb a:focus-visible, .sb button:focus-visible, .sb input:focus-visible,
+.sb select:focus-visible, .sb textarea:focus-visible, .sb summary:focus-visible {
+  outline: 2px solid var(--rose); outline-offset: 3px; border-radius: 4px;
+}
+.sb .rise { opacity:0; transform: translateY(22px); animation: sbrise .9s cubic-bezier(.16,1,.3,1) forwards; }
+.sb .d1{animation-delay:.05s}.sb .d2{animation-delay:.14s}.sb .d3{animation-delay:.23s}
+@keyframes sbrise { to { opacity:1; transform:none } }
+@media (prefers-reduced-motion: reduce){
+  .sb .rise{animation:none;opacity:1;transform:none}
+  .sb *,.sb *::before,.sb *::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+`;
+
 const NAV = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#galeria", label: "Galería" },
-  { href: "#equipo", label: "Equipo" },
-  { href: "#reservar", label: "Reservar" },
+  ["#servicios", "Servicios"],
+  ["#galeria", "Galería"],
+  ["#equipo", "Equipo"],
+  ["#reservar", "Reservar"],
 ];
 
-const servicios = [
-  { t: "Corte de cabello", d: "Cortes de dama y caballero con asesoría de imagen.", p: "Desde RD$ 500" },
-  { t: "Color y mechas", d: "Tintes, balayage y mechas con productos premium.", p: "Desde RD$ 1,800" },
-  { t: "Manicure & Pedicure", d: "Uñas impecables, esmaltado tradicional o en gel.", p: "Desde RD$ 600" },
-  { t: "Barbería", d: "Corte, perfilado de barba y afeitado clásico a navaja.", p: "Desde RD$ 450" },
-  { t: "Tratamientos capilares", d: "Hidratación, keratina y nutrición profunda.", p: "Desde RD$ 1,200" },
-  { t: "Maquillaje", d: "Maquillaje social y para eventos especiales.", p: "Desde RD$ 1,500" },
+const SERVICIOS: [string, string, string][] = [
+  ["Corte de cabello", "Cortes de dama y caballero con asesoría de imagen.", "Desde RD$ 500"],
+  ["Color y mechas", "Tintes, balayage y mechas con productos premium.", "Desde RD$ 1,800"],
+  ["Manicure & Pedicure", "Uñas impecables, esmaltado tradicional o en gel.", "Desde RD$ 600"],
+  ["Barbería", "Corte, perfilado de barba y afeitado clásico a navaja.", "Desde RD$ 450"],
+  ["Tratamientos capilares", "Hidratación, keratina y nutrición profunda.", "Desde RD$ 1,200"],
+  ["Maquillaje", "Maquillaje social y para eventos especiales.", "Desde RD$ 1,500"],
 ];
 
-const equipo = [
-  { n: "Génesis Marte", r: "Estilista & colorista", img: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80" },
-  { n: "Pedro Jiménez", r: "Barbero", img: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?w=500&q=80" },
+const EQUIPO: [string, string, string][] = [
+  ["Génesis Marte", "Estilista & colorista", "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80"],
+  ["Pedro Jiménez", "Barbero", "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?w=500&q=80"],
 ];
 
-const faqs = [
-  { q: "¿Puedo reservar mi cita en línea?", a: "Sí, elige servicio, estilista y horario en segundos y recibe recordatorios automáticos." },
-  { q: "¿Atienden sin cita?", a: "Recibimos walk-ins según disponibilidad, pero reservando aseguras tu turno sin esperas." },
-  { q: "¿Qué métodos de pago aceptan?", a: "Efectivo, tarjeta y transferencia. El pago se realiza en el salón al terminar tu servicio." },
+const GALERIA = [
+  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1000&q=80",
+  "https://images.unsplash.com/photo-1599387737838-626d2e3d5d3a?w=700&q=80",
+  "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=700&q=80",
+  "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=700&q=80",
 ];
+
+const FAQS: [string, string][] = [
+  ["¿Puedo reservar mi cita en línea?", "Sí, elige servicio, estilista y horario en segundos y recibe recordatorios automáticos."],
+  ["¿Atienden sin cita?", "Recibimos walk-ins según disponibilidad, pero reservando aseguras tu turno sin esperas."],
+  ["¿Qué métodos de pago aceptan?", "Efectivo, tarjeta y transferencia. El pago se realiza en el salón al terminar tu servicio."],
+];
+
+const Arrow = () => (
+  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+  </svg>
+);
+
+const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+  <span className="inline-flex items-center gap-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-[var(--rose)]">
+    <span className="h-px w-7 bg-[var(--gold)]/70" />
+    {children}
+  </span>
+);
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSent(true);
-  };
-  const inp =
-    "w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition";
+  const inp = inputCls;
 
   return (
-    <div className="antialiased bg-white text-zinc-800">
-      {/* NAV */}
-      <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-zinc-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <a href="#inicio" className="flex items-center gap-2.5">
-              <span className="w-9 h-9 rounded-xl bg-rose-600 flex items-center justify-center text-white">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
-                </svg>
-              </span>
-              <span className="text-lg font-bold tracking-tight text-zinc-900">Studio Bella</span>
-            </a>
-            <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
-              {NAV.map((l) => (
-                <a key={l.href} href={l.href} className="hover:text-rose-600 transition-colors">{l.label}</a>
-              ))}
-            </nav>
-            <a href="#reservar" className="hidden sm:inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm shadow-rose-600/20 transition-all hover:shadow-md">
-              Reservar cita
-            </a>
-            <button onClick={() => setMenuOpen((o) => !o)} className="md:hidden p-2 -mr-2 text-zinc-700" aria-label="Menú">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            </button>
-          </div>
+    <div className="sb antialiased" style={TOKENS}>
+      <style>{SCOPED_CSS}</style>
+
+      {/* ── Header ─────────────────────────────────────────────────────── */}
+      <header className="sticky top-0 z-50 border-b border-[var(--line)]/70 bg-[var(--bg)]/80 backdrop-blur-xl">
+        <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-5 sm:px-8">
+          <a href="#inicio" className="display text-2xl font-bold tracking-tight text-[var(--cream)]">
+            Studio <span className="italic text-[var(--rose)]">Bella</span>
+          </a>
+          <nav className="hidden items-center gap-9 text-sm text-[var(--muted)] md:flex">
+            {NAV.map(([h, l]) => (
+              <a key={h} href={h} className="transition-colors hover:text-[var(--cream)]">{l}</a>
+            ))}
+          </nav>
+          <a href="#reservar" className="hidden rounded-full border border-[var(--rose)]/40 px-5 py-2.5 text-sm font-semibold text-[var(--rose)] transition-colors hover:bg-[var(--rose)] hover:text-[#1a0f14] sm:inline-flex">
+            Reservar cita
+          </a>
+          <button onClick={() => setMenuOpen((o) => !o)} className="-mr-2 p-2 text-[var(--cream)] md:hidden" aria-label="Abrir menú" aria-expanded={menuOpen}>
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
         </div>
-        <div className={`${menuOpen ? "" : "hidden "}md:hidden border-t border-zinc-100 bg-white px-4 py-3 space-y-1`}>
-          {NAV.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="block py-2 text-zinc-700 font-medium">{l.label}</a>
+        <div className={`${menuOpen ? "" : "hidden "}border-t border-[var(--line)]/70 bg-[var(--panel)] px-5 py-3 md:hidden`}>
+          {NAV.map(([h, l]) => (
+            <a key={h} href={h} onClick={() => setMenuOpen(false)} className="block py-2.5 text-[var(--muted)]">{l}</a>
           ))}
-          <a href="#reservar" onClick={() => setMenuOpen(false)} className="block py-2 text-rose-700 font-semibold">Reservar cita</a>
+          <a href="#reservar" onClick={() => setMenuOpen(false)} className="block py-2.5 font-semibold text-[var(--rose)]">Reservar cita</a>
         </div>
       </header>
 
-      {/* HERO */}
-      <section id="inicio" className="relative overflow-hidden bg-gradient-to-b from-rose-50/70 to-white">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-rose-200/40 rounded-full blur-3xl" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* ── Hero ───────────────────────────────────────────────────────── */}
+      <section id="inicio" className="relative overflow-hidden">
+        <div className="pointer-events-none absolute -right-32 -top-40 h-[460px] w-[460px] rounded-full bg-[var(--rose)]/10 blur-[130px]" />
+        <div className="relative mx-auto max-w-6xl px-5 py-16 sm:px-8 md:py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
-              <span className="inline-flex items-center gap-2 bg-white border border-rose-100 text-rose-700 text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-rose-500" /> Salón & Barbería · Santiago
-              </span>
-              <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.05]">
-                Tu mejor versión,<br /><span className="text-rose-600">empieza aquí</span>
+              <div className="rise d1"><Eyebrow>Salón & Barbería · Santiago</Eyebrow></div>
+              <h1 className="rise d2 display mt-7 text-5xl font-medium leading-[0.98] tracking-[-0.01em] text-[var(--cream)] md:text-[5rem]">
+                Tu mejor versión,
+                <br />
+                <span className="italic text-[var(--rose)]">empieza aquí.</span>
               </h1>
-              <p className="mt-6 text-lg text-zinc-600 leading-relaxed max-w-lg">
-                Cortes, color, uñas y barbería con un equipo que cuida cada detalle. Reserva tu cita en línea en menos de un minuto.
+              <p className="rise d3 mt-7 max-w-md text-lg leading-relaxed text-[var(--muted)]">
+                Cortes, color, uñas y barbería con un equipo que cuida cada detalle. Reserva tu cita en línea en menos de
+                un minuto.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a href="#reservar" className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-rose-600/25 transition-all hover:scale-[1.02]">
+              <div className="rise d3 mt-9 flex flex-wrap gap-4">
+                <a href="#reservar" className="group inline-flex items-center gap-2.5 rounded-full bg-[var(--rose)] px-7 py-3.5 font-semibold text-[#1a0f14] transition-all hover:bg-[var(--gold)]">
                   Reservar cita
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  <span className="transition-transform group-hover:translate-x-0.5"><Arrow /></span>
                 </a>
-                <a href="#servicios" className="inline-flex items-center gap-2 bg-white border border-zinc-200 hover:border-zinc-300 text-zinc-700 font-semibold px-7 py-3.5 rounded-full transition-colors">Ver servicios</a>
+                <a href="#servicios" className="inline-flex items-center gap-2 rounded-full border border-[var(--cream)]/25 px-7 py-3.5 font-semibold text-[var(--cream)] transition-colors hover:border-[var(--cream)]/50 hover:bg-[var(--cream)]/5">
+                  Ver servicios
+                </a>
               </div>
             </div>
-            <div className="relative">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80" alt="Salón de belleza" className="w-full h-[460px] object-cover rounded-[2rem] shadow-2xl shadow-zinc-300/50" />
+            <div className="rise d2 relative">
+              <img
+                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80"
+                alt="Interior del salón de belleza"
+                className="h-[380px] w-full rounded-[2rem] object-cover shadow-2xl shadow-black/50 md:h-[480px]"
+              />
+              <div className="absolute -bottom-5 -left-5 rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-6 py-4">
+                <p className="display text-2xl font-semibold text-[var(--gold)]">+8 años</p>
+                <p className="text-xs text-[var(--muted)]">embelleciendo Santiago</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SERVICIOS */}
-      <section id="servicios" className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <p className="text-rose-600 font-semibold text-sm uppercase tracking-wider mb-3">Servicios</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-900">Todo para verte y sentirte bien</h2>
+      {/* ── Servicios ──────────────────────────────────────────────────── */}
+      <section id="servicios" className="border-t border-[var(--line)]/60 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="mb-14 max-w-2xl">
+            <Eyebrow>Servicios</Eyebrow>
+            <h2 className="display mt-6 text-4xl font-medium leading-[1.05] text-[var(--cream)] md:text-5xl">
+              Todo para verte y <span className="italic text-[var(--gold)]">sentirte bien.</span>
+            </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {servicios.map((s) => (
-              <div key={s.t} className="group p-7 rounded-2xl border border-zinc-100 hover:border-rose-200 hover:shadow-xl hover:shadow-zinc-200/60 transition-all hover:-translate-y-1">
-                <h3 className="text-lg font-semibold text-zinc-900 mb-2">{s.t}</h3>
-                <p className="text-zinc-600 leading-relaxed">{s.d}</p>
-                <p className="mt-4 text-rose-600 font-semibold">{s.p}</p>
+          <div className="grid gap-px overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--line)] sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICIOS.map(([t, d, p]) => (
+              <div key={t} className="group flex flex-col bg-[var(--bg)] p-8 transition-colors hover:bg-[var(--panel)]">
+                <h3 className="display text-2xl font-medium text-[var(--cream)]">{t}</h3>
+                <p className="mt-3 flex-1 leading-relaxed text-[var(--muted)]">{d}</p>
+                <p className="mt-5 font-semibold text-[var(--rose)]">{p}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* GALERIA */}
-      <section id="galeria" className="py-20 md:py-28 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
-            <p className="text-rose-600 font-semibold text-sm uppercase tracking-wider mb-3">Galería</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-900">Nuestro trabajo habla por sí solo</h2>
+      {/* ── Galería ────────────────────────────────────────────────────── */}
+      <section id="galeria" className="bg-[var(--bg-2)] py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="mb-12 max-w-xl">
+            <Eyebrow>Galería</Eyebrow>
+            <h2 className="display mt-6 text-4xl font-medium text-[var(--cream)] md:text-5xl">
+              Nuestro trabajo habla solo
+            </h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {[
-              "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=900&q=80",
-              "https://images.unsplash.com/photo-1599387737838-626d2e3d5d3a?w=600&q=80",
-              "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80",
-              "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80",
-            ].map((src, i) => (
-              <div key={src} className={`overflow-hidden rounded-3xl group ${i === 0 ? "col-span-2 row-span-2" : ""}`}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt="Trabajo del salón" loading="lazy" className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${i === 0 ? "min-h-[280px]" : "min-h-[130px]"}`} />
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+            {GALERIA.map((src, i) => (
+              <div key={src} className={`group relative overflow-hidden rounded-2xl border border-[var(--line)] ${i === 0 ? "col-span-2 row-span-2" : ""}`}>
+                <img src={src} alt="Trabajo del salón" loading="lazy" className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06] ${i === 0 ? "min-h-[300px]" : "min-h-[145px]"}`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* EQUIPO */}
-      <section id="equipo" className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <p className="text-rose-600 font-semibold text-sm uppercase tracking-wider mb-3">Nuestro equipo</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-900">Manos expertas, trato cercano</h2>
+      {/* ── Equipo ─────────────────────────────────────────────────────── */}
+      <section id="equipo" className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-5 sm:px-8">
+          <div className="mb-14 max-w-2xl">
+            <Eyebrow>Nuestro equipo</Eyebrow>
+            <h2 className="display mt-6 text-4xl font-medium text-[var(--cream)] md:text-5xl">
+              Manos expertas, <span className="italic text-[var(--gold)]">trato cercano.</span>
+            </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {equipo.map((m) => (
-              <div key={m.n} className="bg-white rounded-3xl shadow-sm border border-zinc-100 overflow-hidden flex flex-col sm:flex-row">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={m.img} alt={m.n} loading="lazy" className="w-full sm:w-40 h-56 sm:h-auto object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-zinc-900">{m.n}</h3>
-                  <p className="text-rose-600 font-medium">{m.r}</p>
+          <div className="grid gap-6 md:grid-cols-2">
+            {EQUIPO.map(([n, r, img]) => (
+              <div key={n} className="flex flex-col overflow-hidden rounded-3xl border border-[var(--line)] bg-[var(--panel)] sm:flex-row">
+                <img src={img} alt={n} loading="lazy" className="h-56 w-full object-cover sm:h-auto sm:w-44" />
+                <div className="flex flex-col justify-center p-7">
+                  <h3 className="display text-2xl font-medium text-[var(--cream)]">{n}</h3>
+                  <p className="mt-1 font-medium text-[var(--rose)]">{r}</p>
                 </div>
               </div>
             ))}
@@ -171,92 +222,120 @@ export default function Page() {
         </div>
       </section>
 
-      {/* RESERVAR */}
-      <section id="reservar" className="py-20 md:py-28 bg-zinc-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 rounded-[2rem] overflow-hidden shadow-2xl shadow-zinc-300/40">
-            <div className="relative bg-rose-700 text-white p-8 md:p-12 overflow-hidden">
-              <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-rose-600/50 rounded-full blur-2xl" />
+      {/* ── Reservar ───────────────────────────────────────────────────── */}
+      <section id="reservar" className="bg-[var(--bg-2)] py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="grid overflow-hidden rounded-[1.75rem] border border-[var(--line)] lg:grid-cols-2">
+            <div className="relative overflow-hidden bg-[var(--panel)] p-8 md:p-12">
+              <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-[var(--rose)]/15 blur-3xl" />
               <div className="relative">
-                <p className="text-rose-200 font-semibold text-sm uppercase tracking-wider mb-3">Reserva tu cita</p>
-                <h2 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">Tu turno,<br />sin esperas</h2>
-                <p className="text-rose-100 mb-10 max-w-sm">Elige servicio, estilista y horario. Te confirmamos al instante.</p>
-                <ul className="space-y-5">
-                  <li className="flex items-center gap-4"><span className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg></span><span className="text-rose-50">Calle del Sol 120, Santiago</span></li>
-                  <li className="flex items-center gap-4"><span className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg></span><span className="text-rose-50">(809) 555-0400</span></li>
-                  <li className="flex items-center gap-4"><span className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></span><span className="text-rose-50">Mar a Dom · 9:00 AM – 8:00 PM</span></li>
+                <Eyebrow>Reserva tu cita</Eyebrow>
+                <h2 className="display mt-6 text-3xl font-medium leading-[1.08] text-[var(--cream)] md:text-4xl">
+                  Tu turno, <span className="italic text-[var(--rose)]">sin esperas.</span>
+                </h2>
+                <p className="mt-4 max-w-sm leading-relaxed text-[var(--muted)]">Elige servicio, estilista y horario. Te confirmamos al instante.</p>
+                <ul className="mt-10 space-y-4 text-[var(--cream)]/90">
+                  {["Calle del Sol 120, Santiago", "(809) 555-0400", "Mar a Dom · 9:00 AM – 8:00 PM"].map((t) => (
+                    <li key={t} className="flex items-center gap-3">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)]" /> {t}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
-            <div className="bg-white p-8 md:p-12">
-              <form onSubmit={handleSubmit} className={`space-y-5 ${sent ? "hidden" : ""}`}>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div><label className="block text-sm font-medium text-zinc-700 mb-1.5">Nombre completo</label><input className={inp} placeholder="Tu nombre" required /></div>
-                  <div><label className="block text-sm font-medium text-zinc-700 mb-1.5">Teléfono</label><input type="tel" className={inp} placeholder="(809) 000-0000" required /></div>
+            <div className="bg-[var(--bg)] p-8 md:p-12">
+              <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className={`space-y-5 ${sent ? "hidden" : ""}`}>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="Nombre completo"><input className={inp} placeholder="Tu nombre" required /></Field>
+                  <Field label="Teléfono"><input type="tel" className={inp} placeholder="(809) 000-0000" required /></Field>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div><label className="block text-sm font-medium text-zinc-700 mb-1.5">Servicio</label>
-                    <select className={`${inp} bg-white`}>{servicios.map((s) => <option key={s.t}>{s.t}</option>)}</select>
-                  </div>
-                  <div><label className="block text-sm font-medium text-zinc-700 mb-1.5">Estilista</label>
-                    <select className={`${inp} bg-white`}><option>Sin preferencia</option>{equipo.map((m) => <option key={m.n}>{m.n}</option>)}</select>
-                  </div>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="Servicio"><select className={inp} defaultValue="Corte de cabello">{SERVICIOS.map(([s]) => <option key={s}>{s}</option>)}</select></Field>
+                  <Field label="Estilista"><select className={inp} defaultValue="Sin preferencia"><option>Sin preferencia</option>{EQUIPO.map(([n]) => <option key={n}>{n}</option>)}</select></Field>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div><label className="block text-sm font-medium text-zinc-700 mb-1.5">Fecha</label><input type="date" className={inp} required /></div>
-                  <div><label className="block text-sm font-medium text-zinc-700 mb-1.5">Hora</label><input type="time" className={inp} required /></div>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="Fecha"><input type="date" className={inp} required /></Field>
+                  <Field label="Hora"><input type="time" className={inp} required /></Field>
                 </div>
-                <button type="submit" className="w-full bg-rose-600 hover:bg-rose-700 text-white font-semibold py-4 rounded-full shadow-lg shadow-rose-600/25 transition-all hover:scale-[1.01]">Confirmar cita</button>
-                <p className="text-center text-xs text-zinc-400">Demo — el formulario no envía información real.</p>
+                <button type="submit" className="w-full rounded-full bg-[var(--rose)] py-4 font-semibold text-[#1a0f14] transition-colors hover:bg-[var(--gold)]">
+                  Confirmar cita
+                </button>
+                <p className="text-center text-xs text-[var(--faint)]">Demo — el formulario no envía información real.</p>
               </form>
-              <div className={`${sent ? "" : "hidden "}text-center py-12`}>
-                <span className="w-16 h-16 mx-auto rounded-full bg-rose-50 text-rose-600 flex items-center justify-center mb-5"><svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg></span>
-                <h3 className="text-2xl font-bold text-zinc-900 mb-2">¡Cita reservada!</h3>
-                <p className="text-zinc-600">Te esperamos. Recibirás un recordatorio antes de tu visita.</p>
+              <div className={`${sent ? "" : "hidden "}py-12 text-center`}>
+                <span className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--rose)]/15 text-[var(--rose)]">
+                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                </span>
+                <h3 className="display text-2xl font-medium text-[var(--cream)]">¡Cita reservada!</h3>
+                <p className="mt-2 text-[var(--muted)]">Te esperamos. Recibirás un recordatorio antes de tu visita.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-900 text-center mb-12">Preguntas frecuentes</h2>
+      {/* ── FAQ ────────────────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
+          <h2 className="display mb-12 text-center text-3xl font-medium text-[var(--cream)] md:text-4xl">Preguntas frecuentes</h2>
           <div className="space-y-3">
-            {faqs.map((f) => (
-              <details key={f.q} className="group bg-zinc-50 rounded-2xl border border-zinc-100 px-6 [&_summary]:list-none">
-                <summary className="flex items-center justify-between py-5 cursor-pointer font-medium text-zinc-900">{f.q}<svg className="w-5 h-5 text-zinc-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></summary>
-                <p className="pb-5 text-zinc-600 leading-relaxed">{f.a}</p>
+            {FAQS.map(([q, a]) => (
+              <details key={q} className="group rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-6 [&_summary]:list-none">
+                <summary className="flex cursor-pointer items-center justify-between py-5 font-medium text-[var(--cream)]">
+                  {q}
+                  <svg className="h-5 w-5 text-[var(--faint)] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </summary>
+                <p className="pb-5 leading-relaxed text-[var(--muted)]">{a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-zinc-900 text-zinc-400 pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-10 mb-12">
+      {/* ── Footer ─────────────────────────────────────────────────────── */}
+      <footer className="border-t border-[var(--line)] bg-[var(--bg)] pb-8 pt-16 text-[var(--muted)]">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="mb-12 grid gap-10 md:grid-cols-3">
             <div>
-              <div className="flex items-center gap-2.5 mb-4">
-                <span className="w-9 h-9 rounded-xl bg-rose-600 flex items-center justify-center text-white"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Z" /></svg></span>
-                <span className="text-lg font-bold text-white">Studio Bella</span>
-              </div>
-              <p className="leading-relaxed max-w-xs">Salón de belleza y barbería en Santiago. Tu mejor versión empieza aquí.</p>
+              <span className="display text-2xl font-bold text-[var(--cream)]">Studio <span className="italic text-[var(--rose)]">Bella</span></span>
+              <p className="mt-4 max-w-xs leading-relaxed">Salón de belleza y barbería en Santiago. Tu mejor versión empieza aquí.</p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contacto</h3>
-              <ul className="space-y-3"><li>Calle del Sol 120, Santiago</li><li>(809) 555-0400</li><li>hola@studiobella.do</li></ul>
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--faint)]">Contacto</h3>
+              <ul className="space-y-3">
+                <li>Calle del Sol 120, Santiago</li>
+                <li><a href="tel:8095550400" className="transition-colors hover:text-[var(--cream)]">(809) 555-0400</a></li>
+                <li><a href="mailto:hola@studiobella.do" className="transition-colors hover:text-[var(--cream)]">hola@studiobella.do</a></li>
+              </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Horario</h3>
-              <ul className="space-y-2"><li>Martes a Sábado · 9:00 AM – 8:00 PM</li><li>Domingo · 9:00 AM – 4:00 PM</li></ul>
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--faint)]">Horario</h3>
+              <ul className="space-y-2">
+                <li>Martes a Sábado · 9:00 AM – 8:00 PM</li>
+                <li>Domingo · 9:00 AM – 4:00 PM</li>
+              </ul>
             </div>
           </div>
-          <div className="border-t border-zinc-800 pt-8 text-center text-sm text-zinc-500">© 2026 Studio Bella. Todos los derechos reservados.</div>
+          <div className="border-t border-[var(--line)] pt-8 text-center text-sm text-[var(--faint)]">
+            © 2026 Studio Bella. Todos los derechos reservados.
+          </div>
         </div>
       </footer>
     </div>
+  );
+}
+
+/* ── Helpers ──────────────────────────────────────────────────────────── */
+const inputCls =
+  "w-full rounded-xl border border-[var(--line)] bg-[var(--panel)] px-4 py-3 text-[var(--cream)] outline-none transition placeholder:text-[var(--faint)] focus:border-[var(--rose)] focus:ring-2 focus:ring-[var(--rose)]/30";
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <label className="block">
+      <span className="mb-1.5 block text-sm font-medium text-[var(--muted)]">{label}</span>
+      {children}
+    </label>
   );
 }
