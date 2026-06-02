@@ -2,143 +2,179 @@
 
 import { useState } from "react";
 
+/* ── Tokens (lujo costero, claro) — marfil/arena + verde-mar + oro ──────── */
+const TOKENS = {
+  "--bg": "#F6F2EA",
+  "--paper": "#FFFFFF",
+  "--soft": "#EDE6D9",
+  "--line": "#E1D9CA",
+  "--ink": "#1F2A28",
+  "--muted": "#5F6B66",
+  "--faint": "#9BA199",
+  "--sea": "#2C6E63",
+  "--sea-deep": "#1E5047",
+  "--gold": "#AD884B",
+  "--gold-soft": "#EADFC8",
+} as React.CSSProperties;
+
+const SCOPED_CSS = `
+.vm { background: var(--bg); color: var(--ink); font-family: var(--font-body), system-ui, sans-serif; }
+.vm .display { font-family: var(--font-display), Georgia, serif; }
+.vm ::selection { background: var(--sea); color: #fff; }
+.vm a:focus-visible, .vm button:focus-visible, .vm input:focus-visible,
+.vm select:focus-visible, .vm textarea:focus-visible, .vm summary:focus-visible {
+  outline: 2px solid var(--sea); outline-offset: 3px; border-radius: 4px;
+}
+.vm .rise { opacity:0; transform: translateY(22px); animation: vmrise .9s cubic-bezier(.16,1,.3,1) forwards; }
+.vm .d1{animation-delay:.05s}.vm .d2{animation-delay:.14s}.vm .d3{animation-delay:.23s}
+@keyframes vmrise { to { opacity:1; transform:none } }
+@media (prefers-reduced-motion: reduce){
+  .vm .rise{animation:none;opacity:1;transform:none}
+  .vm *,.vm *::before,.vm *::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+`;
+
 const NAV = [
-  { href: "#habitaciones", label: "Habitaciones" },
-  { href: "#amenidades", label: "Amenidades" },
-  { href: "#galeria", label: "Galería" },
-  { href: "#reservar", label: "Reservar" },
+  ["#habitaciones", "Habitaciones"],
+  ["#amenidades", "Amenidades"],
+  ["#galeria", "Galería"],
+  ["#reservar", "Reservar"],
 ];
 
-const habitaciones = [
-  {
-    t: "Suite Vista al Mar",
-    d: "Cama king, balcón privado con vista al océano y desayuno incluido.",
-    p: "RD$ 7,800",
-    img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80",
-  },
-  {
-    t: "Habitación Jardín",
-    d: "Acogedora habitación rodeada de naturaleza, a pasos de la piscina.",
-    p: "RD$ 4,900",
-    img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80",
-  },
-  {
-    t: "Villa Familiar",
-    d: "Dos habitaciones, sala y terraza. Perfecta para familias.",
-    p: "RD$ 11,500",
-    img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80",
-  },
+const HABITACIONES: [string, string, string, string][] = [
+  ["Suite Vista al Mar", "Cama king, balcón privado con vista al océano y desayuno incluido.", "RD$ 7,800", "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80"],
+  ["Habitación Jardín", "Acogedora habitación rodeada de naturaleza, a pasos de la piscina.", "RD$ 4,900", "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80"],
+  ["Villa Familiar", "Dos habitaciones, sala y terraza. Perfecta para familias.", "RD$ 11,500", "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80"],
 ];
 
-const amenidades = [
-  { t: "Piscina infinita", d: "Frente al mar, abierta todo el día." },
-  { t: "Wi-Fi de alta velocidad", d: "En todas las áreas del hotel." },
-  { t: "Restaurante & bar", d: "Cocina local e internacional." },
-  { t: "Playa privada", d: "Acceso directo con camastros." },
-  { t: "Spa & bienestar", d: "Masajes y tratamientos frente al mar." },
-  { t: "Parqueo gratis", d: "Seguro y vigilado 24/7." },
+const AMENIDADES: [string, string][] = [
+  ["Piscina infinita", "Frente al mar, abierta todo el día."],
+  ["Wi-Fi de alta velocidad", "En todas las áreas del hotel."],
+  ["Restaurante & bar", "Cocina local e internacional."],
+  ["Playa privada", "Acceso directo con camastros."],
+  ["Spa & bienestar", "Masajes y tratamientos frente al mar."],
+  ["Parqueo gratis", "Seguro y vigilado 24/7."],
 ];
 
-const faqs = [
-  { q: "¿Puedo reservar en línea?", a: "Sí, elige fechas, tipo de habitación y número de huéspedes y te confirmamos al instante." },
-  { q: "¿A qué hora es el check-in y check-out?", a: "Check-in desde las 3:00 PM y check-out hasta las 12:00 PM. Consulta por late check-out." },
-  { q: "¿Incluye desayuno?", a: "Las suites incluyen desayuno. En las demás habitaciones puedes agregarlo al reservar." },
+const GALERIA = [
+  "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1000&q=80",
+  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=700&q=80",
+  "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=700&q=80",
+  "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=700&q=80",
 ];
+
+const FAQS: [string, string][] = [
+  ["¿Puedo reservar en línea?", "Sí, elige fechas, tipo de habitación y número de huéspedes y te confirmamos al instante."],
+  ["¿A qué hora es el check-in y check-out?", "Check-in desde las 3:00 PM y check-out hasta las 12:00 PM. Consulta por late check-out."],
+  ["¿Incluye desayuno?", "Las suites incluyen desayuno. En las demás habitaciones puedes agregarlo al reservar."],
+];
+
+const Arrow = () => (
+  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+  </svg>
+);
+
+const Eyebrow = ({ children, tone = "sea" }: { children: React.ReactNode; tone?: "sea" | "light" }) => (
+  <span className={`inline-flex items-center gap-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.28em] ${tone === "light" ? "text-[var(--gold-soft)]" : "text-[var(--sea)]"}`}>
+    <span className={`h-px w-7 ${tone === "light" ? "bg-[var(--gold-soft)]/70" : "bg-[var(--gold)]/70"}`} />
+    {children}
+  </span>
+);
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSent(true);
-  };
-  const inp =
-    "w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition";
+  const inp = inputCls;
 
   return (
-    <div className="antialiased bg-white text-stone-800">
-      {/* NAV */}
-      <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-stone-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <a href="#inicio" className="flex items-center gap-2.5">
-              <span className="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center text-white">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
-                </svg>
-              </span>
-              <span className="text-xl font-serif font-bold tracking-tight text-stone-900">Villa Marena</span>
-            </a>
-            <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
-              {NAV.map((l) => (
-                <a key={l.href} href={l.href} className="hover:text-emerald-600 transition-colors">{l.label}</a>
-              ))}
-            </nav>
-            <a href="#reservar" className="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm shadow-emerald-600/20 transition-all hover:shadow-md">
-              Reservar
-            </a>
-            <button onClick={() => setMenuOpen((o) => !o)} className="md:hidden p-2 -mr-2 text-stone-700" aria-label="Menú">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            </button>
-          </div>
+    <div className="vm antialiased" style={TOKENS}>
+      <style>{SCOPED_CSS}</style>
+
+      {/* ── Header ─────────────────────────────────────────────────────── */}
+      <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--bg)]/85 backdrop-blur-xl">
+        <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-5 sm:px-8">
+          <a href="#inicio" className="display text-2xl font-bold tracking-tight text-[var(--ink)]">
+            Villa <span className="italic text-[var(--sea)]">Marena</span>
+          </a>
+          <nav className="hidden items-center gap-9 text-sm text-[var(--muted)] md:flex">
+            {NAV.map(([h, l]) => (
+              <a key={h} href={h} className="transition-colors hover:text-[var(--sea)]">{l}</a>
+            ))}
+          </nav>
+          <a href="#reservar" className="hidden rounded-full bg-[var(--sea)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--sea-deep)] sm:inline-flex">
+            Reservar
+          </a>
+          <button onClick={() => setMenuOpen((o) => !o)} className="-mr-2 p-2 text-[var(--ink)] md:hidden" aria-label="Abrir menú" aria-expanded={menuOpen}>
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
         </div>
-        <div className={`${menuOpen ? "" : "hidden "}md:hidden border-t border-stone-100 bg-white px-4 py-3 space-y-1`}>
-          {NAV.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="block py-2 text-stone-700 font-medium">{l.label}</a>
+        <div className={`${menuOpen ? "" : "hidden "}border-t border-[var(--line)] bg-[var(--paper)] px-5 py-3 md:hidden`}>
+          {NAV.map(([h, l]) => (
+            <a key={h} href={h} onClick={() => setMenuOpen(false)} className="block py-2.5 text-[var(--muted)]">{l}</a>
           ))}
-          <a href="#reservar" onClick={() => setMenuOpen(false)} className="block py-2 text-emerald-700 font-semibold">Reservar</a>
+          <a href="#reservar" onClick={() => setMenuOpen(false)} className="block py-2.5 font-semibold text-[var(--sea)]">Reservar</a>
         </div>
       </header>
 
-      {/* HERO inmersivo */}
-      <section id="inicio" className="relative min-h-[88vh] flex items-center">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80" alt="Playa frente al hotel" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-900/55 to-stone-900/20" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      {/* ── Hero inmersivo ─────────────────────────────────────────────── */}
+      <section id="inicio" className="relative flex min-h-[86vh] items-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1700&q=80" alt="Playa frente al hotel" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1a18]/80 via-[#0d1a18]/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a18]/60 via-transparent to-transparent" />
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 py-24 sm:px-8">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Hotel boutique · Las Terrenas, Samaná
-            </span>
-            <h1 className="mt-6 font-serif text-5xl md:text-7xl font-bold text-white leading-[1.02]">
-              Tu escape frente<br /><span className="text-emerald-400">al mar</span>
+            <div className="rise d1"><Eyebrow tone="light">Hotel boutique · Las Terrenas, Samaná</Eyebrow></div>
+            <h1 className="rise d2 display mt-6 text-6xl font-medium leading-[0.95] text-white md:text-[6.5rem]">
+              Tu escape frente
+              <br />
+              <span className="italic text-[var(--gold-soft)]">al mar.</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-stone-200 leading-relaxed max-w-xl">
-              Un refugio boutique donde el Caribe es tu vista diaria. Reserva tu habitación en línea y vive la experiencia Villa Marena.
+            <p className="rise d3 mt-6 max-w-lg text-lg leading-relaxed text-white/85">
+              Un refugio boutique donde el Caribe es tu vista diaria. Reserva tu habitación en línea y vive la
+              experiencia Villa Marena.
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <a href="#reservar" className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-emerald-900/40 transition-all hover:scale-[1.02]">
+            <div className="rise d3 mt-9 flex flex-wrap gap-4">
+              <a href="#reservar" className="group inline-flex items-center gap-2.5 rounded-full bg-[var(--gold)] px-7 py-3.5 font-semibold text-[#1c160c] transition-all hover:bg-[var(--gold-soft)]">
                 Reservar ahora
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <span className="transition-transform group-hover:translate-x-0.5"><Arrow /></span>
               </a>
-              <a href="#habitaciones" className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/30 hover:bg-white/20 text-white font-semibold px-7 py-3.5 rounded-full transition-colors">Ver habitaciones</a>
+              <a href="#habitaciones" className="inline-flex items-center gap-2 rounded-full border border-white/35 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white/10">
+                Ver habitaciones
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* HABITACIONES */}
-      <section id="habitaciones" className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <p className="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-3">Habitaciones</p>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-stone-900">Espacios pensados para descansar</h2>
+      {/* ── Habitaciones ───────────────────────────────────────────────── */}
+      <section id="habitaciones" className="py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="mb-14 max-w-2xl">
+            <Eyebrow>Habitaciones</Eyebrow>
+            <h2 className="display mt-5 text-5xl font-medium leading-[1.02] text-[var(--ink)] md:text-6xl">
+              Espacios pensados para <span className="italic text-[var(--sea)]">descansar.</span>
+            </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {habitaciones.map((h) => (
-              <div key={h.t} className="bg-white rounded-3xl border border-stone-100 overflow-hidden hover:shadow-xl hover:shadow-stone-200/60 transition-all group">
+          <div className="grid gap-7 md:grid-cols-3">
+            {HABITACIONES.map(([t, d, p, img]) => (
+              <div key={t} className="group overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] transition-shadow hover:shadow-xl hover:shadow-[var(--sea)]/10">
                 <div className="overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={h.img} alt={h.t} loading="lazy" className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={img} alt={t} loading="lazy" className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-xl font-bold text-stone-900">{h.t}</h3>
-                  <p className="mt-2 text-stone-600 leading-relaxed">{h.d}</p>
-                  <div className="mt-5 flex items-center justify-between">
-                    <span><span className="text-2xl font-extrabold text-stone-900">{h.p}</span><span className="text-stone-500 text-sm"> / noche</span></span>
-                    <a href="#reservar" className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">Reservar →</a>
+                  <h3 className="display text-2xl font-semibold text-[var(--ink)]">{t}</h3>
+                  <p className="mt-2 leading-relaxed text-[var(--muted)]">{d}</p>
+                  <div className="mt-5 flex items-center justify-between border-t border-[var(--line)] pt-4">
+                    <span>
+                      <span className="display text-2xl font-semibold text-[var(--ink)]">{p}</span>
+                      <span className="text-sm text-[var(--faint)]"> / noche</span>
+                    </span>
+                    <a href="#reservar" className="inline-flex items-center gap-1.5 font-semibold text-[var(--sea)] transition-all hover:gap-2.5">
+                      Reservar <Arrow />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -147,22 +183,22 @@ export default function Page() {
         </div>
       </section>
 
-      {/* AMENIDADES */}
-      <section id="amenidades" className="py-20 md:py-28 bg-stone-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
-            <p className="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-3">Amenidades</p>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-stone-900">Todo lo que necesitas, incluido</h2>
+      {/* ── Amenidades ─────────────────────────────────────────────────── */}
+      <section id="amenidades" className="bg-[var(--soft)] py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="mb-12 max-w-2xl">
+            <Eyebrow>Amenidades</Eyebrow>
+            <h2 className="display mt-5 text-5xl font-medium text-[var(--ink)] md:text-6xl">Todo lo que necesitas, incluido</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {amenidades.map((a) => (
-              <div key={a.t} className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-stone-100">
-                <span className="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+          <div className="grid gap-px overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--line)] sm:grid-cols-2 lg:grid-cols-3">
+            {AMENIDADES.map(([t, d]) => (
+              <div key={t} className="flex items-start gap-4 bg-[var(--bg)] p-7">
+                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[var(--gold-soft)] text-[var(--gold)]">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
                 </span>
                 <div>
-                  <h3 className="font-semibold text-stone-900">{a.t}</h3>
-                  <p className="text-stone-600 text-sm leading-relaxed">{a.d}</p>
+                  <h3 className="display text-xl font-semibold text-[var(--ink)]">{t}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-[var(--muted)]">{d}</p>
                 </div>
               </div>
             ))}
@@ -170,108 +206,138 @@ export default function Page() {
         </div>
       </section>
 
-      {/* GALERIA */}
-      <section id="galeria" className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
-            <p className="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-3">Galería</p>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-stone-900">Un vistazo a Villa Marena</h2>
+      {/* ── Galería ────────────────────────────────────────────────────── */}
+      <section id="galeria" className="py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="mb-12 max-w-xl">
+            <Eyebrow>Galería</Eyebrow>
+            <h2 className="display mt-5 text-5xl font-medium text-[var(--ink)] md:text-6xl">Un vistazo a Villa Marena</h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {[
-              "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80",
-              "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80",
-              "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&q=80",
-              "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=600&q=80",
-            ].map((src, i) => (
-              <div key={src} className={`overflow-hidden rounded-3xl group ${i === 0 ? "col-span-2 row-span-2" : ""}`}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt="Villa Marena" loading="lazy" className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${i === 0 ? "min-h-[280px]" : "min-h-[130px]"}`} />
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+            {GALERIA.map((src, i) => (
+              <div key={src} className={`group relative overflow-hidden rounded-2xl border border-[var(--line)] ${i === 0 ? "col-span-2 row-span-2" : ""}`}>
+                <img src={src} alt="Villa Marena" loading="lazy" className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06] ${i === 0 ? "min-h-[300px]" : "min-h-[145px]"}`} />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* RESERVAR */}
-      <section id="reservar" className="py-20 md:py-28 bg-stone-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 rounded-[2rem] overflow-hidden shadow-2xl shadow-stone-300/40">
-            <div className="relative bg-stone-900 text-white p-8 md:p-12 overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=900&q=80" alt="Atardecer en la playa" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+      {/* ── Reservar ───────────────────────────────────────────────────── */}
+      <section id="reservar" className="bg-[var(--soft)] py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="grid overflow-hidden rounded-[1.75rem] border border-[var(--line)] shadow-xl shadow-[var(--sea)]/5 lg:grid-cols-2">
+            <div className="relative overflow-hidden bg-[var(--sea-deep)] p-8 text-white md:p-12">
+              <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=1000&q=80" alt="" className="absolute inset-0 h-full w-full object-cover opacity-20" />
               <div className="relative">
-                <p className="text-emerald-400 font-semibold text-sm uppercase tracking-wider mb-3">Reserva tu estadía</p>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 leading-tight">Te esperamos<br />en el paraíso</h2>
-                <p className="text-stone-300 mb-10 max-w-sm">Reserva en línea y asegura tu habitación. Para estadías largas o grupos, contáctanos.</p>
-                <ul className="space-y-5">
-                  <li className="flex items-center gap-4"><span className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg></span><span className="text-stone-100">Playa Bonita, Las Terrenas, Samaná</span></li>
-                  <li className="flex items-center gap-4"><span className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg></span><span className="text-stone-100">(809) 555-0500</span></li>
+                <Eyebrow tone="light">Reserva tu estadía</Eyebrow>
+                <h2 className="display mt-5 text-4xl font-medium leading-[1.05] md:text-5xl">
+                  Te esperamos <span className="italic text-[var(--gold-soft)]">en el paraíso.</span>
+                </h2>
+                <p className="mt-4 max-w-sm leading-relaxed text-white/80">Reserva en línea y asegura tu habitación. Para estadías largas o grupos, contáctanos.</p>
+                <ul className="mt-10 space-y-4 text-white/90">
+                  {["Playa Bonita, Las Terrenas, Samaná", "(809) 555-0500"].map((t) => (
+                    <li key={t} className="flex items-center gap-3">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold-soft)]" /> {t}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
-            <div className="bg-white p-8 md:p-12">
-              <form onSubmit={handleSubmit} className={`space-y-5 ${sent ? "hidden" : ""}`}>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div><label className="block text-sm font-medium text-stone-700 mb-1.5">Nombre completo</label><input className={inp} placeholder="Tu nombre" required /></div>
-                  <div><label className="block text-sm font-medium text-stone-700 mb-1.5">Teléfono o correo</label><input className={inp} placeholder="Para confirmarte" required /></div>
+            <div className="bg-[var(--paper)] p-8 md:p-12">
+              <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className={`space-y-5 ${sent ? "hidden" : ""}`}>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="Nombre completo"><input className={inp} placeholder="Tu nombre" required /></Field>
+                  <Field label="Teléfono o correo"><input className={inp} placeholder="Para confirmarte" required /></Field>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div><label className="block text-sm font-medium text-stone-700 mb-1.5">Check-in</label><input type="date" className={inp} required /></div>
-                  <div><label className="block text-sm font-medium text-stone-700 mb-1.5">Check-out</label><input type="date" className={inp} required /></div>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="Check-in"><input type="date" className={inp} required /></Field>
+                  <Field label="Check-out"><input type="date" className={inp} required /></Field>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div><label className="block text-sm font-medium text-stone-700 mb-1.5">Huéspedes</label><select className={`${inp} bg-white`}><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div>
-                  <div><label className="block text-sm font-medium text-stone-700 mb-1.5">Habitación</label><select className={`${inp} bg-white`}>{habitaciones.map((h) => <option key={h.t}>{h.t}</option>)}</select></div>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="Huéspedes"><select className={inp} defaultValue="2">{["1", "2", "3", "4", "5+"].map((n) => <option key={n}>{n}</option>)}</select></Field>
+                  <Field label="Habitación"><select className={inp} defaultValue="Suite Vista al Mar">{HABITACIONES.map(([t]) => <option key={t}>{t}</option>)}</select></Field>
                 </div>
-                <button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-4 rounded-full shadow-lg shadow-emerald-600/25 transition-all hover:scale-[1.01]">Confirmar reserva</button>
-                <p className="text-center text-xs text-stone-400">Demo — el formulario no envía información real.</p>
+                <button type="submit" className="w-full rounded-full bg-[var(--sea)] py-4 font-semibold text-white transition-colors hover:bg-[var(--sea-deep)]">
+                  Confirmar reserva
+                </button>
+                <p className="text-center text-xs text-[var(--faint)]">Demo — el formulario no envía información real.</p>
               </form>
-              <div className={`${sent ? "" : "hidden "}text-center py-12`}>
-                <span className="w-16 h-16 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5"><svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg></span>
-                <h3 className="text-2xl font-bold text-stone-900 mb-2">¡Reserva confirmada!</h3>
-                <p className="text-stone-600">Te esperamos en Villa Marena. Recibirás los detalles por correo.</p>
+              <div className={`${sent ? "" : "hidden "}py-12 text-center`}>
+                <span className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--gold-soft)] text-[var(--gold)]">
+                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                </span>
+                <h3 className="display text-2xl font-semibold text-[var(--ink)]">¡Reserva confirmada!</h3>
+                <p className="mt-2 text-[var(--muted)]">Te esperamos en Villa Marena. Recibirás los detalles por correo.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-stone-900 text-center mb-12">Preguntas frecuentes</h2>
+      {/* ── FAQ ────────────────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
+          <h2 className="display mb-12 text-center text-4xl font-medium text-[var(--ink)] md:text-5xl">Preguntas frecuentes</h2>
           <div className="space-y-3">
-            {faqs.map((f) => (
-              <details key={f.q} className="group bg-stone-50 rounded-2xl border border-stone-100 px-6 [&_summary]:list-none">
-                <summary className="flex items-center justify-between py-5 cursor-pointer font-medium text-stone-900">{f.q}<svg className="w-5 h-5 text-stone-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></summary>
-                <p className="pb-5 text-stone-600 leading-relaxed">{f.a}</p>
+            {FAQS.map(([q, a]) => (
+              <details key={q} className="group rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-6 [&_summary]:list-none">
+                <summary className="flex cursor-pointer items-center justify-between py-5 font-medium text-[var(--ink)]">
+                  {q}
+                  <svg className="h-5 w-5 text-[var(--faint)] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </summary>
+                <p className="pb-5 leading-relaxed text-[var(--muted)]">{a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-stone-950 text-stone-400 pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-10 mb-12">
+      {/* ── Footer ─────────────────────────────────────────────────────── */}
+      <footer className="border-t border-[var(--line)] bg-[var(--ink)] pb-8 pt-16 text-white/70">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="mb-12 grid gap-10 md:grid-cols-3">
             <div>
-              <span className="text-2xl font-serif font-bold text-white">Villa Marena</span>
-              <p className="leading-relaxed max-w-xs mt-4">Hotel boutique frente al mar en Las Terrenas, Samaná. Tu escape al Caribe.</p>
+              <span className="display text-2xl font-bold text-white">Villa <span className="italic text-[var(--gold-soft)]">Marena</span></span>
+              <p className="mt-4 max-w-xs leading-relaxed">Hotel boutique frente al mar en Las Terrenas, Samaná. Tu escape al Caribe.</p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contacto</h3>
-              <ul className="space-y-3"><li>Playa Bonita, Las Terrenas</li><li>(809) 555-0500</li><li>reservas@villamarena.do</li></ul>
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white">Contacto</h3>
+              <ul className="space-y-3">
+                <li>Playa Bonita, Las Terrenas</li>
+                <li><a href="tel:8095550500" className="transition-colors hover:text-white">(809) 555-0500</a></li>
+                <li><a href="mailto:reservas@villamarena.do" className="transition-colors hover:text-white">reservas@villamarena.do</a></li>
+              </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Recepción</h3>
-              <ul className="space-y-2"><li>Check-in · 3:00 PM</li><li>Check-out · 12:00 PM</li><li>Atención 24/7</li></ul>
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white">Recepción</h3>
+              <ul className="space-y-2">
+                <li>Check-in · 3:00 PM</li>
+                <li>Check-out · 12:00 PM</li>
+                <li>Atención 24/7</li>
+              </ul>
             </div>
           </div>
-          <div className="border-t border-stone-800 pt-8 text-center text-sm text-stone-500">© 2026 Villa Marena. Todos los derechos reservados.</div>
+          <div className="border-t border-white/10 pt-8 text-center text-sm text-white/50">
+            © 2026 Villa Marena. Todos los derechos reservados.
+          </div>
         </div>
       </footer>
     </div>
+  );
+}
+
+/* ── Helpers ──────────────────────────────────────────────────────────── */
+const inputCls =
+  "w-full rounded-xl border border-[var(--line)] bg-[var(--bg)] px-4 py-3 text-[var(--ink)] outline-none transition placeholder:text-[var(--faint)] focus:border-[var(--sea)] focus:ring-2 focus:ring-[var(--sea)]/25";
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <label className="block">
+      <span className="mb-1.5 block text-sm font-medium text-[var(--muted)]">{label}</span>
+      {children}
+    </label>
   );
 }
