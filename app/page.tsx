@@ -53,6 +53,14 @@ const works = [
     desc: "Sitio de hotel con habitaciones, amenidades y reserva en línea por fechas y huéspedes.",
     features: ["Reserva por fechas", "Tipos de habitación", "Amenidades", "Galería"],
   },
+  {
+    href: "/demos/gimnasio",
+    img: "/shots/gimnasio.webp",
+    kind: "Planes + captación para gimnasio",
+    name: "Gimnasio",
+    desc: "Web enérgica con planes y precios, clase de prueba y galería del espacio, lista para captar nuevos miembros.",
+    features: ["Planes y precios", "Clase de prueba", "Galería", "Contacto directo"],
+  },
 ];
 
 const stack = ["React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL"];
@@ -148,7 +156,7 @@ export default function Home() {
                       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
                     </span>
                     <div>
-                      <p className="font-display text-sm font-bold text-white">5 demos en vivo</p>
+                      <p className="font-display text-sm font-bold text-white">6 demos en vivo</p>
                       <p className="text-xs text-slate-400">funcionales y navegables</p>
                     </div>
                   </div>
@@ -158,7 +166,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Marquesina — muro de trabajo (las 5 demos en loop) */}
+        {/* Marquesina — muro de trabajo (las demos en loop) */}
         <Reveal delay={0.2} className="marquee-mask relative mt-20 md:mt-28">
           <div className="marquee-track flex w-max gap-5">
             {[...works, ...works].map((w, i) => (
