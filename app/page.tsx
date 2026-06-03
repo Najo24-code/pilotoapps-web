@@ -77,53 +77,101 @@ export default function Home() {
       <Navbar />
 
       {/* HERO */}
-      <section id="inicio" className="grain relative overflow-hidden pt-40 pb-20 md:pt-52">
+      <section id="inicio" className="grain relative overflow-hidden pt-36 pb-14 md:pt-44">
         <div className="mesh absolute inset-0" />
-        <div className="dotgrid absolute inset-0 opacity-70" />
-        <div className="absolute -top-40 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-brand/10 blur-[140px]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 to-transparent" />
-        <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-slate-300">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-              </span>
-              Desarrollo de software a la medida · República Dominicana
-            </span>
-            <h1 className="mx-auto mt-8 max-w-4xl font-display text-5xl font-bold leading-[0.98] tracking-[-0.03em] text-gleam sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
-              Convierte tu negocio en un <span className="text-brand">sistema</span>.
-            </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
-              Diseño y construyo software a la medida para PYMEs: citas, inventario, ventas y web
-              profesional. Menos cuadernos y Excel, más control.
-            </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <a
-                href="#contacto"
-                className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-slate-950 transition-all hover:scale-[1.02] hover:bg-brand-300"
-              >
-                Empecemos tu proyecto
-                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-              </a>
-              <a
-                href="#trabajos"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 font-semibold text-white transition-colors hover:border-white/30 hover:bg-white/5"
-              >
-                Ver trabajos
-              </a>
-            </div>
-          </Reveal>
+        <div className="dotgrid absolute inset-0 opacity-60" />
+        <div className="absolute -top-44 right-[-8rem] h-[680px] w-[680px] rounded-full bg-brand/10 blur-[150px]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent" />
 
-          {/* Showcase real (reemplaza el dashboard falso) */}
-          <Reveal delay={0.15} className="mx-auto mt-16 max-w-4xl md:mt-20">
-            <div className="float">
-              <BrowserFrame src="/shots/clinica.webp" alt="Vista de uno de los sistemas de ejemplo de PilotoApps" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-8">
+            {/* Texto — asimétrico, alineado a la izquierda */}
+            <div className="lg:col-span-7">
+              <Reveal>
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-slate-300">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+                  </span>
+                  Desarrollo de software a la medida · RD
+                </span>
+                <h1 className="mt-7 font-display text-5xl font-bold leading-[0.94] tracking-[-0.03em] text-gleam sm:text-6xl lg:text-7xl xl:text-[5rem]">
+                  Convierte tu negocio en un <span className="text-brand">sistema</span>.
+                </h1>
+                <p className="mt-7 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl">
+                  Diseño y construyo software a la medida para PYMEs: citas, inventario, ventas y web
+                  profesional. Menos cuadernos y Excel, más control.
+                </p>
+                <div className="mt-9 flex flex-wrap gap-4">
+                  <a
+                    href="#contacto"
+                    className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-slate-950 transition-all hover:scale-[1.02] hover:bg-brand-300"
+                  >
+                    Empecemos tu proyecto
+                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#trabajos"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 font-semibold text-white transition-colors hover:border-white/30 hover:bg-white/5"
+                  >
+                    Ver trabajos
+                  </a>
+                </div>
+                <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 border-t border-white/10 pt-6 text-sm text-slate-500">
+                  <span>App en producción</span>
+                  <span className="h-1 w-1 rounded-full bg-slate-600" />
+                  <span>Stack moderno</span>
+                  <span className="h-1 w-1 rounded-full bg-slate-600" />
+                  <span>Trato directo 1:1</span>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+
+            {/* Showcase — composición tilted dinámica */}
+            <div className="lg:col-span-5">
+              <Reveal delay={0.15}>
+                <div className="float relative mx-auto max-w-md lg:max-w-none">
+                  <div className="rotate-[-2deg] transition-transform duration-500 hover:rotate-0">
+                    <BrowserFrame src="/shots/restaurante.webp" alt="Demo de un sistema de PilotoApps" />
+                  </div>
+                  <div className="absolute -bottom-5 -left-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-3 shadow-2xl shadow-black/50 backdrop-blur-md">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand/15 text-brand">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                    </span>
+                    <div>
+                      <p className="font-display text-sm font-bold text-white">5 demos en vivo</p>
+                      <p className="text-xs text-slate-400">funcionales y navegables</p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
         </div>
+
+        {/* Marquesina — muro de trabajo (las 5 demos en loop) */}
+        <Reveal delay={0.2} className="marquee-mask relative mt-20 md:mt-28">
+          <div className="marquee-track flex w-max gap-5">
+            {[...works, ...works].map((w, i) => (
+              <a
+                key={i}
+                href={w.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-hidden={i >= works.length}
+                tabIndex={i >= works.length ? -1 : undefined}
+                className="block w-[280px] shrink-0 transition-transform hover:-translate-y-1.5 sm:w-[320px]"
+              >
+                <BrowserFrame src={w.img} alt={`Demo ${w.name} — PilotoApps`} />
+                <p className="mt-3 text-sm text-slate-500">
+                  <span className="text-brand">{w.kind}</span> · <span className="text-slate-300">{w.name}</span>
+                </p>
+              </a>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       {/* CAPACIDADES */}
