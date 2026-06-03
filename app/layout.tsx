@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,10 +9,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
-  variable: "--font-playfair",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -55,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="es" className={`${inter.variable} ${bricolage.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

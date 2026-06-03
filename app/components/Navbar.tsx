@@ -32,7 +32,7 @@ export default function Navbar() {
                 />
               </svg>
             </span>
-            <span className="text-lg font-bold tracking-tight text-white">PilotoApps</span>
+            <span className="font-display text-lg font-bold tracking-tight text-white">PilotoApps</span>
           </a>
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-400 md:flex">

@@ -77,9 +77,11 @@ export default function Home() {
       <Navbar />
 
       {/* HERO */}
-      <section id="inicio" className="relative overflow-hidden pt-40 pb-20 md:pt-52">
-        <div className="dotgrid absolute inset-0" />
+      <section id="inicio" className="grain relative overflow-hidden pt-40 pb-20 md:pt-52">
+        <div className="mesh absolute inset-0" />
+        <div className="dotgrid absolute inset-0 opacity-70" />
         <div className="absolute -top-40 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-brand/10 blur-[140px]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 to-transparent" />
         <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-slate-300">
@@ -89,7 +91,7 @@ export default function Home() {
               </span>
               Desarrollo de software a la medida · República Dominicana
             </span>
-            <h1 className="mx-auto mt-8 max-w-4xl text-5xl font-extrabold leading-[1.03] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+            <h1 className="mx-auto mt-8 max-w-4xl font-display text-5xl font-bold leading-[0.98] tracking-[-0.03em] text-gleam sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
               Convierte tu negocio en un <span className="text-brand">sistema</span>.
             </h1>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
@@ -129,7 +131,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Lo que construyo</p>
-            <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
+            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               Software a tu medida, no plantillas.
             </h2>
           </Reveal>
@@ -163,7 +165,7 @@ export default function Home() {
                     {c.icon}
                   </svg>
                 </span>
-                <h3 className="mb-3 text-xl font-bold text-white">{c.t}</h3>
+                <h3 className="mb-3 font-display text-xl font-semibold text-white">{c.t}</h3>
                 <p className="text-lg leading-relaxed text-slate-400">{c.d}</p>
               </Reveal>
             ))}
@@ -176,7 +178,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Trabajos de muestra</p>
-            <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
+            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               Mira lo que puedo construir para ti.
             </h2>
             <p className="mt-6 text-lg text-slate-400 md:text-xl">
@@ -196,7 +198,7 @@ export default function Home() {
                   </div>
                   <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                     <p className="text-sm font-semibold uppercase tracking-widest text-brand">{w.kind}</p>
-                    <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-white md:text-4xl">{w.name}</h3>
+                    <h3 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-white md:text-4xl">{w.name}</h3>
                     <p className="mt-5 text-lg leading-relaxed text-slate-400">{w.desc}</p>
                     <div className="mt-7 flex flex-wrap gap-2.5">
                       {w.features.map((f) => (
@@ -228,7 +230,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Proyectos reales</p>
-            <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
+            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               No solo demos: también software en producción.
             </h2>
           </Reveal>
@@ -237,7 +239,7 @@ export default function Home() {
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-widest text-brand">App de préstamos y cobros</p>
-                <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-white md:text-4xl">SuaPréstamos</h3>
+                <h3 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-white md:text-4xl">SuaPréstamos</h3>
                 <p className="mt-5 text-lg leading-relaxed text-slate-400">
                   App móvil para prestamistas: gestiona clientes, préstamos, cuotas, mora y cobros, con
                   un dashboard que muestra tu cartera en tiempo real. Diseñada para usarse cada día,
@@ -278,7 +280,7 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Detrás de PilotoApps</p>
-            <h2 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white md:text-6xl">
+            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               Hablas directo con quien programa tu sistema.
             </h2>
             <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate-400 md:text-xl">
@@ -312,7 +314,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Cómo trabajo</p>
-            <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
+            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               De la idea a tu sistema, sin complicaciones.
             </h2>
           </Reveal>
@@ -324,8 +326,8 @@ export default function Home() {
               { n: "04", t: "Lanzo y acompaño", d: "Lo dejo funcionando, te capacito y te doy soporte continuo." },
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
-                <div className="text-5xl font-extrabold text-brand">{s.n}</div>
-                <h3 className="mb-2 mt-5 text-xl font-bold text-white">{s.t}</h3>
+                <div className="font-display text-5xl font-bold text-brand">{s.n}</div>
+                <h3 className="mb-2 mt-5 font-display text-xl font-semibold text-white">{s.t}</h3>
                 <p className="leading-relaxed text-slate-400">{s.d}</p>
               </Reveal>
             ))}
@@ -339,7 +341,7 @@ export default function Home() {
           <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
             <Reveal>
               <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Hablemos</p>
-              <h2 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white md:text-6xl">
+              <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
                 ¿Listo para ordenar tu negocio?
               </h2>
               <p className="mt-6 max-w-md text-lg text-slate-400 md:text-xl">

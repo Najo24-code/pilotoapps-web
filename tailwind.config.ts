@@ -6,7 +6,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: ["var(--font-playfair)", "serif"],
+        display: ["var(--font-display)", "var(--font-inter)", "sans-serif"],
       },
       // Firma de marca PilotoApps — un solo acento fuerte (lima eléctrica).
       // Para cambiar la identidad, ajusta solo estos valores.

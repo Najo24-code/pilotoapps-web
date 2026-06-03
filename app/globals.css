@@ -19,10 +19,49 @@ body {
   color: #020617;
 }
 
+/* Foco accesible y elegante (teclado) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 /* Fondo de puntos sutil */
 .dotgrid {
   background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
   background-size: 38px 38px;
+}
+
+/* Malla de gradiente — atmósfera del hero (verde de marca, muy sutil) */
+.mesh {
+  background:
+    radial-gradient(60% 55% at 18% 12%, rgba(52, 211, 153, 0.14), transparent 60%),
+    radial-gradient(50% 50% at 88% 22%, rgba(16, 185, 129, 0.1), transparent 55%),
+    radial-gradient(70% 60% at 50% 100%, rgba(52, 211, 153, 0.07), transparent 60%);
+}
+
+/* Grano fino — le da cuerpo al fondo (no se nota conscientemente) */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Texto con degradado sutil para titulares clave */
+.text-gleam {
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Aparición al hacer scroll */
@@ -57,4 +96,25 @@ body {
   box-shadow:
     0 50px 100px -20px rgba(0, 0, 0, 0.7),
     0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* Respeto a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .float {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
