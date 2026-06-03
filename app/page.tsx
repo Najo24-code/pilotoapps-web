@@ -60,10 +60,17 @@ const stack = ["React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL"]
 function BrowserFrame({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="browser overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
-      <div className="flex items-center gap-2 border-b border-white/10 bg-slate-900/80 px-4 py-3">
-        <span className="h-3 w-3 rounded-full bg-red-400/70" />
-        <span className="h-3 w-3 rounded-full bg-amber-400/70" />
-        <span className="h-3 w-3 rounded-full bg-green-400/70" />
+      {/* Barra de navegador neutra (universal, no atada a ningún sistema) */}
+      <div className="flex items-center gap-3 border-b border-white/10 bg-slate-900/80 px-3.5 py-2.5">
+        <div className="flex items-center gap-1 text-slate-600">
+          <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.4} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+          <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.4} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+        </div>
+        <div className="flex min-w-0 flex-1 items-center gap-1.5 rounded-md bg-white/5 px-2.5 py-1 text-xs text-slate-500">
+          <svg className="h-3 w-3 shrink-0 text-brand/80" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
+          <span className="truncate">tu-negocio.com</span>
+        </div>
+        <svg className="h-3.5 w-3.5 shrink-0 text-slate-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0 0 12.8 5.3M19.5 12a7.5 7.5 0 0 0-12.8-5.3M4.5 12V7.5m0 4.5h4.5m10.5 0V16.5m0-4.5h-4.5" /></svg>
       </div>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={`${BP}${src}`} alt={alt} width={1760} height={1100} loading="lazy" className="h-auto w-full" />
