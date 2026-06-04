@@ -91,7 +91,7 @@ export default function Home() {
       <Navbar />
 
       {/* HERO */}
-      <section id="inicio" className="grain relative overflow-hidden pt-36 pb-14 md:pt-44">
+      <section id="inicio" className="grain relative overflow-hidden pt-28 pb-10 md:pt-32">
         <div className="mesh absolute inset-0" />
         <div className="dotgrid absolute inset-0 opacity-60" />
         <div className="absolute -top-44 right-[-8rem] h-[680px] w-[680px] rounded-full bg-brand/10 blur-[150px]" />
@@ -167,7 +167,7 @@ export default function Home() {
         </div>
 
         {/* Marquesina — muro de trabajo (las demos en loop) */}
-        <Reveal delay={0.2} className="marquee-mask relative mt-20 md:mt-28">
+        <Reveal delay={0.2} className="marquee-mask relative mt-12 md:mt-16">
           <div className="marquee-track flex w-max gap-5">
             {[...works, ...works].map((w, i) => (
               <a
@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* CAPACIDADES */}
-      <section id="servicios" className="border-t border-white/10 py-28 md:py-40">
+      <section id="servicios" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Lo que construyo</p>
@@ -198,11 +198,12 @@ export default function Home() {
               Software a tu medida, no plantillas.
             </h2>
           </Reveal>
-          <div className="mt-20 grid gap-x-12 gap-y-16 md:grid-cols-3">
+          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
             {[
               {
                 t: "Sistemas de gestión",
-                d: "Citas, inventario, ventas y clientes en un panel claro. Tus datos en tiempo real, desde cualquier dispositivo.",
+                d: "Citas, inventario, ventas y clientes en un panel claro, en tiempo real desde cualquier dispositivo.",
+                points: ["Agenda y reservas", "Inventario y stock", "Ventas y clientes", "Reportes en vivo"],
                 icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6Zm0 9.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25Zm9.75-9.75A2.25 2.25 0 0 1 15.75 3.75H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6Zm0 9.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                 ),
@@ -210,26 +211,40 @@ export default function Home() {
               {
                 t: "Web profesional",
                 d: "Una web rápida y moderna para que tus clientes te encuentren, conectada a tu sistema.",
+                points: ["Diseño a tu medida", "Veloz y en el celular", "Optimizada para Google", "Formularios que captan"],
                 icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
                 ),
               },
               {
                 t: "Automatización",
-                d: "Recordatorios, reportes y tareas repetitivas en piloto automático. Menos trabajo manual, menos errores.",
+                d: "Recordatorios, reportes y tareas repetitivas en piloto automático — menos trabajo manual, menos errores.",
+                points: ["Recordatorios por WhatsApp", "Reportes que llegan solos", "Alertas de stock bajo", "Menos tareas a mano"],
                 icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
                 ),
               },
             ].map((c, i) => (
-              <Reveal key={c.t} delay={i * 0.1}>
-                <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand">
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.6} stroke="currentColor">
-                    {c.icon}
-                  </svg>
-                </span>
-                <h3 className="mb-3 font-display text-xl font-semibold text-white">{c.t}</h3>
-                <p className="text-lg leading-relaxed text-slate-400">{c.d}</p>
+              <Reveal key={c.t} delay={i * 0.1} className="h-full">
+                <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[.02] p-7 transition-colors hover:border-brand/30 hover:bg-white/[.04] md:p-8">
+                  <span className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand ring-1 ring-inset ring-brand/20">
+                    <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.6} stroke="currentColor">
+                      {c.icon}
+                    </svg>
+                  </span>
+                  <h3 className="mb-3 font-display text-xl font-semibold text-white">{c.t}</h3>
+                  <p className="leading-relaxed text-slate-400">{c.d}</p>
+                  <ul className="mt-6 space-y-3 border-t border-white/10 pt-6">
+                    {c.points.map((p) => (
+                      <li key={p} className="flex items-center gap-3 text-sm text-slate-300">
+                        <svg className="h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -237,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* TRABAJOS / DEMOS GRANDES */}
-      <section id="trabajos" className="border-t border-white/10 py-28 md:py-40">
+      <section id="trabajos" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Trabajos de muestra</p>
@@ -250,7 +265,7 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="mt-24 space-y-28 md:space-y-40">
+          <div className="mt-14 space-y-16 md:space-y-24">
             {works.map((w, i) => (
               <Reveal key={w.href}>
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
@@ -289,7 +304,7 @@ export default function Home() {
       </section>
 
       {/* PROYECTOS REALES */}
-      <section id="reales" className="border-t border-white/10 py-28 md:py-40">
+      <section id="reales" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Proyectos reales</p>
@@ -339,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* SOBRE MÍ */}
-      <section id="sobre" className="border-t border-white/10 py-28 md:py-40">
+      <section id="sobre" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Detrás de PilotoApps</p>
@@ -373,7 +388,7 @@ export default function Home() {
       </section>
 
       {/* PROCESO */}
-      <section id="proceso" className="border-t border-white/10 py-28 md:py-40">
+      <section id="proceso" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Cómo trabajo</p>
@@ -399,7 +414,7 @@ export default function Home() {
       </section>
 
       {/* CONTACTO */}
-      <section id="contacto" className="border-t border-white/10 py-28 md:py-40">
+      <section id="contacto" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
             <Reveal>
