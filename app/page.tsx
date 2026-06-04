@@ -113,15 +113,16 @@ export default function Home() {
                   Convierte tu negocio en un <span className="text-brand">sistema</span>.
                 </h1>
                 <p className="mt-7 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl">
-                  Diseño y construyo software a la medida para PYMEs: citas, inventario, ventas y web
-                  profesional. Menos cuadernos y Excel, más control.
+                  Diseño y construyo software a la medida para PYMEs: citas, inventario, ventas y una
+                  web que trabaja por ti. Adiós al cuaderno y el Excel — tu negocio ordenado y bajo
+                  control, desde el celular.
                 </p>
                 <div className="mt-9 flex flex-wrap gap-4">
                   <a
                     href="#contacto"
                     className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-slate-950 transition-all hover:scale-[1.02] hover:bg-brand-300"
                   >
-                    Empecemos tu proyecto
+                    Cuéntame tu caso
                     <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
@@ -136,9 +137,9 @@ export default function Home() {
                 <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 border-t border-white/10 pt-6 text-sm text-slate-500">
                   <span>App en producción</span>
                   <span className="h-1 w-1 rounded-full bg-slate-600" />
-                  <span>Stack moderno</span>
+                  <span>El código y los datos, tuyos</span>
                   <span className="h-1 w-1 rounded-full bg-slate-600" />
-                  <span>Trato directo 1:1</span>
+                  <span>Trato directo contigo</span>
                 </div>
               </Reveal>
             </div>
