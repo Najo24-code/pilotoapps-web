@@ -3,9 +3,8 @@ import Navbar from "./components/Navbar";
 import Reveal from "./components/Reveal";
 import ContactForm from "./components/ContactForm";
 import WhatsAppFab from "./components/WhatsAppFab";
+import { BP } from "./site";
 
-// basePath del sitio (GitHub Pages /pilotoapps-web). Se antepone a los assets locales.
-const BP = "/pilotoapps-web";
 const EMAIL = "pilotoapps.dev@gmail.com";
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Quiero un sistema para mi negocio")}`;
 const WHATSAPP =
