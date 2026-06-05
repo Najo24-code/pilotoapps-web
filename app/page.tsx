@@ -307,38 +307,24 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="mt-14 space-y-16 md:space-y-24">
+          <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2">
             {works.map((w, i) => (
-              <Reveal key={w.href}>
-                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-                  <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                    <Link href={w.href} target="_blank" className="block transition-transform hover:scale-[1.01]">
-                      <BrowserFrame src={w.img} alt={`Demo ${w.name} — PilotoApps`} />
-                    </Link>
+              <Reveal key={w.href} delay={(i % 2) * 0.08}>
+                <Link href={w.href} target="_blank" className="group block">
+                  <div className="transition-transform duration-300 group-hover:-translate-y-1.5">
+                    <BrowserFrame src={w.img} alt={`Demo ${w.name} — PilotoApps`} />
                   </div>
-                  <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                    <p className="text-sm font-semibold uppercase tracking-widest text-brand">{w.kind}</p>
-                    <h3 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-white md:text-4xl">{w.name}</h3>
-                    <p className="mt-5 text-lg leading-relaxed text-slate-400">{w.desc}</p>
-                    <div className="mt-7 flex flex-wrap gap-2.5">
-                      {w.features.map((f) => (
-                        <span key={f} className="rounded-full border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm text-slate-300">
-                          {f}
-                        </span>
-                      ))}
+                  <div className="mt-5 flex items-baseline gap-4 border-t border-white/10 pt-4">
+                    <span className="font-display text-sm tabular-nums text-slate-600">{String(i + 1).padStart(2, "0")}</span>
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold uppercase tracking-widest text-brand">{w.kind}</p>
+                      <h3 className="mt-1.5 font-display text-xl font-bold tracking-[-0.01em] text-white md:text-2xl">{w.name}</h3>
                     </div>
-                    <Link
-                      href={w.href}
-                      target="_blank"
-                      className="group mt-9 inline-flex items-center gap-2 font-semibold text-brand transition-all hover:gap-3"
-                    >
-                      Ver demo en vivo
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                      </svg>
-                    </Link>
+                    <svg className="ml-auto h-5 w-5 shrink-0 self-center text-slate-600 transition-all group-hover:translate-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
