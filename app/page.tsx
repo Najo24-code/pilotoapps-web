@@ -220,7 +220,11 @@ export default function Home() {
       <section id="servicios" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Lo que construyo</p>
+            <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
+              <span className="tabular-nums text-slate-600">01</span>
+              <span className="h-px w-6 bg-white/15" />
+              <span className="text-brand">Servicios</span>
+            </p>
             <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               Software a tu medida, no plantillas.
             </h2>
@@ -282,7 +286,11 @@ export default function Home() {
       <section id="trabajos" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Trabajos de muestra</p>
+            <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
+              <span className="tabular-nums text-slate-600">02</span>
+              <span className="h-px w-6 bg-white/15" />
+              <span className="text-brand">Trabajos de muestra</span>
+            </p>
             <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               Mira lo que puedo construir para ti.
             </h2>
@@ -334,7 +342,11 @@ export default function Home() {
       <section id="reales" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Proyectos reales</p>
+            <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
+              <span className="tabular-nums text-slate-600">03</span>
+              <span className="h-px w-6 bg-white/15" />
+              <span className="text-brand">Proyectos reales</span>
+            </p>
             <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               No solo demos: también software en producción.
             </h2>
@@ -385,7 +397,11 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Detrás de PilotoApps</p>
+              <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
+                <span className="tabular-nums text-slate-600">04</span>
+                <span className="h-px w-6 bg-white/15" />
+                <span className="text-brand">Detrás de PilotoApps</span>
+              </p>
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
                 Hablas directo con quien programa tu sistema.
               </h2>
@@ -451,7 +467,11 @@ export default function Home() {
       <section id="proceso" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Cómo trabajo</p>
+            <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
+              <span className="tabular-nums text-slate-600">05</span>
+              <span className="h-px w-6 bg-white/15" />
+              <span className="text-brand">Cómo trabajo</span>
+            </p>
             <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               De la idea a tu sistema, sin complicaciones.
             </h2>
@@ -481,7 +501,11 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
             <Reveal>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">Hablemos</p>
+              <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
+                <span className="tabular-nums text-slate-600">06</span>
+                <span className="h-px w-6 bg-white/15" />
+                <span className="text-brand">Hablemos</span>
+              </p>
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
                 ¿Listo para ordenar tu negocio?
               </h2>
