@@ -229,9 +229,10 @@ export default function Home() {
               Software a tu medida, no plantillas.
             </h2>
           </Reveal>
-          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
+          <div className="mt-14 border-t border-white/10">
             {[
               {
+                n: "i",
                 t: "Sistemas de gestión",
                 d: "Citas, inventario, ventas y clientes en un panel claro, en tiempo real desde cualquier dispositivo.",
                 points: ["Agenda y reservas", "Inventario y stock", "Ventas y clientes", "Reportes en vivo"],
@@ -240,6 +241,7 @@ export default function Home() {
                 ),
               },
               {
+                n: "ii",
                 t: "Web profesional",
                 d: "Una web rápida y moderna para que tus clientes te encuentren, conectada a tu sistema.",
                 points: ["Diseño a tu medida", "Veloz y en el celular", "Optimizada para Google", "Formularios que captan"],
@@ -248,6 +250,7 @@ export default function Home() {
                 ),
               },
               {
+                n: "iii",
                 t: "Automatización",
                 d: "Recordatorios, reportes y tareas repetitivas en piloto automático — menos trabajo manual, menos errores.",
                 points: ["Recordatorios por WhatsApp", "Reportes que llegan solos", "Alertas de stock bajo", "Menos tareas a mano"],
@@ -255,26 +258,30 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
                 ),
               },
-            ].map((c, i) => (
-              <Reveal key={c.t} delay={i * 0.1} className="h-full">
-                <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[.02] p-7 transition-colors hover:border-brand/30 hover:bg-white/[.04] md:p-8">
-                  <span className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand ring-1 ring-inset ring-brand/20">
-                    <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.6} stroke="currentColor">
-                      {c.icon}
-                    </svg>
-                  </span>
-                  <h3 className="mb-3 font-display text-xl font-semibold text-white">{c.t}</h3>
-                  <p className="leading-relaxed text-slate-400">{c.d}</p>
-                  <ul className="mt-6 space-y-3 border-t border-white/10 pt-6">
-                    {c.points.map((p) => (
-                      <li key={p} className="flex items-center gap-3 text-sm text-slate-300">
-                        <svg className="h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                        </svg>
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
+            ].map((c) => (
+              <Reveal key={c.t}>
+                <div className="group grid gap-6 border-b border-white/10 py-10 transition-colors lg:grid-cols-12 lg:gap-8 lg:py-12">
+                  {/* Nombre del servicio — la tipografía manda */}
+                  <div className="lg:col-span-5">
+                    <span className="mb-5 font-display text-sm tabular-nums text-slate-600">{c.n}</span>
+                    <div className="mt-4 flex items-start gap-4">
+                      <span className="mt-1.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand ring-1 ring-inset ring-brand/20 transition-colors group-hover:bg-brand/15">
+                        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.6} stroke="currentColor">{c.icon}</svg>
+                      </span>
+                      <h3 className="font-display text-3xl font-bold tracking-[-0.02em] text-white md:text-4xl">{c.t}</h3>
+                    </div>
+                  </div>
+                  {/* Descripción + tags */}
+                  <div className="lg:col-span-7 lg:pt-1">
+                    <p className="max-w-2xl text-lg leading-relaxed text-slate-400">{c.d}</p>
+                    <div className="mt-6 flex flex-wrap gap-2.5">
+                      {c.points.map((p) => (
+                        <span key={p} className="rounded-full border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm text-slate-300 transition-colors group-hover:border-brand/25 group-hover:text-slate-200">
+                          {p}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             ))}
