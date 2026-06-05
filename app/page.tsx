@@ -345,40 +345,49 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <Reveal className="mt-20">
-            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-brand">App de préstamos y cobros</p>
-                <h3 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-white md:text-4xl">SuaPréstamos</h3>
-                <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <Reveal className="mt-16">
+            <div className="grid gap-12 border-t border-white/10 pt-12 lg:grid-cols-12 lg:gap-16 lg:pt-16">
+              <div className="lg:col-span-6">
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand">App de préstamos y cobros</p>
+                <h3 className="mt-4 font-display text-5xl font-bold tracking-[-0.03em] text-white md:text-6xl">SuaPréstamos</h3>
+                <p className="mt-6 max-w-md text-lg leading-relaxed text-slate-400">
                   App móvil para prestamistas: gestiona clientes, préstamos, cuotas, mora y cobros, con
                   un dashboard que muestra tu cartera en tiempo real. Diseñada para usarse cada día,
                   desde el celular.
                 </p>
-                <div className="mt-7 flex flex-wrap gap-2.5">
-                  {["Clientes y garantes", "Cuotas y mora", "Semáforo de cartera", "Reportes", "App Android"].map((f) => (
-                    <span key={f} className="rounded-full border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm text-slate-300">
+                <ul className="mt-8 divide-y divide-white/10 border-t border-white/10">
+                  {["Clientes y garantes", "Cuotas, mora y cobros", "Semáforo de cartera en vivo", "Reportes de cartera", "App Android nativa"].map((f) => (
+                    <li key={f} className="flex items-center gap-3 py-3 text-slate-300">
+                      <svg className="h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                      </svg>
                       {f}
-                    </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
                 <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-4 py-2 text-sm font-medium text-brand">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-                  En camino a Google Play
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand" />
+                  </span>
+                  En producción · en camino a Google Play
                 </p>
               </div>
 
-              <div className="flex justify-center gap-3 sm:gap-4">
-                {[
-                  { src: "/shots/sua-dash.webp", cls: "translate-y-4" },
-                  { src: "/shots/sua-cobros.webp", cls: "-translate-y-2 hidden sm:block" },
-                  { src: "/shots/sua-clientes.webp", cls: "translate-y-6 hidden md:block" },
-                ].map((p) => (
-                  <div key={p.src} className={`w-40 overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900 shadow-2xl shadow-black/50 sm:w-44 ${p.cls}`}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={`${BP}${p.src}`} alt="Pantalla de SuaPréstamos" loading="lazy" className="h-auto w-full" />
-                  </div>
-                ))}
+              <div className="relative lg:col-span-6">
+                <div className="absolute -inset-4 -z-10 rounded-[3rem] bg-brand/10 blur-3xl" />
+                <div className="flex justify-center gap-3 sm:gap-4">
+                  {[
+                    { src: "/shots/sua-dash.webp", cls: "translate-y-4" },
+                    { src: "/shots/sua-cobros.webp", cls: "-translate-y-2 hidden sm:block" },
+                    { src: "/shots/sua-clientes.webp", cls: "translate-y-6 hidden md:block" },
+                  ].map((p) => (
+                    <div key={p.src} className={`w-40 overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900 shadow-2xl shadow-black/50 sm:w-44 ${p.cls}`}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={`${BP}${p.src}`} alt="Pantalla de SuaPréstamos" loading="lazy" className="h-auto w-full" />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </Reveal>
