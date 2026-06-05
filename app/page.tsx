@@ -397,8 +397,8 @@ export default function Home() {
       {/* SOBRE MÍ */}
       <section id="sobre" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <Reveal>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <Reveal className="lg:col-span-6">
               <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
                 <span className="tabular-nums text-slate-600">04</span>
                 <span className="h-px w-6 bg-white/15" />
@@ -421,43 +421,41 @@ export default function Home() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.1}>
-              <div className="rounded-3xl border border-white/10 bg-white/[.03] p-7 md:p-9">
-                <div className="flex items-center gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand">
-                    <svg className="h-7 w-7 text-slate-950" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-                    </svg>
-                  </span>
-                  <div>
-                    <p className="font-display text-lg font-bold text-white">PilotoApps</p>
-                    <p className="text-sm text-slate-400">Desarrollo full-stack · República Dominicana</p>
-                  </div>
+            <Reveal delay={0.1} className="lg:col-span-6 lg:border-l lg:border-white/10 lg:pl-12">
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand">
+                  <svg className="h-6 w-6 text-slate-950" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                  </svg>
+                </span>
+                <div>
+                  <p className="font-display text-lg font-bold text-white">PilotoApps</p>
+                  <p className="text-sm text-slate-400">Desarrollo full-stack · República Dominicana</p>
                 </div>
-                <ul className="mt-7 space-y-4 border-t border-white/10 pt-7">
-                  {[
-                    "Trato directo 1:1, sin intermediarios ni vendedores",
-                    "Tecnología moderna, dimensionada para tu PYME",
-                    "El sistema, el código y los datos son tuyos",
-                    "Te lo entrego funcionando y te capacito para usarlo",
-                  ].map((h) => (
-                    <li key={h} className="flex items-start gap-3 text-slate-300">
-                      <svg className="mt-1 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                      </svg>
-                      {h}
-                    </li>
+              </div>
+              <ul className="mt-8 divide-y divide-white/10 border-t border-white/10">
+                {[
+                  "Trato directo 1:1, sin intermediarios ni vendedores",
+                  "Tecnología moderna, dimensionada para tu PYME",
+                  "El sistema, el código y los datos son tuyos",
+                  "Te lo entrego funcionando y te capacito para usarlo",
+                ].map((h) => (
+                  <li key={h} className="flex items-start gap-3 py-3.5 text-slate-300">
+                    <svg className="mt-1 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500">Stack con el que trabajo</p>
+                <div className="flex flex-wrap gap-2.5">
+                  {stack.map((s) => (
+                    <span key={s} className="rounded-lg border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm font-medium text-slate-200">
+                      {s}
+                    </span>
                   ))}
-                </ul>
-                <div className="mt-7 border-t border-white/10 pt-7">
-                  <p className="mb-3 text-sm font-medium text-slate-500">Stack con el que trabajo</p>
-                  <div className="flex flex-wrap gap-2.5">
-                    {stack.map((s) => (
-                      <span key={s} className="rounded-lg border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm font-medium text-slate-200">
-                        {s}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
             </Reveal>
