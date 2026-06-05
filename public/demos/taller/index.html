@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Taller Mecánico - Soluciones mecánicas confiables y eficientes">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Taller Mecánico | Soluciones mecánicas confiables y eficientes">
+    <meta property="og:description" content="Taller Mecánico - Soluciones mecánicas confiables y eficientes">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Taller Mecánico | Soluciones mecánicas confiables y eficientes">
+    <meta name="twitter:description" content="Taller Mecánico - Soluciones mecánicas confiables y eficientes">
+    
+    <title>Taller Mecánico | Soluciones mecánicas confiables y eficientes</title>
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        /* Offset para anclas bajo el navbar sticky */
+        [id] { scroll-margin-top: 5rem; }
+        /* Focus visible for accessibility */
+        :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+    </style>
+    
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+    :root { --font-display:'Sora'; --font-body:'Inter Tight';--bg:#F7F8FA; --panel:#FFFFFF; --panel2:#EDF0F5; --surface-dark:#0E1626;--line:#DDE2EB; --ink:#101725; --muted:#4A5468; --faint:#838EA3;--accent:#1E5BD6; --accent-deep:#1647AC; --accent-soft:#E2EAFB; --on-accent:#FFFFFF; }
+    
+    .site-themed { background: var(--bg); color: var(--ink); font-family: var(--font-body), system-ui, sans-serif; }
+    .site-themed h1, .site-themed h2, .site-themed h3, .site-themed h4 { font-family: var(--font-display), Georgia, serif !important; letter-spacing: -0.02em; }
+    .site-themed ::selection { background: var(--accent); color: var(--on-accent); }
+    /* Superficies */
+    .site-themed .bg-white { background-color: var(--panel) !important; }
+    .site-themed .bg-white\/80 { background-color: color-mix(in srgb, var(--panel) 88%, transparent) !important; }
+    .site-themed .bg-gray-50, .site-themed .bg-gray-100 { background-color: var(--panel2) !important; }
+    .site-themed .bg-gray-50\/50 { background-color: color-mix(in srgb, var(--panel2) 70%, transparent) !important; }
+    .site-themed .bg-gray-800, .site-themed .bg-gray-900 { background-color: var(--surface-dark) !important; }
+    .site-themed .hover\:bg-gray-50:hover, .site-themed .hover\:bg-gray-100:hover { background-color: var(--panel2) !important; }
+    .site-themed .hover\:bg-gray-200:hover { background-color: var(--line) !important; }
+    /* Texto */
+    .site-themed .text-gray-900, .site-themed .text-gray-800 { color: var(--ink) !important; }
+    .site-themed .text-gray-700, .site-themed .text-gray-600 { color: var(--muted) !important; }
+    .site-themed .text-gray-500, .site-themed .text-gray-400, .site-themed .text-gray-300, .site-themed .text-gray-200 { color: var(--faint) !important; }
+    /* Bordes */
+    .site-themed [class*="border-gray-"] { border-color: var(--line) !important; }
+    /* Acento */
+    .site-themed .text-blue-600, .site-themed .text-blue-700, .site-themed .text-blue-800 { color: var(--accent) !important; }
+    .site-themed .text-blue-100, .site-themed .text-blue-200, .site-themed .text-blue-300 { color: var(--accent) !important; opacity: .9; }
+    .site-themed .bg-blue-600 { background-color: var(--accent) !important; }
+    .site-themed .hover\:bg-blue-700:hover { background-color: var(--accent-deep) !important; }
+    .site-themed .bg-blue-50, .site-themed .bg-blue-100 { background-color: var(--accent-soft) !important; }
+    .site-themed .hover\:bg-blue-50:hover { background-color: var(--accent-soft) !important; }
+    .site-themed .ring-blue-500 { --tw-ring-color: var(--accent) !important; }
+    .site-themed .border-blue-500, .site-themed .border-blue-600 { border-color: var(--accent) !important; }
+    /* Gradientes (heros / CTA) → acento del tema */
+    .site-themed [class*="from-blue-"], .site-themed [class*="from-indigo-"] { --tw-gradient-from: var(--accent) var(--tw-gradient-from-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+    .site-themed [class*="to-blue-"], .site-themed [class*="to-indigo-"] { --tw-gradient-to: var(--accent-deep) var(--tw-gradient-to-position) !important; }
+    /* Formularios */
+    .site-themed input, .site-themed textarea, .site-themed select { background-color: var(--panel2) !important; color: var(--ink) !important; border-color: var(--line) !important; }
+    .site-themed ::placeholder { color: var(--faint) !important; }
+    /* Accesibilidad */
+    .site-themed :focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) {
+      .site-themed *, .site-themed *::before, .site-themed *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+    
+    
+    .site-themed.site-anim section { opacity: 0; transform: translateY(26px);
+        transition: opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1); }
+    .site-themed.site-anim section.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .site-themed.site-anim section { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+    </style>
+    
+    <script>
+    (function(){
+      try {
+        var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (mq.matches) return;
+        document.body.classList.add('site-anim');
+        var io = new IntersectionObserver(function(es){
+          es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('section').forEach(function(el){ io.observe(el); });
+      } catch(e) { document.body.classList.remove('site-anim'); }
+    })();
+    </script>
+</head>
+<body class="antialiased site-themed">
+    <header class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <span class="text-xl font-bold text-gray-900">Taller Mecánico</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex md:items-center md:gap-8">
+                <nav class="flex items-center gap-8"><a href="#inicio" class="text-sm font-medium transition-colors text-blue-600">Inicio</a>
+<a href="#servicios" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Servicios</a>
+<a href="#proceso" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Cómo trabajamos</a>
+<a href="#galeria" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Galería</a>
+<a href="#contacto" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Contacto</a></nav>
+                <a href="#contacto"><button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold  rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 text-sm py-2 px-4"  >
+    Agendar servicio
+</button></a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button type="button" class="text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg transition-all duration-200 inline-flex items-center justify-center gap-2" onclick="toggleMobileMenu()"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+        <div class="py-3">
+            <nav class="flex flex-col gap-1"><a href="#inicio" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors bg-blue-50 text-blue-600">Inicio</a>
+<a href="#servicios" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Servicios</a>
+<a href="#proceso" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Cómo trabajamos</a>
+<a href="#galeria" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Galería</a>
+<a href="#contacto" class="block px-4 py-3 text-base font-medium rounded-lg transition-colors text-gray-700 hover:bg-gray-50">Contacto</a></nav>
+        </div>
+        <div class="px-4 pt-2 pb-4"><a href="#contacto" class="block"><button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 w-full"  >
+    Agendar servicio
+</button></a></div>
+    </div>
+</header>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+}
+</script>
+<main><section id="inicio">
+    <div class="relative min-h-[68vh] flex items-end bg-gray-900 bg-cover bg-center" style="background-image:url('https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/25"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div class="max-w-3xl">
+                <span class="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-white/80 mb-5">Taller Mecánico</span>
+                <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.05] mb-6">Soluciones mecánicas confiables y eficientes</h1>
+                <p class="text-xl md:text-2xl text-white/85 max-w-2xl leading-relaxed">Nuestro equipo técnico se compromete a ofrecer servicios de alta calidad para mantener tu vehículo en óptimas condiciones.</p>
+                <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg py-4 px-10 rounded-xl inline-flex items-center gap-2 shadow-2xl transition-all hover:scale-105 mt-9">Agendar servicio<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
+            <div class="flex items-start gap-3 px-6 py-5">
+            <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-base font-medium text-gray-900">Diagnóstico claro</span>
+        </div><div class="flex items-start gap-3 px-6 py-5">
+            <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-base font-medium text-gray-900">Repuestos de calidad</span>
+        </div><div class="flex items-start gap-3 px-6 py-5">
+            <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-base font-medium text-gray-900">Presupuesto sin sorpresas</span>
+        </div>
+        </div>
+    </div>
+</section>
+<section id="ventajas" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Por qué dejarnos tu vehículo</h2><p class="text-xl text-gray-600 max-w-3xl mx-auto">Trabajo serio, presupuesto claro.</p></div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">🧹</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Cambio de aceite</h3>
+    <p class="text-gray-600 leading-relaxed">Revisamos y reemplazamos el aceite del motor según las recomendaciones del fabricante.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">⚙️</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mantenimiento preventivo</h3>
+    <p class="text-gray-600 leading-relaxed">Realizamos revisiones periódicas para detectar problemas antes de que se conviertan en fallas graves.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg shadow-blue-500/25">🛠️</div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Reparación de frenos</h3>
+    <p class="text-gray-600 leading-relaxed">Nuestros técnicos especializados reparan y reemplazan los frenos según sea necesario.</p>
+</div>
+        </div>
+    </div>
+</section>
+<section id="servicios" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Servicios</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-3">Diagnóstico claro y presupuesto sin sorpresas.</p>
+        </div>
+        <div class="grid md:grid-cols-2 md:gap-x-14">
+            <div class="py-5 border-b border-gray-200">
+        <div class="flex items-baseline gap-3">
+            <h3 class="text-lg font-semibold text-gray-900">Cambio de aceite y filtros</h3>
+            <span class="flex-1 border-b border-dotted border-gray-300 translate-y-[-3px]"></span>
+            <span class="text-lg font-bold text-blue-600 whitespace-nowrap">RD$1,200</span>
+        </div>
+        <p class="text-gray-600 mt-1 pr-20">Servicio preventivo completo.</p>
+    </div><div class="py-5 border-b border-gray-200">
+        <div class="flex items-baseline gap-3">
+            <h3 class="text-lg font-semibold text-gray-900">Sistema de frenos</h3>
+            <span class="flex-1 border-b border-dotted border-gray-300 translate-y-[-3px]"></span>
+            <span class="text-lg font-bold text-blue-600 whitespace-nowrap">RD$2,500</span>
+        </div>
+        <p class="text-gray-600 mt-1 pr-20">Revisión y cambio de pastillas/discos.</p>
+    </div><div class="py-5 border-b border-gray-200">
+        <div class="flex items-baseline gap-3">
+            <h3 class="text-lg font-semibold text-gray-900">Diagnóstico computarizado</h3>
+            <span class="flex-1 border-b border-dotted border-gray-300 translate-y-[-3px]"></span>
+            <span class="text-lg font-bold text-blue-600 whitespace-nowrap">RD$800</span>
+        </div>
+        <p class="text-gray-600 mt-1 pr-20">Detectamos la falla con escáner.</p>
+    </div><div class="py-5 border-b border-gray-200">
+        <div class="flex items-baseline gap-3">
+            <h3 class="text-lg font-semibold text-gray-900">Mantenimiento general</h3>
+            <span class="flex-1 border-b border-dotted border-gray-300 translate-y-[-3px]"></span>
+            <span class="text-lg font-bold text-blue-600 whitespace-nowrap">RD$3,000</span>
+        </div>
+        <p class="text-gray-600 mt-1 pr-20">Chequeo integral del vehículo.</p>
+    </div>
+        </div>
+    </div>
+</section>
+<section id="proceso" class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Cómo trabajamos</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-3">Sin sorpresas, de principio a fin.</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-10 md:gap-8">
+            <div class="relative">
+        <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-600 text-white text-2xl font-bold shadow-lg mb-5">1</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Diagnóstico</h3>
+        <p class="text-gray-600 leading-relaxed">Revisamos tu vehículo y detectamos la falla.</p>
+    </div><div class="relative">
+        <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-600 text-white text-2xl font-bold shadow-lg mb-5">2</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Presupuesto</h3>
+        <p class="text-gray-600 leading-relaxed">Te explicamos el trabajo y el costo antes de empezar.</p>
+    </div><div class="relative">
+        <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-600 text-white text-2xl font-bold shadow-lg mb-5">3</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Reparación</h3>
+        <p class="text-gray-600 leading-relaxed">Hacemos el servicio con repuestos de calidad.</p>
+    </div><div class="relative">
+        <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-600 text-white text-2xl font-bold shadow-lg mb-5">4</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Entrega</h3>
+        <p class="text-gray-600 leading-relaxed">Te entregamos el auto listo y probado.</p>
+    </div>
+        </div>
+    </div>
+</section>
+<section id="galeria" class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">El taller</h2>
+            
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] md:auto-rows-[200px] gap-4">
+            <div class="md:col-span-2 md:row-span-2 overflow-hidden rounded-2xl group"><img src="https://images.pexels.com/photos/4116193/pexels-photo-4116193.jpeg?auto=compress&cs=tinysrgb&w=800" alt="El taller 1" loading="lazy" class="w-full h-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105"></div><div class=" overflow-hidden rounded-2xl group"><img src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800" alt="El taller 2" loading="lazy" class="w-full h-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105"></div><div class=" overflow-hidden rounded-2xl group"><img src="https://images.pexels.com/photos/4488636/pexels-photo-4488636.jpeg?auto=compress&cs=tinysrgb&w=800" alt="El taller 3" loading="lazy" class="w-full h-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105"></div>
+        </div>
+    </div>
+</section>
+<div id="contacto-cta"><section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Lleva tu vehículo a un taller mecánico confiable</h2>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto mt-4">Nuestro equipo técnico se compromete a ofrecer servicios de alta calidad.</p>
+        <div class="mt-10">
+            <a href="#contacto" class="bg-white text-blue-600 hover:bg-blue-50 font-semibold text-lg py-4 px-10 rounded-xl inline-flex items-center gap-2 shadow-lg transition-all hover:scale-105">
+                Agendar servicio
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section></div>
+<div id="faq"><section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Preguntas frecuentes</h2>
+        <div class="divide-y divide-gray-200 border-t border-gray-200">
+            <div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(0)">
+        <span class="text-lg font-medium text-gray-900">¿Cuáles son las horas de atención?</span>
+        <svg id="faq-icon-0" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-0" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">Estamos abiertos de lunes a viernes, de 8am a 5pm.</p>
+    </div>
+</div><div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(1)">
+        <span class="text-lg font-medium text-gray-900">¿Qué tipo de pago aceptas?</span>
+        <svg id="faq-icon-1" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-1" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">Aceptamos efectivo, tarjetas de crédito y débito.</p>
+    </div>
+</div><div class="border-b border-gray-200">
+    <button type="button" class="w-full py-6 flex items-center justify-between text-left" onclick="toggleFaq(2)">
+        <span class="text-lg font-medium text-gray-900">¿Tienes certificación para realizar mantenimiento?</span>
+        <svg id="faq-icon-2" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <div id="faq-answer-2" class="hidden pb-6">
+        <p class="text-gray-600 leading-relaxed">Sí, nuestros técnicos están certificados por la industria automotriz.</p>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleFaq(index) {
+    const answer = document.getElementById('faq-answer-' + index);
+    const icon = document.getElementById('faq-icon-' + index);
+    answer.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+}
+</script></div></main>
+<footer id="contacto" class="bg-gray-900 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
+            <div class="col-span-2 md:col-span-1">
+    <span class="text-xl font-bold text-white">Taller Mecánico</span>
+    <p class="text-gray-400 mt-4 max-w-xs">Nuestro equipo técnico se compromete a ofrecer servicios de alta calidad para mantener tu vehículo en óptimas condiciones.</p>
+    <div class="flex gap-4 mt-6"><a href="#" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="#" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></div>
+</div>
+            <div>
+    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Enlaces</h3>
+    <ul class="space-y-3"><li><a href="#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li><li><a href="#servicios" class="text-gray-400 hover:text-white transition-colors">Servicios</a></li><li><a href="#proceso" class="text-gray-400 hover:text-white transition-colors">Cómo trabajamos</a></li><li><a href="#galeria" class="text-gray-400 hover:text-white transition-colors">Galería</a></li><li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li></ul>
+</div>
+            
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+            <p class="text-gray-500 text-sm text-center">© 2026 Taller Mecánico. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+    
+</body>
+</html>

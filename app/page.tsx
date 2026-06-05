@@ -60,6 +60,30 @@ const works = [
     desc: "Web enérgica con planes y precios, clase de prueba y galería del espacio, lista para captar nuevos miembros.",
     features: ["Planes y precios", "Clase de prueba", "Galería", "Contacto directo"],
   },
+  {
+    href: "/demos/barberia",
+    img: "/shots/barberia.webp",
+    kind: "Landing + reservas para barbería",
+    name: "Barbería",
+    desc: "Web con estilo, galería de cortes y reserva de cita en línea para mantener la silla llena todos los días.",
+    features: ["Reserva de cita", "Galería de cortes", "Servicios y precios", "Contacto directo"],
+  },
+  {
+    href: "/demos/academia",
+    img: "/shots/academia.webp",
+    kind: "Captación para academia",
+    name: "Academia",
+    desc: "Web que guía al estudiante del primer contacto a la inscripción, con programas, precios y proceso claro.",
+    features: ["Inscripción en línea", "Programas y precios", "Proceso paso a paso", "Contacto directo"],
+  },
+  {
+    href: "/demos/taller",
+    img: "/shots/taller.webp",
+    kind: "Captación para taller mecánico",
+    name: "Taller mecánico",
+    desc: "Web técnica que genera confianza, con servicios, presupuesto sin sorpresas y solicitud de cita.",
+    features: ["Solicitud de cita", "Servicios y precios", "Garantías claras", "Contacto directo"],
+  },
 ];
 
 const stack = ["React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL"];
