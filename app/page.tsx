@@ -61,14 +61,6 @@ const works = [
     features: ["Planes y precios", "Clase de prueba", "Galería", "Contacto directo"],
   },
   {
-    href: "/demos/barberia",
-    img: "/shots/barberia.webp",
-    kind: "Landing + reservas para barbería",
-    name: "Barbería",
-    desc: "Web con estilo, galería de cortes y reserva de cita en línea para mantener la silla llena todos los días.",
-    features: ["Reserva de cita", "Galería de cortes", "Servicios y precios", "Contacto directo"],
-  },
-  {
     href: "/demos/academia",
     img: "/shots/academia.webp",
     kind: "Captación para academia",
