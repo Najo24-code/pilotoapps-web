@@ -484,10 +484,10 @@ export default function Home() {
               { n: "04", t: "Lanzo y acompaño", d: "Lo dejo funcionando, te capacito y te doy soporte continuo." },
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
-                <div className="relative border-t border-white/10 pt-7">
-                  <span className="absolute -top-[5px] left-0 h-2.5 w-2.5 rounded-full bg-brand ring-4 ring-brand/15" />
-                  <div className="font-display text-5xl font-bold text-brand/90">{s.n}</div>
-                  <h3 className="mb-2 mt-4 font-display text-xl font-semibold text-white">{s.t}</h3>
+                <div className="group relative border-t border-white/10 pt-8">
+                  <span className="absolute left-0 top-0 h-0.5 w-12 -translate-y-px bg-brand transition-all duration-300 group-hover:w-20" />
+                  <div className="font-display text-6xl font-bold tracking-tight text-brand">{s.n}</div>
+                  <h3 className="mb-2 mt-5 font-display text-xl font-semibold text-white">{s.t}</h3>
                   <p className="leading-relaxed text-slate-400">{s.d}</p>
                 </div>
               </Reveal>
@@ -533,10 +533,9 @@ export default function Home() {
                 </a>
               </div>
             </Reveal>
-            <Reveal delay={0.1}>
-              <div className="rounded-3xl border border-white/10 bg-white/[.03] p-6 md:p-8">
-                <ContactForm />
-              </div>
+            <Reveal delay={0.1} className="lg:border-l lg:border-white/10 lg:pl-12">
+              <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-slate-500">O escríbeme aquí</p>
+              <ContactForm />
             </Reveal>
           </div>
         </div>
