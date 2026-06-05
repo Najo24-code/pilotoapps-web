@@ -109,148 +109,87 @@ export default function Home() {
       {/* HERO */}
       <section id="inicio" className="grain relative overflow-hidden pt-28 pb-10 md:pt-32">
         <div className="mesh absolute inset-0" />
-        <div className="dotgrid absolute inset-0 opacity-60" />
+        <div className="dotgrid absolute inset-0 opacity-25" />
         <div className="absolute -top-44 right-[-8rem] h-[680px] w-[680px] rounded-full bg-brand/10 blur-[150px]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent" />
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-8">
-            {/* Texto — asimétrico, alineado a la izquierda */}
-            <div className="lg:col-span-6">
-              <Reveal>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-slate-300">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-                  </span>
-                  Desarrollo de software a la medida · RD
+          {/* Masthead — cabecera tipo revista */}
+          <Reveal>
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <span className="inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-slate-400 sm:text-xs">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand" />
                 </span>
-                <h1 className="mt-7 font-display text-5xl font-bold leading-[0.94] tracking-[-0.03em] text-gleam sm:text-6xl lg:text-7xl xl:text-[5rem]">
-                  Convierte tu negocio en un <span className="text-brand">sistema</span>.
-                </h1>
-                <p className="mt-7 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl">
-                  Diseño y construyo software a la medida para PYMEs: citas, inventario, ventas y una
-                  web que trabaja por ti. Adiós al cuaderno y el Excel — tu negocio ordenado y bajo
-                  control, desde el celular.
-                </p>
-                <div className="mt-9 flex flex-wrap gap-4">
-                  <a
-                    href="#contacto"
-                    className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-slate-950 transition-all hover:scale-[1.02] hover:bg-brand-300"
-                  >
-                    Cuéntame tu caso
-                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="#trabajos"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 font-semibold text-white transition-colors hover:border-white/30 hover:bg-white/5"
-                  >
-                    Ver trabajos
-                  </a>
-                </div>
-                <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 border-t border-white/10 pt-6 text-sm text-slate-500">
-                  <span>App en producción</span>
-                  <span className="h-1 w-1 rounded-full bg-slate-600" />
-                  <span>El código y los datos, tuyos</span>
-                  <span className="h-1 w-1 rounded-full bg-slate-600" />
-                  <span>Trato directo contigo</span>
-                </div>
-              </Reveal>
+                Desarrollo de software a la medida
+              </span>
+              <span className="hidden text-xs font-medium uppercase tracking-[0.22em] text-slate-500 sm:inline">
+                Santo Domingo · RD
+              </span>
             </div>
+          </Reveal>
 
-            {/* Showcase — el PRODUCTO como protagonista: un panel real con profundidad */}
-            <div className="lg:col-span-6">
-              <Reveal delay={0.15}>
-                <div className="float relative mx-auto max-w-md lg:max-w-none">
-                  {/* halo detrás del panel */}
-                  <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-brand/10 blur-3xl" />
+          {/* Titular gigante — la tipografía es la protagonista */}
+          <Reveal delay={0.05}>
+            <h1 className="mt-10 font-display text-[3.5rem] font-bold leading-[0.86] tracking-[-0.045em] text-gleam sm:text-7xl lg:text-8xl xl:text-[8rem]">
+              Convierte tu<br />
+              negocio en un<br />
+              <span className="text-brand">sistema.</span>
+            </h1>
+          </Reveal>
 
-                  {/* Ventana de la app — el sistema, en grande */}
-                  <div className="rotate-[-1.5deg] overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 shadow-2xl shadow-black/60 backdrop-blur-md transition-transform duration-500 hover:rotate-0">
-                    {/* barra de la app (neutra, no atada a ningún sistema) */}
-                    <div className="flex items-center gap-2.5 border-b border-white/10 bg-slate-900/90 px-4 py-3">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand/15 font-display text-sm font-bold text-brand">M</span>
-                      <div className="leading-tight">
-                        <p className="font-display text-sm font-bold text-white">Mi Negocio</p>
-                        <p className="text-[11px] text-slate-500">Panel de control</p>
-                      </div>
-                      <span className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-2.5 py-1 text-[11px] font-medium text-brand">
-                        <span className="h-1.5 w-1.5 rounded-full bg-brand" /> En vivo
-                      </span>
-                    </div>
+          {/* Fila inferior — subhead + CTAs (izq) · índice de capacidades (der) */}
+          <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-12 lg:gap-12">
+            <Reveal delay={0.1} className="lg:col-span-6">
+              <p className="max-w-md text-lg leading-relaxed text-slate-400 md:text-xl">
+                Diseño y construyo software a la medida para PYMEs. Adiós al cuaderno
+                y el Excel — tu negocio ordenado y bajo control, desde el celular.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="#contacto"
+                  className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-slate-950 transition-all hover:scale-[1.02] hover:bg-brand-300"
+                >
+                  Cuéntame tu caso
+                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+                <a
+                  href="#trabajos"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 font-semibold text-white transition-colors hover:border-white/30 hover:bg-white/5"
+                >
+                  Ver trabajos
+                </a>
+              </div>
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
+                <span>App en producción</span>
+                <span className="h-1 w-1 rounded-full bg-slate-600" />
+                <span>El código y los datos, tuyos</span>
+                <span className="h-1 w-1 rounded-full bg-slate-600" />
+                <span>Trato directo contigo</span>
+              </div>
+            </Reveal>
 
-                    {/* cuerpo del panel */}
-                    <div className="space-y-4 p-5">
-                      {/* KPIs */}
-                      <div className="grid grid-cols-3 gap-3">
-                        {[
-                          { l: "Ventas hoy", v: "RD$ 24,800", t: "+12%" },
-                          { l: "Citas", v: "12", t: "hoy" },
-                          { l: "Por cobrar", v: "RD$ 8,450", t: "3 clientes" },
-                        ].map((k) => (
-                          <div key={k.l} className="rounded-xl border border-white/10 bg-white/[.03] p-3">
-                            <p className="text-[11px] text-slate-500">{k.l}</p>
-                            <p className="mt-1 font-display text-sm font-bold text-white sm:text-base">{k.v}</p>
-                            <p className="text-[11px] text-brand">{k.t}</p>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* mini-gráfico de ventas */}
-                      <div className="rounded-xl border border-white/10 bg-white/[.03] p-4">
-                        <div className="mb-3 flex items-center justify-between">
-                          <p className="text-xs font-medium text-slate-300">Ventas · últimos 7 días</p>
-                          <p className="text-[11px] text-slate-500">RD$ 142,300</p>
-                        </div>
-                        <div className="flex h-20 items-end gap-1.5 sm:gap-2">
-                          {[40, 64, 50, 82, 58, 96, 74].map((h, i) => (
-                            <div key={i} className="flex-1 rounded-t-md bg-gradient-to-t from-brand/25 to-brand" style={{ height: `${h}%` }} />
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* movimientos recientes */}
-                      <div className="space-y-2">
-                        {[
-                          { n: "Pedido #1042", a: "+RD$ 1,200" },
-                          { n: "Cita · Corte y barba", a: "Confirmada" },
-                        ].map((r) => (
-                          <div key={r.n} className="flex items-center gap-3 rounded-lg border border-white/5 bg-white/[.02] px-3 py-2.5">
-                            <span className="h-2 w-2 shrink-0 rounded-full bg-brand" />
-                            <p className="truncate text-sm text-slate-300">{r.n}</p>
-                            <p className="ml-auto shrink-0 text-sm font-medium text-white">{r.a}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* tarjeta flotante (profundidad) — toast de cita */}
-                  <div className="absolute -right-4 -top-4 hidden items-center gap-2.5 rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-3 shadow-2xl shadow-black/50 backdrop-blur-md sm:flex">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-brand/15 text-brand">
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.4} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                    </span>
-                    <div>
-                      <p className="font-display text-xs font-bold text-white">Cita confirmada</p>
-                      <p className="text-[11px] text-slate-400">hoy · 3:30 PM</p>
-                    </div>
-                  </div>
-
-                  {/* pill flotante (profundidad) — tendencia */}
-                  <div className="absolute -bottom-4 -left-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-3 shadow-2xl shadow-black/50 backdrop-blur-md">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand/15 text-brand">
-                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" /></svg>
-                    </span>
-                    <div>
-                      <p className="font-display text-sm font-bold text-white">+18% este mes</p>
-                      <p className="text-xs text-slate-400">todo en un panel</p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
+            {/* Índice editorial — lo que construyo, como sumario de revista */}
+            <Reveal delay={0.15} className="lg:col-span-6 lg:border-l lg:border-white/10 lg:pl-12">
+              <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.22em] text-slate-500">Lo que construyo</p>
+              <ul className="divide-y divide-white/10">
+                {[
+                  ["01", "Citas y reservas en línea"],
+                  ["02", "Inventario y ventas"],
+                  ["03", "Cobros, cuotas y reportes"],
+                  ["04", "Tu web, trabajando 24/7"],
+                ].map(([n, t]) => (
+                  <li key={n} className="group flex items-baseline gap-5 py-4">
+                    <span className="font-display text-sm font-bold tabular-nums text-brand">{n}</span>
+                    <span className="text-lg text-slate-200 transition-colors group-hover:text-white md:text-xl">{t}</span>
+                    <svg className="ml-auto h-4 w-4 shrink-0 self-center text-slate-600 transition-all group-hover:translate-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </div>
 
