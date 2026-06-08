@@ -82,18 +82,18 @@ const stack = ["React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL"]
 
 function BrowserFrame({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="browser overflow-hidden rounded-2xl border border-white/10 bg-zinc-900">
+    <div className="browser overflow-hidden rounded-2xl border border-white/10 bg-stone-900">
       {/* Barra de navegador neutra (universal, no atada a ningún sistema) */}
-      <div className="flex items-center gap-3 border-b border-white/10 bg-zinc-900/80 px-3.5 py-2.5">
-        <div className="flex items-center gap-1 text-zinc-600">
+      <div className="flex items-center gap-3 border-b border-white/10 bg-stone-900/80 px-3.5 py-2.5">
+        <div className="flex items-center gap-1 text-stone-600">
           <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.4} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
           <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.4} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
         </div>
-        <div className="flex min-w-0 flex-1 items-center gap-1.5 rounded-md bg-white/5 px-2.5 py-1 text-xs text-zinc-500">
+        <div className="flex min-w-0 flex-1 items-center gap-1.5 rounded-md bg-white/5 px-2.5 py-1 text-xs text-stone-500">
           <svg className="h-3 w-3 shrink-0 text-brand/80" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
           <span className="truncate">tu-negocio.com</span>
         </div>
-        <svg className="h-3.5 w-3.5 shrink-0 text-zinc-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0 0 12.8 5.3M19.5 12a7.5 7.5 0 0 0-12.8-5.3M4.5 12V7.5m0 4.5h4.5m10.5 0V16.5m0-4.5h-4.5" /></svg>
+        <svg className="h-3.5 w-3.5 shrink-0 text-stone-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0 0 12.8 5.3M19.5 12a7.5 7.5 0 0 0-12.8-5.3M4.5 12V7.5m0 4.5h4.5m10.5 0V16.5m0-4.5h-4.5" /></svg>
       </div>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={`${BP}${src}`} alt={alt} width={1760} height={1100} loading="lazy" className="h-auto w-full" />
@@ -103,7 +103,7 @@ function BrowserFrame({ src, alt }: { src: string; alt: string }) {
 
 export default function Home() {
   return (
-    <div className="bg-zinc-950 text-zinc-300">
+    <div className="bg-stone-950 text-stone-300">
       <Navbar />
 
       {/* HERO */}
@@ -111,20 +111,20 @@ export default function Home() {
         <div className="mesh absolute inset-0" />
         <div className="dotgrid absolute inset-0 opacity-25" />
         <div className="absolute -top-44 right-[-8rem] h-[680px] w-[680px] rounded-full bg-brand/10 blur-[150px]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-zinc-950 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-stone-950 to-transparent" />
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           {/* Masthead — cabecera tipo revista */}
           <Reveal>
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-zinc-400 sm:text-xs">
+              <span className="inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-stone-400 sm:text-xs">
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand" />
                 </span>
                 Desarrollo de software a la medida
               </span>
-              <span className="hidden text-xs font-medium uppercase tracking-[0.22em] text-zinc-500 sm:inline">
+              <span className="hidden text-xs font-medium uppercase tracking-[0.22em] text-stone-500 sm:inline">
                 Santo Domingo · RD
               </span>
             </div>
@@ -142,17 +142,17 @@ export default function Home() {
           {/* Fila inferior — subhead + CTAs (izq) · índice de capacidades (der) */}
           <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-12 lg:gap-12">
             <Reveal delay={0.1} className="lg:col-span-6">
-              <p className="max-w-md text-lg leading-relaxed text-zinc-400 md:text-xl">
+              <p className="max-w-md text-lg leading-relaxed text-stone-400 md:text-xl">
                 Saca tu negocio del cuaderno y el Excel. Te construyo un sistema a la
                 medida que manejas completo desde el celular.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href="#contacto"
-                  className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-zinc-950 transition-all hover:scale-[1.02] hover:bg-brand-300"
+                  className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-stone-950 transition-all hover:scale-[1.02] hover:bg-brand-300"
                 >
                   Cuéntame tu caso
-                  <svg className="h-4 w-4 transition-transform group-hover:tranzinc-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <svg className="h-4 w-4 transition-transform group-hover:transtone-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </a>
@@ -163,18 +163,18 @@ export default function Home() {
                   Ver trabajos
                 </a>
               </div>
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-zinc-500">
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-stone-500">
                 <span>App en producción</span>
-                <span className="h-1 w-1 rounded-full bg-zinc-600" />
+                <span className="h-1 w-1 rounded-full bg-stone-600" />
                 <span>El código y los datos, tuyos</span>
-                <span className="h-1 w-1 rounded-full bg-zinc-600" />
+                <span className="h-1 w-1 rounded-full bg-stone-600" />
                 <span>Trato directo contigo</span>
               </div>
             </Reveal>
 
             {/* Índice editorial — lo que construyo, como sumario de revista */}
             <Reveal delay={0.15} className="lg:col-span-6 lg:border-l lg:border-white/10 lg:pl-12">
-              <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.22em] text-zinc-500">Lo que construyo</p>
+              <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.22em] text-stone-500">Lo que construyo</p>
               <ul className="divide-y divide-white/10">
                 {[
                   ["01", "Citas y reservas en línea"],
@@ -184,8 +184,8 @@ export default function Home() {
                 ].map(([n, t]) => (
                   <li key={n} className="group flex items-baseline gap-5 py-4">
                     <span className="font-display text-sm font-bold tabular-nums text-brand">{n}</span>
-                    <span className="text-lg text-zinc-200 transition-colors group-hover:text-white md:text-xl">{t}</span>
-                    <svg className="ml-auto h-4 w-4 shrink-0 self-center text-zinc-600 transition-all group-hover:tranzinc-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                    <span className="text-lg text-stone-200 transition-colors group-hover:text-white md:text-xl">{t}</span>
+                    <svg className="ml-auto h-4 w-4 shrink-0 self-center text-stone-600 transition-all group-hover:transtone-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
                   </li>
                 ))}
               </ul>
@@ -204,11 +204,11 @@ export default function Home() {
                 rel="noopener noreferrer"
                 aria-hidden={i >= works.length}
                 tabIndex={i >= works.length ? -1 : undefined}
-                className="block w-[280px] shrink-0 transition-transform hover:-tranzinc-y-1.5 sm:w-[320px]"
+                className="block w-[280px] shrink-0 transition-transform hover:-transtone-y-1.5 sm:w-[320px]"
               >
                 <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
-                <p className="mt-3 text-sm text-zinc-500">
-                  <span className="text-brand">{w.kind}</span> · <span className="text-zinc-300">{w.name}</span>
+                <p className="mt-3 text-sm text-stone-500">
+                  <span className="text-brand">{w.kind}</span> · <span className="text-stone-300">{w.name}</span>
                 </p>
               </a>
             ))}
@@ -221,7 +221,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-              <span className="tabular-nums text-zinc-600">01</span>
+              <span className="tabular-nums text-stone-600">01</span>
               <span className="h-px w-6 bg-white/15" />
               <span className="text-brand">Servicios</span>
             </p>
@@ -263,7 +263,7 @@ export default function Home() {
                 <div className="group grid gap-6 border-b border-white/10 py-10 transition-colors lg:grid-cols-12 lg:gap-8 lg:py-12">
                   {/* Nombre del servicio — la tipografía manda */}
                   <div className="lg:col-span-5">
-                    <span className="mb-5 font-display text-sm tabular-nums text-zinc-600">{c.n}</span>
+                    <span className="mb-5 font-display text-sm tabular-nums text-stone-600">{c.n}</span>
                     <div className="mt-4 flex items-start gap-4">
                       <span className="mt-1.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand ring-1 ring-inset ring-brand/20 transition-colors group-hover:bg-brand/15">
                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.6} stroke="currentColor">{c.icon}</svg>
@@ -273,10 +273,10 @@ export default function Home() {
                   </div>
                   {/* Descripción + tags */}
                   <div className="lg:col-span-7 lg:pt-1">
-                    <p className="max-w-2xl text-lg leading-relaxed text-zinc-400">{c.d}</p>
+                    <p className="max-w-2xl text-lg leading-relaxed text-stone-400">{c.d}</p>
                     <div className="mt-6 flex flex-wrap gap-2.5">
                       {c.points.map((p) => (
-                        <span key={p} className="rounded-full border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm text-zinc-300 transition-colors group-hover:border-brand/25 group-hover:text-zinc-200">
+                        <span key={p} className="rounded-full border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm text-stone-300 transition-colors group-hover:border-brand/25 group-hover:text-stone-200">
                           {p}
                         </span>
                       ))}
@@ -294,14 +294,14 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-              <span className="tabular-nums text-zinc-600">02</span>
+              <span className="tabular-nums text-stone-600">02</span>
               <span className="h-px w-6 bg-white/15" />
               <span className="text-brand">Trabajos de muestra</span>
             </p>
             <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               Mira lo que puedo construir para ti.
             </h2>
-            <p className="mt-6 text-lg text-zinc-400 md:text-xl">
+            <p className="mt-6 text-lg text-stone-400 md:text-xl">
               Proyectos de ejemplo, funcionales y navegables. Ábrelos y pruébalos: reserva una
               cita, mira un menú, navega un catálogo.
             </p>
@@ -311,16 +311,16 @@ export default function Home() {
             {works.map((w, i) => (
               <Reveal key={w.href} delay={(i % 2) * 0.08}>
                 <Link href={w.href} target="_blank" className="group block">
-                  <div className="transition-transform duration-300 group-hover:-tranzinc-y-1.5">
+                  <div className="transition-transform duration-300 group-hover:-transtone-y-1.5">
                     <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
                   </div>
                   <div className="mt-5 flex items-baseline gap-4 border-t border-white/10 pt-4">
-                    <span className="font-display text-sm tabular-nums text-zinc-600">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-display text-sm tabular-nums text-stone-600">{String(i + 1).padStart(2, "0")}</span>
                     <div className="min-w-0">
                       <p className="text-xs font-semibold uppercase tracking-widest text-brand">{w.kind}</p>
                       <h3 className="mt-1.5 font-display text-xl font-bold tracking-[-0.01em] text-white md:text-2xl">{w.name}</h3>
                     </div>
-                    <svg className="ml-auto h-5 w-5 shrink-0 self-center text-zinc-600 transition-all group-hover:tranzinc-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <svg className="ml-auto h-5 w-5 shrink-0 self-center text-stone-600 transition-all group-hover:transtone-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
                   </div>
@@ -336,7 +336,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-              <span className="tabular-nums text-zinc-600">03</span>
+              <span className="tabular-nums text-stone-600">03</span>
               <span className="h-px w-6 bg-white/15" />
               <span className="text-brand">Proyectos reales</span>
             </p>
@@ -350,14 +350,14 @@ export default function Home() {
               <div className="lg:col-span-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-brand">App de préstamos y cobros</p>
                 <h3 className="mt-4 font-display text-5xl font-bold tracking-[-0.03em] text-white md:text-6xl">SuaPréstamos</h3>
-                <p className="mt-6 max-w-md text-lg leading-relaxed text-zinc-400">
+                <p className="mt-6 max-w-md text-lg leading-relaxed text-stone-400">
                   App móvil para prestamistas: gestiona clientes, préstamos, cuotas, mora y cobros, con
                   un dashboard que muestra tu cartera en tiempo real. Diseñada para usarse cada día,
                   desde el celular.
                 </p>
                 <ul className="mt-8 divide-y divide-white/10 border-t border-white/10">
                   {["Clientes y garantes", "Cuotas, mora y cobros", "Semáforo de cartera en vivo", "Reportes de cartera", "App Android nativa"].map((f) => (
-                    <li key={f} className="flex items-center gap-3 py-3 text-zinc-300">
+                    <li key={f} className="flex items-center gap-3 py-3 text-stone-300">
                       <svg className="h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                       </svg>
@@ -378,11 +378,11 @@ export default function Home() {
                 <div className="absolute -inset-4 -z-10 rounded-[3rem] bg-brand/10 blur-3xl" />
                 <div className="flex justify-center gap-3 sm:gap-4">
                   {[
-                    { src: "/shots/sua-dash.webp", cls: "tranzinc-y-4" },
-                    { src: "/shots/sua-cobros.webp", cls: "-tranzinc-y-2 hidden sm:block" },
-                    { src: "/shots/sua-clientes.webp", cls: "tranzinc-y-6 hidden md:block" },
+                    { src: "/shots/sua-dash.webp", cls: "transtone-y-4" },
+                    { src: "/shots/sua-cobros.webp", cls: "-transtone-y-2 hidden sm:block" },
+                    { src: "/shots/sua-clientes.webp", cls: "transtone-y-6 hidden md:block" },
                   ].map((p) => (
-                    <div key={p.src} className={`w-40 overflow-hidden rounded-[1.75rem] border border-white/10 bg-zinc-900 shadow-2xl shadow-black/50 sm:w-44 ${p.cls}`}>
+                    <div key={p.src} className={`w-40 overflow-hidden rounded-[1.75rem] border border-white/10 bg-stone-900 shadow-2xl shadow-black/50 sm:w-44 ${p.cls}`}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={`${BP}${p.src}`} alt="Pantalla de SuaPréstamos" loading="lazy" className="h-auto w-full" />
                     </div>
@@ -400,14 +400,14 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-6">
               <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-                <span className="tabular-nums text-zinc-600">04</span>
+                <span className="tabular-nums text-stone-600">04</span>
                 <span className="h-px w-6 bg-white/15" />
                 <span className="text-brand">Detrás de Forja</span>
               </p>
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
                 Hablas directo con quien programa tu sistema.
               </h2>
-              <div className="mt-8 space-y-6 text-lg leading-relaxed text-zinc-400">
+              <div className="mt-8 space-y-6 text-lg leading-relaxed text-stone-400">
                 <p>
                   Forja es un estudio dominicano de desarrollo de software. Sin plantillas ni
                   intermediarios: construyo tu sistema desde cero, a la medida de tu PYME y de cómo
@@ -416,7 +416,7 @@ export default function Home() {
                 <p>
                   Trabajas conmigo de principio a fin: desde la primera conversación hasta que el
                   sistema queda funcionando en tu negocio. Lo entrego andando, te enseño a usarlo y{" "}
-                  <span className="text-zinc-200">quedas con todo en tus manos</span> — sin depender de nadie.
+                  <span className="text-stone-200">quedas con todo en tus manos</span> — sin depender de nadie.
                 </p>
               </div>
             </Reveal>
@@ -424,13 +424,13 @@ export default function Home() {
             <Reveal delay={0.1} className="lg:col-span-6 lg:border-l lg:border-white/10 lg:pl-12">
               <div className="flex items-center gap-4">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand">
-                  <svg className="h-6 w-6 text-zinc-950" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
+                  <svg className="h-6 w-6 text-stone-950" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
                   </svg>
                 </span>
                 <div>
                   <p className="font-display text-lg font-bold text-white">Forja</p>
-                  <p className="text-sm text-zinc-400">Estudio de desarrollo de software · República Dominicana</p>
+                  <p className="text-sm text-stone-400">Estudio de desarrollo de software · República Dominicana</p>
                 </div>
               </div>
               <ul className="mt-8 divide-y divide-white/10 border-t border-white/10">
@@ -440,7 +440,7 @@ export default function Home() {
                   "El sistema, el código y los datos son tuyos",
                   "Te lo entrego funcionando y te capacito para usarlo",
                 ].map((h) => (
-                  <li key={h} className="flex items-start gap-3 py-3.5 text-zinc-300">
+                  <li key={h} className="flex items-start gap-3 py-3.5 text-stone-300">
                     <svg className="mt-1 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                     </svg>
@@ -449,10 +449,10 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-8">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-zinc-500">Stack con el que trabajo</p>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-stone-500">Stack con el que trabajo</p>
                 <div className="flex flex-wrap gap-2.5">
                   {stack.map((s) => (
-                    <span key={s} className="rounded-lg border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm font-medium text-zinc-200">
+                    <span key={s} className="rounded-lg border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm font-medium text-stone-200">
                       {s}
                     </span>
                   ))}
@@ -468,7 +468,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-              <span className="tabular-nums text-zinc-600">05</span>
+              <span className="tabular-nums text-stone-600">05</span>
               <span className="h-px w-6 bg-white/15" />
               <span className="text-brand">Cómo trabajo</span>
             </p>
@@ -485,10 +485,10 @@ export default function Home() {
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
                 <div className="group relative border-t border-white/10 pt-8">
-                  <span className="absolute left-0 top-0 h-0.5 w-12 -tranzinc-y-px bg-brand transition-all duration-300 group-hover:w-20" />
+                  <span className="absolute left-0 top-0 h-0.5 w-12 -transtone-y-px bg-brand transition-all duration-300 group-hover:w-20" />
                   <div className="font-display text-6xl font-bold tracking-tight text-white/15">{s.n}</div>
                   <h3 className="mb-2 mt-5 font-display text-xl font-semibold text-white">{s.t}</h3>
-                  <p className="leading-relaxed text-zinc-400">{s.d}</p>
+                  <p className="leading-relaxed text-stone-400">{s.d}</p>
                 </div>
               </Reveal>
             ))}
@@ -501,14 +501,14 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-              <span className="tabular-nums text-zinc-600">06</span>
+              <span className="tabular-nums text-stone-600">06</span>
               <span className="h-px w-6 bg-white/15" />
               <span className="text-brand">Planes</span>
             </p>
             <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               Reservas con recordatorio automático por WhatsApp.
             </h2>
-            <p className="mt-6 text-lg text-zinc-400 md:text-xl">
+            <p className="mt-6 text-lg text-stone-400 md:text-xl">
               El cliente reserva solo y le llega un recordatorio por WhatsApp 24h y 2h antes de la cita.
               Menos ausencias, tu agenda llena. Pensado para barberías, salones, clínicas y gimnasios.
             </p>
@@ -563,8 +563,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <p className="mt-5 text-center text-sm text-zinc-500">
-                Así le llega el recordatorio a tus clientes — <span className="text-zinc-300">solo, 24h y 2h antes</span>.
+              <p className="mt-5 text-center text-sm text-stone-500">
+                Así le llega el recordatorio a tus clientes — <span className="text-stone-300">solo, 24h y 2h antes</span>.
               </p>
             </Reveal>
 
@@ -582,9 +582,9 @@ export default function Home() {
                 </div>
                 <div className="mt-7 flex items-end gap-2 border-y border-white/10 py-6">
                   <span className="font-display text-5xl font-bold tracking-tight text-white">RD$2,000</span>
-                  <span className="mb-1.5 text-zinc-400">/mes</span>
+                  <span className="mb-1.5 text-stone-400">/mes</span>
                 </div>
-                <p className="mt-3 text-sm text-zinc-400">
+                <p className="mt-3 text-sm text-stone-400">
                   + RD$15,000 de montaje (pago único): diseño, configuración y puesta en marcha.
                 </p>
                 <ul className="mt-7 space-y-3">
@@ -596,25 +596,25 @@ export default function Home() {
                     "Galería y servicios con precios",
                     "Dominio, hosting y soporte incluidos",
                   ].map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-zinc-300">
+                    <li key={f} className="flex items-start gap-3 text-stone-300">
                       <svg className="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.4} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
                       <span className="text-[15px] leading-snug">{f}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-7 rounded-xl border border-brand/20 bg-brand/5 px-4 py-3 text-sm leading-relaxed text-zinc-300">
+                <p className="mt-7 rounded-xl border border-brand/20 bg-brand/5 px-4 py-3 text-sm leading-relaxed text-stone-300">
                   <span className="font-semibold text-brand">Se paga solo:</span> evitando ~3–4 citas perdidas al mes ya recuperas la mensualidad.
                 </p>
                 <a
                   href={WHATSAPP}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 font-semibold text-zinc-950 transition-all hover:scale-[1.01] hover:bg-brand-300"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 font-semibold text-stone-950 transition-all hover:scale-[1.01] hover:bg-brand-300"
                 >
                   Quiero Agenda Llena
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
                 </a>
-                <p className="mt-4 text-center text-xs text-zinc-500">
+                <p className="mt-4 text-center text-xs text-stone-500">
                   ¿Salón con varios estilistas? Súmale el módulo de comisiones.
                 </p>
               </div>
@@ -629,14 +629,14 @@ export default function Home() {
           <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
             <Reveal>
               <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-                <span className="tabular-nums text-zinc-600">07</span>
+                <span className="tabular-nums text-stone-600">07</span>
                 <span className="h-px w-6 bg-white/15" />
                 <span className="text-brand">Hablemos</span>
               </p>
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
                 ¿Listo para ordenar tu negocio?
               </h2>
-              <p className="mt-6 max-w-md text-lg text-zinc-400 md:text-xl">
+              <p className="mt-6 max-w-md text-lg text-stone-400 md:text-xl">
                 Cada proyecto es a la medida. Cuéntame tu caso y te preparo una propuesta con alcance y
                 cotización personalizada. Sin compromiso.
               </p>
@@ -661,7 +661,7 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={0.1} className="lg:border-l lg:border-white/10 lg:pl-12">
-              <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-zinc-500">O escríbeme aquí</p>
+              <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-stone-500">O escríbeme aquí</p>
               <ContactForm />
             </Reveal>
           </div>
@@ -673,18 +673,18 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 sm:px-6 md:flex-row lg:px-8">
           <div className="flex items-center gap-2.5">
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand">
-              <svg className="h-5 w-5 text-zinc-950" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
+              <svg className="h-5 w-5 text-stone-950" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
               </svg>
             </span>
             <span className="text-lg font-bold text-white">Forja</span>
           </div>
-          <p className="text-sm text-zinc-500">Software a la medida para PYMEs · República Dominicana</p>
-          <a href={MAILTO} className="text-sm text-zinc-400 transition-colors hover:text-white">
+          <p className="text-sm text-stone-500">Software a la medida para PYMEs · República Dominicana</p>
+          <a href={MAILTO} className="text-sm text-stone-400 transition-colors hover:text-white">
             {EMAIL}
           </a>
         </div>
-        <p className="mt-8 text-center text-xs text-zinc-600">© 2026 Forja. Todos los derechos reservados.</p>
+        <p className="mt-8 text-center text-xs text-stone-600">© 2026 Forja. Todos los derechos reservados.</p>
       </footer>
 
       <WhatsAppFab />

@@ -5,7 +5,7 @@ import { useState } from "react";
 const ENDPOINT = "https://formsubmit.co/ajax/pilotoapps.dev@gmail.com";
 
 const inputClass =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-zinc-500 outline-none transition focus:border-transparent focus:ring-2 focus:ring-brand";
+  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500 outline-none transition focus:border-transparent focus:ring-2 focus:ring-brand";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
@@ -38,7 +38,7 @@ export default function ContactForm() {
           </svg>
         </span>
         <h3 className="mb-2 text-2xl font-bold text-white">¡Mensaje enviado!</h3>
-        <p className="text-zinc-300">Te respondo lo antes posible con una propuesta.</p>
+        <p className="text-stone-300">Te respondo lo antes posible con una propuesta.</p>
       </div>
     );
   }
@@ -47,16 +47,16 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4 text-left">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-zinc-300">Nombre</label>
+          <label className="mb-1.5 block text-sm font-medium text-stone-300">Nombre</label>
           <input name="name" required placeholder="Tu nombre" className={inputClass} />
         </div>
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-zinc-300">Teléfono o correo</label>
+          <label className="mb-1.5 block text-sm font-medium text-stone-300">Teléfono o correo</label>
           <input name="phone" required placeholder="Para responderte" className={inputClass} />
         </div>
       </div>
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-zinc-300">¿Qué necesitas?</label>
+        <label className="mb-1.5 block text-sm font-medium text-stone-300">¿Qué necesitas?</label>
         <textarea
           name="message"
           rows={4}
@@ -68,7 +68,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full bg-brand py-4 font-semibold text-zinc-950 shadow-lg shadow-brand/20 transition-all hover:bg-brand-300 disabled:opacity-60"
+        className="w-full rounded-full bg-brand py-4 font-semibold text-stone-950 shadow-lg shadow-brand/20 transition-all hover:bg-brand-300 disabled:opacity-60"
       >
         {status === "sending" ? "Enviando..." : "Enviar mensaje"}
       </button>
