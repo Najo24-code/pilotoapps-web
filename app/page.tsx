@@ -299,7 +299,7 @@ export default function Home() {
               <span className="text-brand">Trabajos de muestra</span>
             </p>
             <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
-              Mira lo que puedo construir para ti.
+              Mira lo que podemos construir para ti.
             </h2>
             <p className="mt-6 text-lg text-stone-400 md:text-xl">
               Proyectos de ejemplo, funcionales y navegables. Ábrelos y pruébalos: reserva una
