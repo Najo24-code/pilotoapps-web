@@ -143,8 +143,8 @@ export default function Home() {
           <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-12 lg:gap-12">
             <Reveal delay={0.1} className="lg:col-span-6">
               <p className="max-w-md text-lg leading-relaxed text-slate-400 md:text-xl">
-                Diseño y construyo software a la medida para PYMEs. Adiós al cuaderno
-                y el Excel — tu negocio ordenado y bajo control, desde el celular.
+                Saca tu negocio del cuaderno y el Excel. Te construyo un sistema a la
+                medida que manejas completo desde el celular.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -409,9 +409,9 @@ export default function Home() {
               </h2>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate-400">
                 <p>
-                  PilotoApps es un estudio de desarrollo de software en República Dominicana. Construyo
-                  tu sistema desde cero con tecnología moderna y fiable — la misma que usan las grandes
-                  plataformas — pero pensada y dimensionada para una PYME.
+                  PilotoApps es un estudio dominicano de desarrollo de software. Sin plantillas ni
+                  intermediarios: construyo tu sistema desde cero, a la medida de tu PYME y de cómo
+                  trabajas día a día.
                 </p>
                 <p>
                   Sin intermediarios ni equipos de ventas: trato 1:1, contigo desde la primera
