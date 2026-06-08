@@ -19,7 +19,7 @@ export default function ContactForm() {
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ ...data, _subject: "Nuevo mensaje desde PilotoApps" }),
+        body: JSON.stringify({ ...data, _subject: "Nuevo mensaje desde Forja" }),
       });
       if (!res.ok) throw new Error("bad status");
       setStatus("ok");

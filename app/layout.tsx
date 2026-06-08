@@ -19,7 +19,7 @@ const bricolage = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE + "/"),
-  title: "PilotoApps | Software a la medida para tu negocio",
+  title: "Forja | Software a la medida para tu negocio",
   description:
     "Desarrollo de software a la medida para PYMEs en República Dominicana: sistemas de citas, inventario, ventas y web profesional.",
   alternates: { canonical: "/" },
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_DO",
     url: SITE,
-    siteName: "PilotoApps",
-    title: "PilotoApps | Software a la medida para tu negocio",
+    siteName: "Forja",
+    title: "Forja | Software a la medida para tu negocio",
     description:
       "Sistemas de citas, inventario, ventas y web profesional para PYMEs en República Dominicana. Rápido, a tu medida y con trato directo.",
     images: [
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
         url: SITE + "/og.png",
         width: 1200,
         height: 630,
-        alt: "PilotoApps — Software a la medida para PYMEs en RD",
+        alt: "Forja — Software a la medida para PYMEs en RD",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PilotoApps | Software a la medida para tu negocio",
+    title: "Forja | Software a la medida para tu negocio",
     description:
       "Sistemas de citas, inventario, ventas y web profesional para PYMEs en República Dominicana.",
     images: [SITE + "/og.png"],
@@ -57,7 +57,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "PilotoApps",
+    name: "Forja",
     description:
       "Desarrollo de software a la medida para PYMEs en República Dominicana: sistemas de citas, inventario, ventas y web profesional.",
     url: SITE + "/",

@@ -1,6 +1,6 @@
 const WHATSAPP_URL =
   "https://wa.me/18495821328?text=" +
-  encodeURIComponent("Hola PilotoApps, quiero información sobre un sistema para mi negocio.");
+  encodeURIComponent("Hola Forja, quiero información sobre un sistema para mi negocio.");
 
 export default function WhatsAppFab() {
   return (

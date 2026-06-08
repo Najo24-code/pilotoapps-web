@@ -9,7 +9,7 @@ const EMAIL = "pilotoapps.dev@gmail.com";
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Quiero un sistema para mi negocio")}`;
 const WHATSAPP =
   "https://wa.me/18495821328?text=" +
-  encodeURIComponent("Hola PilotoApps, quiero información sobre un sistema para mi negocio.");
+  encodeURIComponent("Hola Forja, quiero información sobre un sistema para mi negocio.");
 
 const works = [
   {
@@ -206,7 +206,7 @@ export default function Home() {
                 tabIndex={i >= works.length ? -1 : undefined}
                 className="block w-[280px] shrink-0 transition-transform hover:-translate-y-1.5 sm:w-[320px]"
               >
-                <BrowserFrame src={w.img} alt={`Demo ${w.name} — PilotoApps`} />
+                <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
                 <p className="mt-3 text-sm text-slate-500">
                   <span className="text-brand">{w.kind}</span> · <span className="text-slate-300">{w.name}</span>
                 </p>
@@ -312,7 +312,7 @@ export default function Home() {
               <Reveal key={w.href} delay={(i % 2) * 0.08}>
                 <Link href={w.href} target="_blank" className="group block">
                   <div className="transition-transform duration-300 group-hover:-translate-y-1.5">
-                    <BrowserFrame src={w.img} alt={`Demo ${w.name} — PilotoApps`} />
+                    <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
                   </div>
                   <div className="mt-5 flex items-baseline gap-4 border-t border-white/10 pt-4">
                     <span className="font-display text-sm tabular-nums text-slate-600">{String(i + 1).padStart(2, "0")}</span>
@@ -402,14 +402,14 @@ export default function Home() {
               <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
                 <span className="tabular-nums text-slate-600">04</span>
                 <span className="h-px w-6 bg-white/15" />
-                <span className="text-brand">Detrás de PilotoApps</span>
+                <span className="text-brand">Detrás de Forja</span>
               </p>
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
                 Hablas directo con quien programa tu sistema.
               </h2>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate-400">
                 <p>
-                  PilotoApps es un estudio dominicano de desarrollo de software. Sin plantillas ni
+                  Forja es un estudio dominicano de desarrollo de software. Sin plantillas ni
                   intermediarios: construyo tu sistema desde cero, a la medida de tu PYME y de cómo
                   trabajas día a día.
                 </p>
@@ -429,7 +429,7 @@ export default function Home() {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-display text-lg font-bold text-white">PilotoApps</p>
+                  <p className="font-display text-lg font-bold text-white">Forja</p>
                   <p className="text-sm text-slate-400">Estudio de desarrollo de software · República Dominicana</p>
                 </div>
               </div>
@@ -677,14 +677,14 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
               </svg>
             </span>
-            <span className="text-lg font-bold text-white">PilotoApps</span>
+            <span className="text-lg font-bold text-white">Forja</span>
           </div>
           <p className="text-sm text-slate-500">Software a la medida para PYMEs · República Dominicana</p>
           <a href={MAILTO} className="text-sm text-slate-400 transition-colors hover:text-white">
             {EMAIL}
           </a>
         </div>
-        <p className="mt-8 text-center text-xs text-slate-600">© 2026 PilotoApps. Todos los derechos reservados.</p>
+        <p className="mt-8 text-center text-xs text-slate-600">© 2026 Forja. Todos los derechos reservados.</p>
       </footer>
 
       <WhatsAppFab />

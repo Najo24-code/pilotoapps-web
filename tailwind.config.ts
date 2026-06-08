@@ -8,15 +8,15 @@ const config: Config = {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-display)", "var(--font-inter)", "sans-serif"],
       },
-      // Firma de marca PilotoApps — un solo acento fuerte (lima eléctrica).
+      // Firma de marca Forja — brasa / hierro al rojo vivo (un solo acento incandescente).
       // Para cambiar la identidad, ajusta solo estos valores.
       colors: {
         brand: {
-          DEFAULT: "#34d399",
-          300: "#6ee7b7",
-          400: "#34d399",
-          500: "#10b981",
-          600: "#059669",
+          DEFAULT: "#ff3b1d",
+          300: "#ff6a4d",
+          400: "#ff3b1d",
+          500: "#e7240b",
+          600: "#bd1a06",
         },
       },
     },
