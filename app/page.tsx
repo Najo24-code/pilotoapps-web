@@ -143,7 +143,7 @@ export default function Home() {
           <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-12 lg:gap-12">
             <Reveal delay={0.1} className="lg:col-span-6">
               <p className="max-w-md text-lg leading-relaxed text-stone-400 md:text-xl">
-                Saca tu negocio del cuaderno y el Excel. Te construyo un sistema a la
+                Saca tu negocio del cuaderno y el Excel. Te construimos un sistema a la
                 medida que manejas completo desde el celular.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -151,8 +151,8 @@ export default function Home() {
                   href="#contacto"
                   className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-stone-950 transition-all hover:scale-[1.02] hover:bg-brand-300"
                 >
-                  Cuéntame tu caso
-                  <svg className="h-4 w-4 transition-transform group-hover:transtone-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  Cuéntanos tu caso
+                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </a>
@@ -174,7 +174,7 @@ export default function Home() {
 
             {/* Índice editorial — lo que construyo, como sumario de revista */}
             <Reveal delay={0.15} className="lg:col-span-6 lg:border-l lg:border-white/10 lg:pl-12">
-              <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.22em] text-stone-500">Lo que construyo</p>
+              <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.22em] text-stone-500">Lo que construimos</p>
               <ul className="divide-y divide-white/10">
                 {[
                   ["01", "Citas y reservas en línea"],
@@ -185,7 +185,7 @@ export default function Home() {
                   <li key={n} className="group flex items-baseline gap-5 py-4">
                     <span className="font-display text-sm font-bold tabular-nums text-brand">{n}</span>
                     <span className="text-lg text-stone-200 transition-colors group-hover:text-white md:text-xl">{t}</span>
-                    <svg className="ml-auto h-4 w-4 shrink-0 self-center text-stone-600 transition-all group-hover:transtone-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                    <svg className="ml-auto h-4 w-4 shrink-0 self-center text-stone-600 transition-all group-hover:translate-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
                   </li>
                 ))}
               </ul>
@@ -204,7 +204,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 aria-hidden={i >= works.length}
                 tabIndex={i >= works.length ? -1 : undefined}
-                className="block w-[280px] shrink-0 transition-transform hover:-transtone-y-1.5 sm:w-[320px]"
+                className="block w-[280px] shrink-0 transition-transform hover:-translate-y-1.5 sm:w-[320px]"
               >
                 <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
                 <p className="mt-3 text-sm text-stone-500">
@@ -311,7 +311,7 @@ export default function Home() {
             {works.map((w, i) => (
               <Reveal key={w.href} delay={(i % 2) * 0.08}>
                 <Link href={w.href} target="_blank" className="group block">
-                  <div className="transition-transform duration-300 group-hover:-transtone-y-1.5">
+                  <div className="transition-transform duration-300 group-hover:-translate-y-1.5">
                     <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
                   </div>
                   <div className="mt-5 flex items-baseline gap-4 border-t border-white/10 pt-4">
@@ -320,7 +320,7 @@ export default function Home() {
                       <p className="text-xs font-semibold uppercase tracking-widest text-brand">{w.kind}</p>
                       <h3 className="mt-1.5 font-display text-xl font-bold tracking-[-0.01em] text-white md:text-2xl">{w.name}</h3>
                     </div>
-                    <svg className="ml-auto h-5 w-5 shrink-0 self-center text-stone-600 transition-all group-hover:transtone-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <svg className="ml-auto h-5 w-5 shrink-0 self-center text-stone-600 transition-all group-hover:translate-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
                   </div>
@@ -378,9 +378,9 @@ export default function Home() {
                 <div className="absolute -inset-4 -z-10 rounded-[3rem] bg-brand/10 blur-3xl" />
                 <div className="flex justify-center gap-3 sm:gap-4">
                   {[
-                    { src: "/shots/sua-dash.webp", cls: "transtone-y-4" },
-                    { src: "/shots/sua-cobros.webp", cls: "-transtone-y-2 hidden sm:block" },
-                    { src: "/shots/sua-clientes.webp", cls: "transtone-y-6 hidden md:block" },
+                    { src: "/shots/sua-dash.webp", cls: "translate-y-4" },
+                    { src: "/shots/sua-cobros.webp", cls: "-translate-y-2 hidden sm:block" },
+                    { src: "/shots/sua-clientes.webp", cls: "translate-y-6 hidden md:block" },
                   ].map((p) => (
                     <div key={p.src} className={`w-40 overflow-hidden rounded-[1.75rem] border border-white/10 bg-stone-900 shadow-2xl shadow-black/50 sm:w-44 ${p.cls}`}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -405,17 +405,17 @@ export default function Home() {
                 <span className="text-brand">Detrás de Forja</span>
               </p>
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
-                Hablas directo con quien programa tu sistema.
+                Hablas directo con quienes construyen tu sistema.
               </h2>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-stone-400">
                 <p>
                   Forja es un estudio dominicano de desarrollo de software. Sin plantillas ni
-                  intermediarios: construyo tu sistema desde cero, a la medida de tu PYME y de cómo
+                  intermediarios: construimos tu sistema desde cero, a la medida de tu PYME y de cómo
                   trabajas día a día.
                 </p>
                 <p>
-                  Trabajas conmigo de principio a fin: desde la primera conversación hasta que el
-                  sistema queda funcionando en tu negocio. Lo entrego andando, te enseño a usarlo y{" "}
+                  Trabajas con nosotros de principio a fin: desde la primera conversación hasta que el
+                  sistema queda funcionando en tu negocio. Lo entregamos andando, te enseñamos a usarlo y{" "}
                   <span className="text-stone-200">quedas con todo en tus manos</span> — sin depender de nadie.
                 </p>
               </div>
@@ -438,7 +438,7 @@ export default function Home() {
                   "Trato directo 1:1, sin intermediarios ni vendedores",
                   "Tecnología moderna, a la escala de tu PYME",
                   "El sistema, el código y los datos son tuyos",
-                  "Te lo entrego funcionando y te capacito para usarlo",
+                  "Te lo entregamos funcionando y te capacitamos para usarlo",
                 ].map((h) => (
                   <li key={h} className="flex items-start gap-3 py-3.5 text-stone-300">
                     <svg className="mt-1 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
@@ -449,7 +449,7 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-8">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-stone-500">Stack con el que trabajo</p>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-stone-500">Stack con el que trabajamos</p>
                 <div className="flex flex-wrap gap-2.5">
                   {stack.map((s) => (
                     <span key={s} className="rounded-lg border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm font-medium text-stone-200">
@@ -470,7 +470,7 @@ export default function Home() {
             <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
               <span className="tabular-nums text-stone-600">05</span>
               <span className="h-px w-6 bg-white/15" />
-              <span className="text-brand">Cómo trabajo</span>
+              <span className="text-brand">Cómo trabajamos</span>
             </p>
             <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               De la idea a tu sistema, sin complicaciones.
@@ -478,14 +478,14 @@ export default function Home() {
           </Reveal>
           <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { n: "01", t: "Conversamos", d: "Entiendo tu negocio y qué problema resolver. Te doy alcance y precio claro." },
-              { n: "02", t: "Diseño", d: "Defino cómo se verá y funcionará, ajustado a tu forma de trabajar." },
-              { n: "03", t: "Construyo", d: "Programo tu sistema y te mantengo al tanto del avance en cada paso." },
-              { n: "04", t: "Lanzo y acompaño", d: "Lo dejo funcionando, te capacito y te doy soporte continuo." },
+              { n: "01", t: "Conversamos", d: "Entendemos tu negocio y qué problema resolver. Te damos alcance y precio claro." },
+              { n: "02", t: "Diseñamos", d: "Definimos cómo se verá y funcionará, ajustado a tu forma de trabajar." },
+              { n: "03", t: "Construimos", d: "Programamos tu sistema y te mantenemos al tanto del avance en cada paso." },
+              { n: "04", t: "Lanzamos y acompañamos", d: "Lo dejamos funcionando, te capacitamos y te damos soporte continuo." },
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
                 <div className="group relative border-t border-white/10 pt-8">
-                  <span className="absolute left-0 top-0 h-0.5 w-12 -transtone-y-px bg-brand transition-all duration-300 group-hover:w-20" />
+                  <span className="absolute left-0 top-0 h-0.5 w-12 -translate-y-px bg-brand transition-all duration-300 group-hover:w-20" />
                   <div className="font-display text-6xl font-bold tracking-tight text-white/15">{s.n}</div>
                   <h3 className="mb-2 mt-5 font-display text-xl font-semibold text-white">{s.t}</h3>
                   <p className="leading-relaxed text-stone-400">{s.d}</p>
@@ -637,7 +637,7 @@ export default function Home() {
                 ¿Listo para ordenar tu negocio?
               </h2>
               <p className="mt-6 max-w-md text-lg text-stone-400 md:text-xl">
-                Cada proyecto es a la medida. Cuéntame tu caso y te preparo una propuesta con alcance y
+                Cada proyecto es a la medida. Cuéntanos tu caso y te preparamos una propuesta con alcance y
                 cotización personalizada. Sin compromiso.
               </p>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -661,7 +661,7 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={0.1} className="lg:border-l lg:border-white/10 lg:pl-12">
-              <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-stone-500">O escríbeme aquí</p>
+              <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-stone-500">O escríbenos aquí</p>
               <ContactForm />
             </Reveal>
           </div>

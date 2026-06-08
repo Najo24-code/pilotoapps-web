@@ -38,7 +38,7 @@ export default function ContactForm() {
           </svg>
         </span>
         <h3 className="mb-2 text-2xl font-bold text-white">¡Mensaje enviado!</h3>
-        <p className="text-stone-300">Te respondo lo antes posible con una propuesta.</p>
+        <p className="text-stone-300">Te respondemos lo antes posible con una propuesta.</p>
       </div>
     );
   }
@@ -61,7 +61,7 @@ export default function ContactForm() {
           name="message"
           rows={4}
           required
-          placeholder="Cuéntame brevemente sobre tu negocio y qué quieres resolver..."
+          placeholder="Cuéntanos brevemente sobre tu negocio y qué quieres resolver..."
           className={inputClass}
         />
       </div>
@@ -74,7 +74,7 @@ export default function ContactForm() {
       </button>
       {status === "error" && (
         <p className="text-center text-sm text-red-400">
-          No se pudo enviar. Escríbeme directo por WhatsApp o correo.
+          No se pudo enviar. Escríbenos directo por WhatsApp o correo.
         </p>
       )}
     </form>
