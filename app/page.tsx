@@ -302,8 +302,8 @@ export default function Home() {
               Mira lo que puedo construir para ti.
             </h2>
             <p className="mt-6 text-lg text-slate-400 md:text-xl">
-              Proyectos de ejemplo, funcionales y navegables. Así se ve y funciona lo que puedo
-              construir para tu negocio. Ábrelos y pruébalos.
+              Proyectos de ejemplo, funcionales y navegables. Ábrelos y pruébalos: reserva una
+              cita, mira un menú, navega un catálogo.
             </p>
           </Reveal>
 
@@ -414,9 +414,9 @@ export default function Home() {
                   trabajas día a día.
                 </p>
                 <p>
-                  Sin intermediarios ni equipos de ventas: trato 1:1, contigo desde la primera
-                  conversación hasta la entrega. <span className="text-slate-200">El sistema, el código y los datos son tuyos.</span>{" "}
-                  Te lo entrego funcionando y te explico cómo usarlo.
+                  Trabajas conmigo de principio a fin: desde la primera conversación hasta que el
+                  sistema queda funcionando en tu negocio. Lo entrego andando, te enseño a usarlo y{" "}
+                  <span className="text-slate-200">quedas con todo en tus manos</span> — sin depender de nadie.
                 </p>
               </div>
             </Reveal>
@@ -436,7 +436,7 @@ export default function Home() {
               <ul className="mt-8 divide-y divide-white/10 border-t border-white/10">
                 {[
                   "Trato directo 1:1, sin intermediarios ni vendedores",
-                  "Tecnología moderna, dimensionada para tu PYME",
+                  "Tecnología moderna, a la escala de tu PYME",
                   "El sistema, el código y los datos son tuyos",
                   "Te lo entrego funcionando y te capacito para usarlo",
                 ].map((h) => (
