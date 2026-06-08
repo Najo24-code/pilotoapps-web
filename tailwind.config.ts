@@ -12,11 +12,11 @@ const config: Config = {
       // Para cambiar la identidad, ajusta solo estos valores.
       colors: {
         brand: {
-          DEFAULT: "#ff3b1d",
-          300: "#ff6a4d",
-          400: "#ff3b1d",
-          500: "#e7240b",
-          600: "#bd1a06",
+          DEFAULT: "#e11d2a",
+          300: "#f0434e",
+          400: "#e11d2a",
+          500: "#c4151f",
+          600: "#9f1019",
         },
       },
     },

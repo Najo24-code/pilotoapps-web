@@ -11,12 +11,12 @@ html {
 }
 
 body {
-  background: #020617;
+  background: #09090b;
 }
 
 ::selection {
-  background: #ff3b1d;
-  color: #020617;
+  background: #e11d2a;
+  color: #09090b;
 }
 
 /* Foco accesible y elegante (teclado) */
@@ -26,7 +26,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 summary:focus-visible {
-  outline: 2px solid #ff3b1d;
+  outline: 2px solid #e11d2a;
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -37,12 +37,12 @@ summary:focus-visible {
   background-size: 38px 38px;
 }
 
-/* Malla de gradiente — atmósfera del hero (brasa incandescente, muy sutil) */
+/* Malla de gradiente — atmósfera del hero (brasa roja, muy sutil) */
 .mesh {
   background:
-    radial-gradient(60% 55% at 18% 12%, rgba(255, 59, 29, 0.16), transparent 60%),
-    radial-gradient(50% 50% at 88% 22%, rgba(255, 106, 40, 0.11), transparent 55%),
-    radial-gradient(70% 60% at 50% 100%, rgba(255, 59, 29, 0.08), transparent 60%);
+    radial-gradient(60% 55% at 18% 12%, rgba(225, 29, 42, 0.13), transparent 60%),
+    radial-gradient(50% 50% at 88% 22%, rgba(225, 29, 42, 0.07), transparent 55%),
+    radial-gradient(70% 60% at 50% 100%, rgba(225, 29, 42, 0.05), transparent 60%);
 }
 
 /* Grano fino — le da cuerpo al fondo (no se nota conscientemente) */

@@ -16,11 +16,11 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mt-3 flex h-16 items-center justify-between rounded-2xl border border-white/10 bg-slate-900/60 px-4 backdrop-blur-xl">
+        <div className="mt-3 flex h-16 items-center justify-between rounded-2xl border border-white/10 bg-zinc-900/60 px-4 backdrop-blur-xl">
           <a href="#inicio" className="flex items-center gap-2.5">
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand">
               <svg
-                className="h-5 w-5 text-slate-950"
+                className="h-5 w-5 text-zinc-950"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={2.2}
@@ -36,7 +36,7 @@ export default function Navbar() {
             <span className="font-display text-lg font-bold tracking-tight text-white">Forja</span>
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-400 md:flex">
+          <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-400 md:flex">
             {LINKS.map((l) => (
               <a key={l.href} href={l.href} className="transition-colors hover:text-white">
                 {l.label}
@@ -46,14 +46,14 @@ export default function Navbar() {
 
           <a
             href="#contacto"
-            className="hidden items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-brand-300 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-brand-300 sm:inline-flex"
           >
             Hablemos
           </a>
 
           <button
             onClick={() => setOpen((v) => !v)}
-            className="-mr-2 p-2 text-slate-200 md:hidden"
+            className="-mr-2 p-2 text-zinc-200 md:hidden"
             aria-label="Menú"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
@@ -64,13 +64,13 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="mx-4 mt-2 space-y-1 rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-3 backdrop-blur-xl md:hidden">
+        <div className="mx-4 mt-2 space-y-1 rounded-2xl border border-white/10 bg-zinc-900/90 px-4 py-3 backdrop-blur-xl md:hidden">
           {LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block py-2 font-medium text-slate-300"
+              className="block py-2 font-medium text-zinc-300"
             >
               {l.label}
             </a>
