@@ -13,6 +13,14 @@ const WHATSAPP =
 
 const works = [
   {
+    href: "/demos/panel",
+    img: "/shots/panel.webp",
+    kind: "Sistema de gestión interno",
+    name: "Panel de negocio",
+    desc: "El software por dentro: caja, ventas, citas e inventario de tu negocio en un solo panel y en tiempo real.",
+    features: ["Caja y ventas", "Citas del día", "Control de stock", "Reportes"],
+  },
+  {
     href: "/demos/clinica",
     img: "/shots/clinica.webp",
     kind: "Sistema de citas en línea",
