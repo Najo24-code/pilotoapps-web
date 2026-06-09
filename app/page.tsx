@@ -107,7 +107,7 @@ export default function Home() {
       <Navbar />
 
       {/* HERO */}
-      <section id="inicio" className="grain relative overflow-hidden pt-28 pb-10 md:pt-32">
+      <section id="inicio" className="grain relative overflow-hidden pt-24 pb-10 md:pt-28">
         <div className="mesh absolute inset-0" />
         <div className="dotgrid absolute inset-0 opacity-25" />
         <div className="absolute -top-44 right-[-8rem] h-[680px] w-[680px] rounded-full bg-brand/10 blur-[150px]" />
@@ -127,7 +127,7 @@ export default function Home() {
 
           {/* Titular gigante — la tipografía es la protagonista */}
           <Reveal delay={0.05}>
-            <h1 className="mt-10 font-display text-[3.5rem] font-bold leading-[0.86] tracking-[-0.045em] text-gleam sm:text-7xl lg:text-8xl xl:text-[8rem]">
+            <h1 className="mt-7 font-display text-[3.25rem] font-bold leading-[0.88] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl xl:text-[6.75rem]">
               Convierte tu<br />
               negocio en un<br />
               <span className="text-brand">sistema.</span>
@@ -135,7 +135,7 @@ export default function Home() {
           </Reveal>
 
           {/* Fila inferior — subhead + CTAs (izq) · índice de capacidades (der) */}
-          <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-12 lg:gap-12">
+          <div className="mt-10 grid gap-10 border-t border-white/10 pt-8 lg:grid-cols-12 lg:gap-12">
             <Reveal delay={0.1} className="lg:col-span-6">
               <p className="max-w-md text-lg leading-relaxed text-stone-400 md:text-xl">
                 Saca tu negocio del cuaderno y el Excel. Te construimos un sistema a la
