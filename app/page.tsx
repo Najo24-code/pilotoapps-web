@@ -80,6 +80,21 @@ const works = [
 
 const stack = ["React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL"];
 
+// Chispas de la fragua: posición, tamaño y ritmo variados para que suban naturales.
+const EMBERS = [
+  { left: "8%", top: "64%", s: "3px", dur: "7s", delay: "0s" },
+  { left: "16%", top: "58%", s: "2px", dur: "8.5s", delay: "1.4s" },
+  { left: "24%", top: "68%", s: "4px", dur: "6.2s", delay: "2.6s" },
+  { left: "33%", top: "55%", s: "2px", dur: "9s", delay: "0.8s" },
+  { left: "41%", top: "62%", s: "3px", dur: "7.4s", delay: "3.4s" },
+  { left: "48%", top: "70%", s: "2px", dur: "8s", delay: "1.9s" },
+  { left: "60%", top: "60%", s: "3px", dur: "8.8s", delay: "0.4s" },
+  { left: "68%", top: "52%", s: "2px", dur: "7.8s", delay: "2.2s" },
+  { left: "76%", top: "66%", s: "4px", dur: "6.6s", delay: "4.1s" },
+  { left: "84%", top: "57%", s: "2px", dur: "9.2s", delay: "1.1s" },
+  { left: "90%", top: "63%", s: "3px", dur: "7.1s", delay: "3s" },
+];
+
 function BrowserFrame({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="browser overflow-hidden rounded-2xl border border-white/10 bg-stone-900">
@@ -109,8 +124,26 @@ export default function Home() {
       {/* HERO */}
       <section id="inicio" className="grain relative overflow-hidden pt-24 pb-10 md:pt-28">
         <div className="mesh absolute inset-0" />
+        <div className="forge-glow absolute inset-0" />
         <div className="dotgrid absolute inset-0 opacity-25" />
         <div className="absolute -top-44 right-[-8rem] h-[680px] w-[680px] rounded-full bg-brand/10 blur-[150px]" />
+        {/* Chispas de la fragua — suben como brasas, llenan el aire del hero */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          {EMBERS.map((e, i) => (
+            <span
+              key={i}
+              className="ember"
+              style={{
+                left: e.left,
+                top: e.top,
+                width: e.s,
+                height: e.s,
+                ["--dur" as string]: e.dur,
+                ["--delay" as string]: e.delay,
+              }}
+            />
+          ))}
+        </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-stone-950 to-transparent" />
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -130,7 +163,7 @@ export default function Home() {
             <h1 className="mt-7 font-display text-[3.25rem] font-bold leading-[0.88] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl xl:text-[6.75rem]">
               Convierte tu<br />
               negocio en un<br />
-              <span className="text-brand">sistema.</span>
+              <span className="ember-text">sistema.</span>
             </h1>
           </Reveal>
 
@@ -224,10 +257,9 @@ export default function Home() {
               Software a tu medida, no plantillas.
             </h2>
           </Reveal>
-          <div className="mt-14 border-t border-white/10">
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {[
               {
-                n: "i",
                 t: "Sistemas de gestión",
                 d: "Citas, inventario, ventas y clientes en un panel claro, en tiempo real desde cualquier dispositivo.",
                 points: ["Agenda y reservas", "Inventario y stock", "Ventas y clientes", "Reportes en vivo"],
@@ -236,7 +268,6 @@ export default function Home() {
                 ),
               },
               {
-                n: "ii",
                 t: "Web profesional",
                 d: "Una web rápida y moderna para que tus clientes te encuentren, conectada a tu sistema.",
                 points: ["Diseño a tu medida", "Veloz y en el celular", "Optimizada para Google", "Formularios que captan"],
@@ -245,7 +276,6 @@ export default function Home() {
                 ),
               },
               {
-                n: "iii",
                 t: "Automatización",
                 d: "Recordatorios, reportes y tareas repetitivas en piloto automático — menos trabajo manual, menos errores.",
                 points: ["Recordatorios por WhatsApp", "Reportes que llegan solos", "Alertas de stock bajo", "Menos tareas a mano"],
@@ -253,29 +283,23 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
                 ),
               },
-            ].map((c) => (
-              <Reveal key={c.t}>
-                <div className="group grid gap-6 border-b border-white/10 py-10 transition-colors lg:grid-cols-12 lg:gap-8 lg:py-12">
-                  {/* Nombre del servicio — la tipografía manda */}
-                  <div className="lg:col-span-5">
-                    <span className="mb-5 font-display text-sm tabular-nums text-stone-600">{c.n}</span>
-                    <div className="mt-4 flex items-start gap-4">
-                      <span className="mt-1.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand ring-1 ring-inset ring-brand/20 transition-colors group-hover:bg-brand/15">
-                        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.6} stroke="currentColor">{c.icon}</svg>
-                      </span>
-                      <h3 className="font-display text-3xl font-bold tracking-[-0.02em] text-white md:text-4xl">{c.t}</h3>
-                    </div>
+            ].map((c, i) => (
+              <Reveal key={c.t} delay={i * 0.08}>
+                <div className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[.02] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:bg-white/[.04]">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand ring-1 ring-inset ring-brand/20 transition-colors group-hover:bg-brand group-hover:text-stone-950 group-hover:ring-brand">
+                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor">{c.icon}</svg>
+                    </span>
+                    <span className="font-display text-sm tabular-nums text-stone-600">0{i + 1}</span>
                   </div>
-                  {/* Descripción + tags */}
-                  <div className="lg:col-span-7 lg:pt-1">
-                    <p className="max-w-2xl text-lg leading-relaxed text-stone-400">{c.d}</p>
-                    <div className="mt-6 flex flex-wrap gap-2.5">
-                      {c.points.map((p) => (
-                        <span key={p} className="rounded-full border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm text-stone-300 transition-colors group-hover:border-brand/25 group-hover:text-stone-200">
-                          {p}
-                        </span>
-                      ))}
-                    </div>
+                  <h3 className="mt-6 font-display text-2xl font-bold tracking-[-0.01em] text-white">{c.t}</h3>
+                  <p className="mt-3 flex-1 leading-relaxed text-stone-400">{c.d}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {c.points.map((p) => (
+                      <span key={p} className="rounded-full border border-white/10 bg-white/[.03] px-3 py-1 text-xs text-stone-300 transition-colors group-hover:border-brand/25 group-hover:text-stone-200">
+                        {p}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </Reveal>
@@ -302,15 +326,52 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2">
-            {works.map((w, i) => (
-              <Reveal key={w.href} delay={(i % 2) * 0.08}>
+          {/* Demo destacada — la primera, en grande con panel de texto */}
+          <Reveal className="mt-14">
+            <Link href={works[0].href} target="_blank" className="group grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+              <div className="relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5">
+                <BrowserFrame src={works[0].img} alt={`Demo ${works[0].name} — Forja`} />
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-950/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-stone-950 shadow-lg">
+                    Abrir demo
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand">Demo destacada</span>
+                <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-brand">{works[0].kind}</p>
+                <h3 className="mt-2 font-display text-3xl font-bold tracking-[-0.01em] text-white md:text-4xl">{works[0].name}</h3>
+                <p className="mt-4 max-w-md text-lg leading-relaxed text-stone-400">{works[0].desc}</p>
+                <div className="mt-7 flex flex-wrap gap-2">
+                  {works[0].features.map((f) => (
+                    <span key={f} className="rounded-full border border-white/10 bg-white/[.03] px-3 py-1 text-xs text-stone-300">{f}</span>
+                  ))}
+                </div>
+                <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-colors group-hover:border-brand group-hover:bg-brand group-hover:text-stone-950">
+                  Abrir demo
+                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                </span>
+              </div>
+            </Link>
+          </Reveal>
+
+          {/* Resto de demos */}
+          <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2">
+            {works.slice(1).map((w, idx) => (
+              <Reveal key={w.href} delay={(idx % 2) * 0.08} className={idx === works.length - 2 ? "sm:col-span-2" : ""}>
                 <Link href={w.href} target="_blank" className="group block">
-                  <div className="transition-transform duration-300 group-hover:-translate-y-1.5">
+                  <div className="relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5">
                     <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
+                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-950/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-stone-950 shadow-lg">
+                        Abrir demo
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                      </span>
+                    </div>
                   </div>
                   <div className="mt-5 flex items-baseline gap-4 border-t border-white/10 pt-4">
-                    <span className="font-display text-sm tabular-nums text-stone-600">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-display text-sm tabular-nums text-stone-600">{String(idx + 2).padStart(2, "0")}</span>
                     <div className="min-w-0">
                       <p className="text-xs font-semibold uppercase tracking-widest text-brand">{w.kind}</p>
                       <h3 className="mt-1.5 font-display text-xl font-bold tracking-[-0.01em] text-white md:text-2xl">{w.name}</h3>
