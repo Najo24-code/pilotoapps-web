@@ -94,10 +94,10 @@ const works = [
   },
 ];
 
-// Demos de la rejilla (todas menos la destacada). La última ocupa el ancho
-// completo SOLO cuando el total es impar, para no dejar una tarjeta huérfana.
-const GRID_DEMOS = works.slice(1);
-const GRID_LAST_SPANS = GRID_DEMOS.length % 2 === 1;
+// Los dos primeros (los sistemas de software) van destacados arriba en grande;
+// el resto (las webs) en una rejilla pareja de 2 columnas (8 = 4 filas limpias).
+const FEATURED = works.slice(0, 2);
+const GRID_DEMOS = works.slice(2);
 
 const stack = ["React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL"];
 
@@ -375,40 +375,44 @@ export default function Home() {
             </p>
           </Reveal>
 
-          {/* Demo destacada — la primera, en grande con panel de texto */}
-          <Reveal className="mt-14">
-            <Link href={works[0].href} target="_blank" className="group grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-              <div className="relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5">
-                <BrowserFrame src={works[0].img} alt={`Demo ${works[0].name} — Forja`} />
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-950/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-stone-950 shadow-lg">
-                    Abrir demo
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
-                  </span>
-                </div>
-              </div>
-              <div>
-                <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand">Demo destacada</span>
-                <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-brand">{works[0].kind}</p>
-                <h3 className="mt-2 font-display text-3xl font-bold tracking-[-0.01em] text-white md:text-4xl">{works[0].name}</h3>
-                <p className="mt-4 max-w-md text-lg leading-relaxed text-stone-400">{works[0].desc}</p>
-                <div className="mt-7 flex flex-wrap gap-2">
-                  {works[0].features.map((f) => (
-                    <span key={f} className="rounded-full border border-white/10 bg-white/[.03] px-3 py-1 text-xs text-stone-300">{f}</span>
-                  ))}
-                </div>
-                <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-colors group-hover:border-brand group-hover:bg-brand group-hover:text-stone-950">
-                  Abrir demo
-                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
-                </span>
-              </div>
-            </Link>
-          </Reveal>
+          {/* Demos destacadas — los dos sistemas de software, en grande */}
+          <div className="mt-14 flex flex-col gap-14 lg:gap-20">
+            {FEATURED.map((w, i) => (
+              <Reveal key={w.href}>
+                <Link href={w.href} target="_blank" className="group grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                  <div className={`relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5 ${i === 1 ? "lg:order-2" : ""}`}>
+                    <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
+                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-950/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-stone-950 shadow-lg">
+                        Abrir demo
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div className={i === 1 ? "lg:order-1" : ""}>
+                    <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand">Sistema a la medida</span>
+                    <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-brand">{w.kind}</p>
+                    <h3 className="mt-2 font-display text-3xl font-bold tracking-[-0.01em] text-white md:text-4xl">{w.name}</h3>
+                    <p className="mt-4 max-w-md text-lg leading-relaxed text-stone-400">{w.desc}</p>
+                    <div className="mt-7 flex flex-wrap gap-2">
+                      {w.features.map((f) => (
+                        <span key={f} className="rounded-full border border-white/10 bg-white/[.03] px-3 py-1 text-xs text-stone-300">{f}</span>
+                      ))}
+                    </div>
+                    <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-colors group-hover:border-brand group-hover:bg-brand group-hover:text-stone-950">
+                      Abrir demo
+                      <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
 
           {/* Resto de demos */}
           <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2">
             {GRID_DEMOS.map((w, idx) => (
-              <Reveal key={w.href} delay={(idx % 2) * 0.08} className={GRID_LAST_SPANS && idx === GRID_DEMOS.length - 1 ? "sm:col-span-2" : ""}>
+              <Reveal key={w.href} delay={(idx % 2) * 0.08}>
                 <Link href={w.href} target="_blank" className="group block">
                   <div className="relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5">
                     <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
@@ -420,7 +424,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="mt-5 flex items-baseline gap-4 border-t border-white/10 pt-4">
-                    <span className="font-display text-sm tabular-nums text-stone-600">{String(idx + 2).padStart(2, "0")}</span>
+                    <span className="font-display text-sm tabular-nums text-stone-600">{String(idx + 3).padStart(2, "0")}</span>
                     <div className="min-w-0">
                       <p className="text-xs font-semibold uppercase tracking-widest text-brand">{w.kind}</p>
                       <h3 className="mt-1.5 font-display text-xl font-bold tracking-[-0.01em] text-white md:text-2xl">{w.name}</h3>
