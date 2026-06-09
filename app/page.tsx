@@ -256,8 +256,12 @@ export default function Home() {
             <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
               Software a tu medida, no plantillas.
             </h2>
+            <p className="mt-6 text-lg text-stone-400 md:text-xl">
+              Construimos cada pieza pensando en cómo trabaja tu negocio: desde el sistema interno
+              hasta la web que te trae clientes, todo conectado y funcionando junto.
+            </p>
           </Reveal>
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 t: "Sistemas de gestión",
@@ -281,6 +285,30 @@ export default function Home() {
                 points: ["Recordatorios por WhatsApp", "Reportes que llegan solos", "Alertas de stock bajo", "Menos tareas a mano"],
                 icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                ),
+              },
+              {
+                t: "Reservas y agenda online",
+                d: "Tus clientes reservan solos desde el celular, con confirmación y recordatorios que reducen las ausencias.",
+                points: ["Agenda 24/7", "Confirmación automática", "Menos ausencias", "Sincronizada con tu equipo"],
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                ),
+              },
+              {
+                t: "Integraciones",
+                d: "Conectamos tu sistema con las herramientas que ya usas, para que todo trabaje en un solo lugar.",
+                points: ["WhatsApp", "Cobros y pagos", "Google y mapas", "Facturación"],
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                ),
+              },
+              {
+                t: "Soporte y acompañamiento",
+                d: "No te dejamos solo: mantenimiento, mejoras continuas y capacitación para que tu equipo lo aproveche al máximo.",
+                points: ["Mantenimiento", "Mejoras continuas", "Capacitación", "Trato directo 1:1"],
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
                 ),
               },
             ].map((c, i) => (
