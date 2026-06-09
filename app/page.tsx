@@ -21,6 +21,22 @@ const works = [
     features: ["Caja y ventas", "Citas del día", "Control de stock", "Reportes"],
   },
   {
+    href: "/demos/cobros",
+    img: "/shots/cobros.webp",
+    kind: "Sistema de cobros y préstamos",
+    name: "Cobros y préstamos",
+    desc: "La jornada de cobro bajo control: cartera, cuotas del día, registro de pagos y mora en un solo lugar.",
+    features: ["Cuotas del día", "Registro de pagos", "Control de mora", "Reportes"],
+  },
+  {
+    href: "/demos/pos",
+    img: "/shots/pos.webp",
+    kind: "Punto de venta (caja)",
+    name: "Caja / Punto de venta",
+    desc: "Terminal de venta táctil: arma el ticket, cobra en efectivo, tarjeta o transferencia y descuenta del inventario.",
+    features: ["Venta táctil", "ITBIS automático", "Varios métodos de pago", "Cierre de caja"],
+  },
+  {
     href: "/demos/clinica",
     img: "/shots/clinica.webp",
     kind: "Sistema de citas en línea",
@@ -84,15 +100,12 @@ const works = [
     desc: "Web técnica que genera confianza, con servicios, presupuesto sin sorpresas y solicitud de cita.",
     features: ["Solicitud de cita", "Servicios y precios", "Garantías claras", "Contacto directo"],
   },
-  {
-    href: "/demos/cobros",
-    img: "/shots/cobros.webp",
-    kind: "Sistema de cobros y préstamos",
-    name: "Cobros y préstamos",
-    desc: "La jornada de cobro bajo control: cartera, cuotas del día, pagos y mora en un solo panel.",
-    features: ["Cuotas del día", "Registro de pagos", "Control de mora", "Reportes"],
-  },
 ];
+
+// Demos de la rejilla (todas menos la destacada). La última ocupa el ancho
+// completo SOLO cuando el total es impar, para no dejar una tarjeta huérfana.
+const GRID_DEMOS = works.slice(1);
+const GRID_LAST_SPANS = GRID_DEMOS.length % 2 === 1;
 
 const stack = ["React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL"];
 
@@ -402,8 +415,8 @@ export default function Home() {
 
           {/* Resto de demos */}
           <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2">
-            {works.slice(1).map((w, idx) => (
-              <Reveal key={w.href} delay={(idx % 2) * 0.08} className={idx === works.length - 2 ? "sm:col-span-2" : ""}>
+            {GRID_DEMOS.map((w, idx) => (
+              <Reveal key={w.href} delay={(idx % 2) * 0.08} className={GRID_LAST_SPANS && idx === GRID_DEMOS.length - 1 ? "sm:col-span-2" : ""}>
                 <Link href={w.href} target="_blank" className="group block">
                   <div className="relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5">
                     <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
