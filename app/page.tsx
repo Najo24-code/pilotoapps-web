@@ -84,6 +84,14 @@ const works = [
     desc: "Web técnica que genera confianza, con servicios, presupuesto sin sorpresas y solicitud de cita.",
     features: ["Solicitud de cita", "Servicios y precios", "Garantías claras", "Contacto directo"],
   },
+  {
+    href: "/demos/cobros",
+    img: "/shots/cobros.webp",
+    kind: "Sistema de cobros y préstamos",
+    name: "Cobros y préstamos",
+    desc: "La jornada de cobro bajo control: cartera, cuotas del día, pagos y mora en un solo panel.",
+    features: ["Cuotas del día", "Registro de pagos", "Control de mora", "Reportes"],
+  },
 ];
 
 const stack = ["React", "Next.js", "Node.js", "Python", "FastAPI", "PostgreSQL"];
@@ -357,8 +365,8 @@ export default function Home() {
               Mira lo que podemos construir para ti.
             </h2>
             <p className="mt-6 text-lg text-stone-400 md:text-xl">
-              Proyectos de ejemplo, funcionales y navegables. Ábrelos y pruébalos: reserva una
-              cita, mira un menú, navega un catálogo.
+              Proyectos de ejemplo, funcionales y navegables. Ábrelos y pruébalos: opera un
+              panel, reserva una cita, navega un catálogo.
             </p>
           </Reveal>
 
