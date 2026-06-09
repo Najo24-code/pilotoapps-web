@@ -21,14 +21,6 @@ const works = [
     features: ["Caja y ventas", "Citas del día", "Control de stock", "Reportes"],
   },
   {
-    href: "/demos/cobros",
-    img: "/shots/cobros.webp",
-    kind: "Sistema de cobros y préstamos",
-    name: "Cobros y préstamos",
-    desc: "La jornada de cobro bajo control: cartera, cuotas del día, registro de pagos y mora en un solo lugar.",
-    features: ["Cuotas del día", "Registro de pagos", "Control de mora", "Reportes"],
-  },
-  {
     href: "/demos/pos",
     img: "/shots/pos.webp",
     kind: "Punto de venta (caja)",
