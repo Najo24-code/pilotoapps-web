@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Navbar from "./components/Navbar";
+import Navbar, { ForjaWord } from "./components/Navbar";
 import Reveal from "./components/Reveal";
 import ContactForm from "./components/ContactForm";
 import WhatsAppFab from "./components/WhatsAppFab";
@@ -114,20 +114,15 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-stone-950 to-transparent" />
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          {/* Masthead — cabecera tipo revista */}
+          {/* Eyebrow — una sola línea, integrada (sin segunda barra) */}
           <Reveal>
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-stone-400 sm:text-xs">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand" />
-                </span>
-                Desarrollo de software a la medida
+            <span className="inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-stone-400 sm:text-xs">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand" />
               </span>
-              <span className="hidden text-xs font-medium uppercase tracking-[0.22em] text-stone-500 sm:inline">
-                Santo Domingo · RD
-              </span>
-            </div>
+              Estudio de software · Santo Domingo, RD
+            </span>
           </Reveal>
 
           {/* Titular gigante — la tipografía es la protagonista */}
@@ -422,16 +417,9 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.1} className="lg:col-span-6 lg:border-l lg:border-white/10 lg:pl-12">
-              <div className="flex items-center gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand">
-                  <svg className="h-6 w-6 text-stone-950" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-                  </svg>
-                </span>
-                <div>
-                  <p className="font-display text-lg font-bold text-white">Forja</p>
-                  <p className="text-sm text-stone-400">Estudio de desarrollo de software · República Dominicana</p>
-                </div>
+              <div>
+                <ForjaWord className="text-2xl" />
+                <p className="mt-1.5 text-sm text-stone-400">Estudio de desarrollo de software · República Dominicana</p>
               </div>
               <ul className="mt-8 divide-y divide-white/10 border-t border-white/10">
                 {[
@@ -671,14 +659,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-12">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 sm:px-6 md:flex-row lg:px-8">
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand">
-              <svg className="h-5 w-5 text-stone-950" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-              </svg>
-            </span>
-            <span className="text-lg font-bold text-white">Forja</span>
-          </div>
+          <ForjaWord className="text-xl" />
           <p className="text-sm text-stone-500">Software a la medida para PYMEs · República Dominicana</p>
           <a href={MAILTO} className="text-sm text-stone-400 transition-colors hover:text-white">
             {EMAIL}
