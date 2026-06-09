@@ -225,7 +225,7 @@ export default function Home() {
         <Reveal delay={0.2} className="marquee-mask relative mt-12 md:mt-16">
           <div className="marquee-track flex w-max gap-5">
             {[...works, ...works].map((w, i) => (
-              <a
+              <Link
                 key={i}
                 href={w.href}
                 target="_blank"
@@ -238,7 +238,7 @@ export default function Home() {
                 <p className="mt-3 text-sm text-stone-500">
                   <span className="text-brand">{w.kind}</span> · <span className="text-stone-300">{w.name}</span>
                 </p>
-              </a>
+              </Link>
             ))}
           </div>
         </Reveal>
@@ -468,11 +468,6 @@ export default function Home() {
                   Forja es un estudio dominicano de desarrollo de software. Sin plantillas ni
                   intermediarios: construimos tu sistema desde cero, a la medida de tu PYME y de cómo
                   trabajas día a día.
-                </p>
-                <p>
-                  Trabajas con nosotros de principio a fin: desde la primera conversación hasta que el
-                  sistema queda funcionando en tu negocio. Lo entregamos andando, te enseñamos a usarlo y{" "}
-                  <span className="text-stone-200">quedas con todo en tus manos</span> — sin depender de nadie.
                 </p>
               </div>
             </Reveal>
