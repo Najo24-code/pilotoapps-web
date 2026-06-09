@@ -265,8 +265,8 @@ export default function Home() {
             {[
               {
                 t: "Sistemas de gestión",
-                d: "Citas, inventario, ventas y clientes en un panel claro, en tiempo real desde cualquier dispositivo.",
-                points: ["Agenda y reservas", "Inventario y stock", "Ventas y clientes", "Reportes en vivo"],
+                d: "Inventario, ventas, caja y clientes en un panel claro, en tiempo real desde cualquier dispositivo.",
+                points: ["Control de caja", "Inventario y stock", "Ventas y clientes", "Reportes en vivo"],
                 icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6Zm0 9.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25Zm9.75-9.75A2.25 2.25 0 0 1 15.75 3.75H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6Zm0 9.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                 ),
@@ -296,11 +296,11 @@ export default function Home() {
                 ),
               },
               {
-                t: "Integraciones",
-                d: "Conectamos tu sistema con las herramientas que ya usas, para que todo trabaje en un solo lugar.",
-                points: ["WhatsApp", "Cobros y pagos", "Google y mapas", "Facturación"],
+                t: "Presencia digital",
+                d: "Que tus clientes te encuentren cuando te buscan: en Google, en el mapa y enlazado a tu Instagram.",
+                points: ["Apareces en Google", "Ubicación en el mapa", "Enlace a Instagram", "Botón de WhatsApp"],
                 icon: (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 ),
               },
               {
