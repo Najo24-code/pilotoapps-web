@@ -576,16 +576,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESO */}
-      <section id="proceso" className="border-t border-white/10 py-16 md:py-24">
+      {/* PROCESO — banda clara: rompe el negro a propósito (ritmo editorial) */}
+      <section id="proceso" className="bg-[#f3efe9] py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl">
             <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-              <span className="tabular-nums text-stone-600">05</span>
-              <span className="h-px w-6 bg-white/15" />
-              <span className="text-brand">Cómo trabajamos</span>
+              <span className="tabular-nums text-stone-400">05</span>
+              <span className="h-px w-6 bg-stone-900/20" />
+              <span className="text-brand-600">Cómo trabajamos</span>
             </p>
-            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
+            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-stone-900 md:text-6xl">
               De la idea a tu sistema, sin complicaciones.
             </h2>
           </Reveal>
@@ -597,11 +597,11 @@ export default function Home() {
               { n: "04", t: "Lanzamos y acompañamos", d: "Lo dejamos funcionando, te capacitamos y te damos soporte continuo." },
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
-                <div className="group relative border-t border-white/10 pt-8">
+                <div className="group relative border-t border-stone-900/15 pt-8">
                   <span className="absolute left-0 top-0 h-0.5 w-12 -translate-y-px bg-brand transition-all duration-300 group-hover:w-20" />
-                  <div className="font-display text-6xl font-bold tracking-tight text-white/15">{s.n}</div>
-                  <h3 className="mb-2 mt-5 font-display text-xl font-semibold text-white">{s.t}</h3>
-                  <p className="leading-relaxed text-stone-400">{s.d}</p>
+                  <div className="font-display text-6xl font-bold tracking-tight text-stone-900/10">{s.n}</div>
+                  <h3 className="mb-2 mt-5 font-display text-xl font-semibold text-stone-900">{s.t}</h3>
+                  <p className="leading-relaxed text-stone-600">{s.d}</p>
                 </div>
               </Reveal>
             ))}
