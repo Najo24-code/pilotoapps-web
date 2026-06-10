@@ -342,7 +342,7 @@ export default function Home() {
                     <span className="font-display text-sm tabular-nums text-stone-600">0{i + 1}</span>
                   </div>
                   <h3 className="mt-6 font-display text-2xl font-bold tracking-[-0.01em] text-white">{c.t}</h3>
-                  <p className="mt-3 flex-1 leading-relaxed text-stone-400">{c.d}</p>
+                  <p className="mt-3 leading-relaxed text-stone-400">{c.d}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {c.points.map((p) => (
                       <span key={p} className="rounded-full border border-white/10 bg-white/[.03] px-3 py-1 text-xs text-stone-300 transition-colors group-hover:border-brand/25 group-hover:text-stone-200">
@@ -653,140 +653,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PLANES + DEMO WHATSAPP */}
-      <section id="precios" className="border-t border-white/10 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="max-w-3xl">
-            <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-              <span className="tabular-nums text-stone-600">06</span>
-              <span className="h-px w-6 bg-white/15" />
-              <span className="text-brand">Planes</span>
-            </p>
-            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
-              Reservas con recordatorio automático por WhatsApp.
-            </h2>
-            <p className="mt-6 text-lg text-stone-400 md:text-xl">
-              El cliente reserva solo y le llega un recordatorio por WhatsApp 24h y 2h antes de la cita.
-              Menos ausencias, tu agenda llena. Pensado para barberías, salones, clínicas y gimnasios.
-            </p>
-          </Reveal>
-
-          <div className="mt-14 grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-            {/* DEMO WHATSAPP — chat en modo oscuro */}
-            <Reveal>
-              <div className="browser mx-auto max-w-sm overflow-hidden rounded-[1.75rem]">
-                {/* Cabecera estilo WhatsApp */}
-                <div className="flex items-center gap-3 bg-[#1f2c34] px-4 py-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#00a884] font-display text-sm font-bold text-white">LC</span>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-semibold text-white">Barbería La Cuchilla</p>
-                    <p className="text-xs text-[#8696a0]">en línea</p>
-                  </div>
-                  <svg className="h-5 w-5 shrink-0 text-[#8696a0]" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h7.5a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-7.5A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
-                </div>
-                {/* Conversación */}
-                <div className="space-y-2.5 bg-[#0b141a] px-3.5 py-5">
-                  {/* Recordatorio entrante */}
-                  <div className="max-w-[88%] rounded-2xl rounded-tl-md bg-[#1f2c34] px-3.5 py-2.5 text-[#e9edef] shadow-sm">
-                    <p className="text-sm leading-relaxed">Hola Pedro 👋 Te recordamos tu cita:</p>
-                    <div className="mt-2 space-y-1 rounded-lg bg-black/25 px-3 py-2 text-sm">
-                      <p>✂️ Corte + barba</p>
-                      <p>📅 Miér 12 jun · 3:00 PM</p>
-                      <p>📍 Barbería La Cuchilla</p>
-                    </div>
-                    <p className="mt-2 text-sm leading-relaxed">¿Confirmas tu asistencia?</p>
-                    <p className="mt-1 text-right text-[10px] text-[#8696a0]">2:00 p.&nbsp;m.</p>
-                  </div>
-                  {/* Botones interactivos */}
-                  <div className="max-w-[88%] overflow-hidden rounded-2xl bg-[#1f2c34] text-center text-sm font-medium text-[#00a884] shadow-sm">
-                    <div className="flex items-center justify-center gap-2 border-b border-white/5 py-2.5">
-                      <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                      Confirmar
-                    </div>
-                    <div className="py-2.5">🗓️ Reagendar</div>
-                  </div>
-                  {/* Respuesta saliente */}
-                  <div className="ml-auto max-w-[88%] rounded-2xl rounded-tr-md bg-[#005c4b] px-3.5 py-2 text-[#e9edef] shadow-sm">
-                    <p className="text-sm">Confirmar ✅</p>
-                    <p className="mt-0.5 flex items-center justify-end gap-1 text-[10px] text-[#8696a0]">
-                      2:01 p.&nbsp;m.
-                      <svg className="h-3.5 w-3.5 text-[#53bdeb]" fill="none" viewBox="0 0 20 12" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M1 6.5 4.5 10 11 2.5" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 10 14.5 2.5" /></svg>
-                    </p>
-                  </div>
-                  {/* Cierre entrante */}
-                  <div className="max-w-[88%] rounded-2xl rounded-tl-md bg-[#1f2c34] px-3.5 py-2.5 text-[#e9edef] shadow-sm">
-                    <p className="text-sm leading-relaxed">¡Perfecto, Pedro! Te esperamos. 💈</p>
-                    <p className="mt-1 text-right text-[10px] text-[#8696a0]">2:01 p.&nbsp;m.</p>
-                  </div>
-                </div>
-              </div>
-              <p className="mt-5 text-center text-sm text-stone-500">
-                Así le llega el recordatorio a tus clientes — <span className="text-stone-300">solo, 24h y 2h antes</span>.
-              </p>
-            </Reveal>
-
-            {/* TARJETA DE PRECIO */}
-            <Reveal delay={0.1}>
-              <div className="rounded-3xl border border-white/10 bg-white/[.03] p-7 md:p-9">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-brand">Plan Agenda Llena</p>
-                    <h3 className="mt-2 font-display text-2xl font-bold tracking-[-0.01em] text-white md:text-3xl">Web + reservas + WhatsApp</h3>
-                  </div>
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#25D366]/15 text-[#25D366]">
-                    <svg className="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.989-1.045a9.866 9.866 0 0 0 .002-.001zm5.49-7.713c-.13-.218-.477-.349-.998-.61-.52-.26-3.077-1.519-3.554-1.692-.477-.174-.825-.26-1.172.26-.347.521-1.345 1.692-1.649 2.04-.303.347-.607.39-1.128.13-.521-.26-2.199-.811-4.188-2.585-1.549-1.382-2.595-3.089-2.899-3.61-.303-.521-.032-.802.228-1.061.234-.234.521-.609.782-.913.26-.304.347-.522.521-.869.174-.347.087-.651-.043-.911-.13-.26-1.172-2.823-1.606-3.866-.423-1.015-.853-.878-1.172-.894l-1-.017c-.347 0-.911.13-1.388.652-.477.52-1.822 1.779-1.822 4.342 0 2.562 1.866 5.038 2.126 5.385.26.347 3.673 5.608 8.901 7.862 1.243.537 2.213.857 2.969 1.097 1.248.396 2.383.34 3.281.206.999-.149 3.077-1.258 3.511-2.474.434-1.215.434-2.258.304-2.474z" /></svg>
-                  </span>
-                </div>
-                <div className="mt-7 flex items-end gap-2 border-y border-white/10 py-6">
-                  <span className="font-display text-5xl font-bold tracking-tight text-white">RD$2,000</span>
-                  <span className="mb-1.5 text-stone-400">/mes</span>
-                </div>
-                <p className="mt-3 text-sm text-stone-400">
-                  + RD$15,000 de montaje (pago único): diseño, configuración y puesta en marcha.
-                </p>
-                <ul className="mt-7 space-y-3">
-                  {[
-                    "Web a medida, rápida y desde el celular",
-                    "Reserva en línea: servicio, barbero/estilista y hora",
-                    "Recordatorios automáticos por WhatsApp (24h y 2h)",
-                    "Panel de citas en tu celular",
-                    "Galería y servicios con precios",
-                    "Dominio, hosting y soporte incluidos",
-                  ].map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-stone-300">
-                      <svg className="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.4} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
-                      <span className="text-[15px] leading-snug">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-7 rounded-xl border border-brand/20 bg-brand/5 px-4 py-3 text-sm leading-relaxed text-stone-300">
-                  <span className="font-semibold text-brand">Se paga solo:</span> evitando ~3–4 citas perdidas al mes ya recuperas la mensualidad.
-                </p>
-                <a
-                  href={WHATSAPP}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 font-semibold text-stone-950 transition-all hover:scale-[1.01] hover:bg-brand-300"
-                >
-                  Quiero Agenda Llena
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
-                </a>
-                <p className="mt-4 text-center text-xs text-stone-500">
-                  ¿Salón con varios estilistas? Súmale el módulo de comisiones.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section id="faq" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-                <span className="tabular-nums text-stone-600">07</span>
+                <span className="tabular-nums text-stone-600">06</span>
                 <span className="h-px w-6 bg-white/15" />
                 <span className="text-brand">Preguntas frecuentes</span>
               </p>
@@ -806,7 +679,7 @@ export default function Home() {
                 {[
                   {
                     q: "¿Cuánto cuesta un sistema a la medida?",
-                    a: "Cada proyecto se cotiza por su alcance, y el precio se cierra por escrito antes de empezar — no cambia a mitad de camino. Como referencia real: el plan Agenda Llena (web + reservas + recordatorios por WhatsApp) cuesta RD$15,000 de montaje + RD$2,000 al mes. Cuéntanos tu caso y te preparamos una propuesta sin compromiso.",
+                    a: "Cada proyecto se cotiza por su alcance: no cuesta lo mismo una web profesional que un sistema de gestión completo. Lo que sí es fijo es la forma: el precio se cierra por escrito antes de empezar y no cambia a mitad de camino. Cuéntanos tu caso y te preparamos una propuesta sin compromiso, con números claros.",
                   },
                   {
                     q: "¿En cuánto tiempo está listo?",
@@ -855,7 +728,7 @@ export default function Home() {
           <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
             <Reveal>
               <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-                <span className="tabular-nums text-stone-600">08</span>
+                <span className="tabular-nums text-stone-600">07</span>
                 <span className="h-px w-6 bg-white/15" />
                 <span className="text-brand">Hablemos</span>
               </p>

@@ -7,7 +7,7 @@ const LINKS = [
   { href: "#trabajos", label: "Trabajos" },
   { href: "#sobre", label: "Estudio" },
   { href: "#proceso", label: "Proceso" },
-  { href: "#precios", label: "Precios" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 /** Marca Forja — wordmark con punto brasa. */
