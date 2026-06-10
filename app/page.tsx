@@ -459,21 +459,37 @@ export default function Home() {
               <div className="lg:col-span-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-brand">App de préstamos y cobros</p>
                 <h3 className="mt-4 font-display text-5xl font-bold tracking-[-0.03em] text-white md:text-6xl">SuaPréstamos</h3>
-                <p className="mt-6 max-w-md text-lg leading-relaxed text-stone-400">
-                  App móvil para prestamistas: gestiona clientes, préstamos, cuotas, mora y cobros, con
-                  un dashboard que muestra tu cartera en tiempo real. Diseñada para usarse cada día,
-                  desde el celular.
-                </p>
-                <ul className="mt-8 divide-y divide-white/10 border-t border-white/10">
-                  {["Clientes y garantes", "Cuotas, mora y cobros", "Semáforo de cartera en vivo", "Reportes de cartera", "App Android nativa"].map((f) => (
-                    <li key={f} className="flex items-center gap-3 py-3 text-stone-300">
-                      <svg className="h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                      </svg>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-8 max-w-md space-y-7 border-t border-white/10 pt-8">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">El problema</p>
+                    <p className="mt-2 leading-relaxed text-stone-400">
+                      Una cartera de préstamos llevada en cuaderno y Excel: cuotas que se escapan,
+                      mora que se descubre tarde y las cuentas viviendo en la cabeza del prestamista.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Lo que construimos</p>
+                    <p className="mt-2 leading-relaxed text-stone-400">
+                      Una app móvil que gestiona clientes, préstamos, cuotas, mora y cobros, con un
+                      dashboard que muestra la cartera en tiempo real.
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {["Clientes y garantes", "Cuotas, mora y cobros", "Semáforo de cartera", "Reportes", "Android nativa"].map((f) => (
+                        <span key={f} className="rounded-full border border-white/10 bg-white/[.03] px-3 py-1 text-xs text-stone-300">
+                          {f}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-brand">El resultado</p>
+                    <p className="mt-2 leading-relaxed text-stone-300">
+                      La operación completa se maneja desde el celular: cada cuota tiene fecha y
+                      estado, la mora se ve al instante y nada depende de la memoria. Hoy está en
+                      producción, operando todos los días.
+                    </p>
+                  </div>
+                </div>
                 <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-4 py-2 text-sm font-medium text-brand">
                   <span className="relative flex h-1.5 w-1.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
@@ -720,13 +736,82 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="border-t border-white/10 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <Reveal className="lg:col-span-5">
+              <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
+                <span className="tabular-nums text-stone-600">07</span>
+                <span className="h-px w-6 bg-white/15" />
+                <span className="text-brand">Preguntas frecuentes</span>
+              </p>
+              <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
+                Lo que todos preguntan antes de empezar.
+              </h2>
+              <p className="mt-6 text-lg text-stone-400">
+                ¿Tienes otra pregunta?{" "}
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="font-medium text-white underline decoration-brand/50 underline-offset-4 transition-colors hover:decoration-brand">
+                  Escríbenos por WhatsApp
+                </a>{" "}
+                y te respondemos directo.
+              </p>
+            </Reveal>
+            <Reveal delay={0.1} className="lg:col-span-7">
+              <div className="divide-y divide-white/10 border-y border-white/10">
+                {[
+                  {
+                    q: "¿Cuánto cuesta un sistema a la medida?",
+                    a: "Cada proyecto se cotiza por su alcance, y el precio se cierra por escrito antes de empezar — no cambia a mitad de camino. Como referencia real: el plan Agenda Llena (web + reservas + recordatorios por WhatsApp) cuesta RD$15,000 de montaje + RD$2,000 al mes. Cuéntanos tu caso y te preparamos una propuesta sin compromiso.",
+                  },
+                  {
+                    q: "¿En cuánto tiempo está listo?",
+                    a: "Depende del tamaño: una web profesional queda lista en cuestión de días; un sistema de gestión completo toma semanas. Antes de empezar te damos una fecha de entrega y te mantenemos al tanto del avance en cada paso.",
+                  },
+                  {
+                    q: "¿De quién es el código, el dominio y los datos?",
+                    a: "Tuyos, siempre. Trabajamos sin ataduras: si mañana decides seguir con otro equipo, te llevas tu sistema completo, tu dominio y toda tu información.",
+                  },
+                  {
+                    q: "¿Qué pasa después de la entrega?",
+                    a: "No te dejamos solo. Te entregamos el sistema funcionando, capacitamos a tu equipo y quedamos disponibles para soporte. Si quieres, añadimos un plan de mantenimiento mensual con mejoras continuas.",
+                  },
+                  {
+                    q: "¿Y si necesito cambios sobre la marcha?",
+                    a: "Los ajustes dentro del alcance acordado van incluidos. Si el proyecto crece con ideas nuevas, te cotizamos la diferencia antes de hacerla — nunca verás una sorpresa en la factura.",
+                  },
+                  {
+                    q: "¿Necesito saber de tecnología para usarlo?",
+                    a: "No. Lo construimos pensando en cómo trabaja tu negocio, te lo entregamos funcionando y te enseñamos a usarlo. Todo se puede manejar desde el celular.",
+                  },
+                  {
+                    q: "¿Atienden fuera de Santo Domingo?",
+                    a: "Sí, trabajamos con negocios de toda República Dominicana. Todo el proceso se lleva por WhatsApp y videollamada, sin necesidad de reuniones presenciales.",
+                  },
+                ].map((f) => (
+                  <details key={f.q} className="group">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-left [&::-webkit-details-marker]:hidden">
+                      <span className="font-display text-lg font-semibold text-white">{f.q}</span>
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-stone-300 transition-all duration-200 group-open:rotate-45 group-open:border-brand/40 group-open:text-brand group-hover:border-white/30">
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                      </span>
+                    </summary>
+                    <p className="max-w-xl pb-6 leading-relaxed text-stone-400">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACTO */}
       <section id="contacto" className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
             <Reveal>
               <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-                <span className="tabular-nums text-stone-600">07</span>
+                <span className="tabular-nums text-stone-600">08</span>
                 <span className="h-px w-6 bg-white/15" />
                 <span className="text-brand">Hablemos</span>
               </p>
@@ -756,6 +841,20 @@ export default function Home() {
                   {EMAIL}
                 </a>
               </div>
+              <ul className="mt-10 max-w-md space-y-3.5 border-t border-white/10 pt-8">
+                {[
+                  "Te respondemos en menos de 24 horas",
+                  "Precio y alcance cerrados por escrito antes de empezar",
+                  "El código, el dominio y tus datos son tuyos",
+                ].map((c) => (
+                  <li key={c} className="flex items-start gap-3 text-stone-300">
+                    <svg className="mt-1 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    {c}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
             <Reveal delay={0.1} className="lg:border-l lg:border-white/10 lg:pl-12">
               <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-stone-500">O escríbenos aquí</p>
