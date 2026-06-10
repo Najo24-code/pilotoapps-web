@@ -17,6 +17,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/demos/academia/" },
   title: "Lingua | Academia de Inglés en Santo Domingo",
   description:
     "Demo Forja. Academia de inglés con cursos por nivel, método práctico y evaluación gratis en línea. Habla inglés con confianza.",

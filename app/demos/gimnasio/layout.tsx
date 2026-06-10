@@ -16,6 +16,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/demos/gimnasio/" },
   title: "Powerfit | Gimnasio en Santo Domingo",
   description:
     "Demo Forja. Gimnasio con planes, clases y agenda de clase de prueba en línea. Entrena con acompañamiento profesional.",

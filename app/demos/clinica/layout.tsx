@@ -16,6 +16,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/demos/clinica/" },
   title: "Clínica Sonrisa | Odontología en Santo Domingo",
   description:
     "Demo Forja. Clínica dental en Santo Domingo con agenda de citas en línea: limpieza, ortodoncia, implantes, blanqueamiento y urgencias.",

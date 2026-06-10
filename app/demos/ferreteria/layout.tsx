@@ -16,6 +16,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/demos/ferreteria/" },
   title: "Ferretería El Constructor | Todo para tu obra",
   description:
     "Demo Forja. Ferretería con catálogo en línea e inventario: herramientas, plomería, electricidad y pinturas, con cotización a domicilio.",

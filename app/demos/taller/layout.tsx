@@ -16,6 +16,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/demos/taller/" },
   title: "AutoPro | Taller mecánico en Santo Domingo",
   description:
     "Demo Forja. Taller mecánico con servicios, garantía escrita y solicitud de cotización en línea. Tu carro en manos expertas.",

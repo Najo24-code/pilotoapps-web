@@ -17,6 +17,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/demos/hotel/" },
   title: "Villa Marena | Hotel boutique en Las Terrenas",
   description:
     "Demo Forja. Hotel boutique frente al mar con reserva de habitaciones en línea: suites, amenidades y experiencias en Samaná.",

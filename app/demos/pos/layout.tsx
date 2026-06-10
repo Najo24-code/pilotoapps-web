@@ -16,6 +16,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/demos/pos/" },
   title: "Punto de venta (caja) | Sistema a la medida",
   description:
     "Demo Forja. Punto de venta: arma el ticket, cobra en efectivo, tarjeta o transferencia y descuenta del inventario al instante.",

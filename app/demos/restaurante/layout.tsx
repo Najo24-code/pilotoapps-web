@@ -17,6 +17,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/demos/restaurante/" },
   title: "La Terraza | Restaurante en Puerto Plata",
   description:
     "Demo Forja. Restaurante con cocina criolla e internacional y reservas de mesa en línea, en Puerto Plata.",

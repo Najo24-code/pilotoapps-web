@@ -16,6 +16,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/demos/panel/" },
   title: "Panel de gestión | Sistema a la medida",
   description:
     "Demo Forja. El sistema por dentro: caja, ventas, citas e inventario de tu negocio en un solo panel, en tiempo real.",
