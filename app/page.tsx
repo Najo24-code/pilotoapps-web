@@ -579,33 +579,77 @@ export default function Home() {
       {/* PROCESO — banda clara: rompe el negro a propósito (ritmo editorial) */}
       <section id="proceso" className="bg-[#f3efe9] py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="max-w-3xl">
-            <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
-              <span className="tabular-nums text-stone-400">05</span>
-              <span className="h-px w-6 bg-stone-900/20" />
-              <span className="text-brand-600">Cómo trabajamos</span>
-            </p>
-            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-stone-900 md:text-6xl">
-              De la idea a tu sistema, sin complicaciones.
-            </h2>
-          </Reveal>
-          <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid items-end gap-6 lg:grid-cols-12 lg:gap-16">
+            <Reveal className="lg:col-span-7">
+              <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest">
+                <span className="tabular-nums text-stone-400">05</span>
+                <span className="h-px w-6 bg-stone-900/20" />
+                <span className="text-brand-600">Cómo trabajamos</span>
+              </p>
+              <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-stone-900 md:text-6xl">
+                De la idea a tu sistema, sin complicaciones.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.08} className="lg:col-span-5">
+              <p className="text-lg leading-relaxed text-stone-600 lg:pb-2">
+                Cuatro pasos, sin letra pequeña: en cada uno sabes qué recibes,
+                cuándo y cuánto cuesta — desde la primera conversación.
+              </p>
+            </Reveal>
+          </div>
+          <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { n: "01", t: "Conversamos", d: "Entendemos tu negocio y qué problema resolver. Te damos alcance y precio claro." },
-              { n: "02", t: "Diseñamos", d: "Definimos cómo se verá y funcionará, ajustado a tu forma de trabajar." },
-              { n: "03", t: "Construimos", d: "Programamos tu sistema y te mantenemos al tanto del avance en cada paso." },
-              { n: "04", t: "Lanzamos y acompañamos", d: "Lo dejamos funcionando, te capacitamos y te damos soporte continuo." },
+              {
+                n: "01", t: "Conversamos",
+                d: "Entendemos tu negocio y qué problema resolver.",
+                r: "Propuesta con alcance y precio cerrado, por escrito.",
+              },
+              {
+                n: "02", t: "Diseñamos",
+                d: "Definimos cómo se verá y funcionará, ajustado a tu forma de trabajar.",
+                r: "El diseño de tu sistema, aprobado por ti antes de programar.",
+              },
+              {
+                n: "03", t: "Construimos",
+                d: "Programamos tu sistema y te mantenemos al tanto en cada paso.",
+                r: "Avances funcionando que pruebas desde tu celular.",
+              },
+              {
+                n: "04", t: "Lanzamos y acompañamos",
+                d: "Lo dejamos funcionando y entrenamos a tu equipo.",
+                r: "Tu sistema en producción, con capacitación y soporte.",
+              },
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
-                <div className="group relative border-t border-stone-900/15 pt-8">
+                <div className="group relative flex h-full flex-col border-t border-stone-900/15 pt-7">
                   <span className="absolute left-0 top-0 h-0.5 w-12 -translate-y-px bg-brand transition-all duration-300 group-hover:w-20" />
-                  <div className="font-display text-6xl font-bold tracking-tight text-stone-900/10">{s.n}</div>
-                  <h3 className="mb-2 mt-5 font-display text-xl font-semibold text-stone-900">{s.t}</h3>
-                  <p className="leading-relaxed text-stone-600">{s.d}</p>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-stone-400">
+                    Paso <span className="tabular-nums">{s.n}</span>
+                  </p>
+                  <h3 className="mb-2 mt-3 font-display text-xl font-semibold text-stone-900">{s.t}</h3>
+                  <p className="pb-5 leading-relaxed text-stone-600">{s.d}</p>
+                  <div className="mt-auto border-t border-stone-900/10 pt-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-600">Te llevas</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-stone-700">{s.r}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
           </div>
+          <Reveal className="mt-16 flex flex-col gap-5 border-t border-stone-900/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-stone-600">
+              La primera conversación es gratis y sin compromiso.
+            </p>
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-semibold text-stone-900 transition-colors hover:text-brand-600"
+            >
+              Cuéntanos tu idea
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+            </a>
+          </Reveal>
         </div>
       </section>
 
