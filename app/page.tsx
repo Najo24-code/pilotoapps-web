@@ -538,6 +538,15 @@ export default function Home() {
                   intermediarios: construimos tu sistema desde cero, a la medida de tu PYME y de cómo
                   trabajas día a día.
                 </p>
+                <p>
+                  No solo hacemos webs: mantenemos software propio operando en producción — como
+                  SuaPréstamos, la app que viste arriba — y ese mismo estándar de ingeniería va en
+                  cada proyecto que entregamos, del más pequeño al más grande.
+                </p>
+                <p>
+                  Creemos en pocas cosas bien hechas: sistemas que tu equipo de verdad use todos los
+                  días, no funciones de adorno.
+                </p>
               </div>
             </Reveal>
 
@@ -561,18 +570,18 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-stone-500">Stack con el que trabajamos</p>
-                <div className="flex flex-wrap gap-2.5">
-                  {stack.map((s) => (
-                    <span key={s} className="rounded-lg border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm font-medium text-stone-200">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </Reveal>
           </div>
+          <Reveal className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <p className="shrink-0 text-xs font-semibold uppercase tracking-widest text-stone-500">Stack con el que trabajamos</p>
+            <div className="flex flex-wrap gap-2.5">
+              {stack.map((s) => (
+                <span key={s} className="rounded-lg border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm font-medium text-stone-200">
+                  {s}
+                </span>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -776,6 +785,10 @@ export default function Home() {
             <Reveal delay={0.1} className="lg:border-l lg:border-white/10 lg:pl-12">
               <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-stone-500">O escríbenos aquí</p>
               <ContactForm />
+              <p className="mt-5 text-sm leading-relaxed text-stone-500">
+                Sin spam y sin compromiso: usamos tus datos solo para responderte. Si te sirve más
+                hablarlo de viva voz, dilo en el mensaje y te llamamos.
+              </p>
             </Reveal>
           </div>
         </div>
