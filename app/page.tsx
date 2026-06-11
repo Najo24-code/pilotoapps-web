@@ -259,7 +259,7 @@ function ServiceViz({ i }: { i: number }) {
           <span className="text-[8px] text-stone-400">barbería cerca de mí</span>
         </div>
         <div className="rounded-md bg-white/[.04] p-2">
-          <p className="text-[9px] font-semibold text-brand-300">Tu Negocio — Reservas en línea</p>
+          <p className="text-[9px] font-semibold text-brand-300">Tu Negocio · Reservas en línea</p>
           <p className="mt-0.5 text-[8px] text-stone-500">tu-negocio.com · Abierto hasta las 8 PM</p>
           <p className="mt-1 flex items-center gap-1 text-[8px] text-stone-400">
             <span className="text-amber-400">★★★★★</span> 4.9 ·
