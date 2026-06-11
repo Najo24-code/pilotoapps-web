@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: SITE + "/og.png",
         width: 1200,
         height: 630,
-        alt: "Forja — Software a la medida para PYMEs en RD",
+        alt: "Forja, software a la medida para PYMEs en RD",
       },
     ],
   },

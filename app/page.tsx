@@ -255,7 +255,7 @@ export default function Home() {
                 tabIndex={i >= works.length ? -1 : undefined}
                 className="block w-[280px] shrink-0 transition-transform hover:-translate-y-1.5 sm:w-[320px]"
               >
-                <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
+                <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} />
                 <p className="mt-3 text-sm text-stone-500">
                   <span className="text-brand">{w.kind}</span> · <span className="text-stone-300">{w.name}</span>
                 </p>
@@ -381,7 +381,7 @@ export default function Home() {
               <Reveal key={w.href}>
                 <Link href={w.href} target="_blank" className="group grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
                   <div className={`relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5 ${i === 1 ? "lg:order-2" : ""}`}>
-                    <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
+                    <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} />
                     <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-950/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <span className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-stone-950 shadow-lg">
                         Abrir demo
@@ -415,7 +415,7 @@ export default function Home() {
               <Reveal key={w.href} delay={(idx % 2) * 0.08}>
                 <Link href={w.href} target="_blank" className="group block">
                   <div className="relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5">
-                    <BrowserFrame src={w.img} alt={`Demo ${w.name} — Forja`} />
+                    <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} />
                     <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-950/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <span className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-stone-950 shadow-lg">
                         Abrir demo
