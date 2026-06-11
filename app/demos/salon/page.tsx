@@ -56,7 +56,7 @@ const EQUIPO: [string, string, string][] = [
 
 const GALERIA = [
   "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1000&q=80",
-  "https://images.unsplash.com/photo-1599387737838-626d2e3d5d3a?w=700&q=80",
+  "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&q=80",
   "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=700&q=80",
   "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=700&q=80",
 ];
@@ -117,42 +117,46 @@ export default function Page() {
         </div>
       </header>
 
-      {/* ── Hero ───────────────────────────────────────────────────────── */}
+      {/* ── Hero editorial: meta + titular a todo lo ancho + fila foto/copy ── */}
       <section id="inicio" className="relative overflow-hidden">
         <div className="pointer-events-none absolute -right-32 -top-40 h-[460px] w-[460px] rounded-full bg-[var(--rose)]/10 blur-[130px]" />
-        <div className="relative mx-auto max-w-6xl px-5 py-16 sm:px-8 md:py-24">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <div className="rise d1"><Eyebrow>Salón & Barbería · Santiago</Eyebrow></div>
-              <h1 className="rise d2 display mt-7 text-5xl font-medium leading-[0.98] tracking-[-0.01em] text-[var(--cream)] md:text-[5rem]">
-                Tu mejor versión,
-                <br />
-                <span className="italic text-[var(--rose)]">empieza aquí.</span>
-              </h1>
-              <p className="rise d3 mt-7 max-w-md text-lg leading-relaxed text-[var(--muted)]">
+        <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-12 sm:px-8 md:pb-24 md:pt-16">
+          <div className="rise d1 flex items-center justify-between gap-4 border-b border-[var(--line)] pb-5 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[var(--faint)]">
+            <span className="text-[var(--rose)]">Salón & Barbería</span>
+            <span className="hidden sm:block">Santiago de los Caballeros</span>
+            <span>Desde 2018</span>
+          </div>
+          <h1 className="rise d2 display mt-12 text-6xl font-medium leading-[0.95] tracking-[-0.02em] text-[var(--cream)] sm:text-7xl md:mt-16 md:text-[7rem] lg:text-[8.5rem]">
+            Tu mejor <span className="italic text-[var(--rose)]">versión,</span>
+            <br />
+            empieza aquí<span className="text-[var(--gold)]">.</span>
+          </h1>
+          <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-12 md:items-end">
+            <div className="rise d2 md:col-span-7">
+              <img
+                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80"
+                alt="Interior del salón de belleza"
+                className="h-[300px] w-full rounded-[2rem] object-cover shadow-2xl shadow-black/50 md:h-[420px]"
+              />
+            </div>
+            <div className="rise d3 md:col-span-5">
+              <p className="text-lg leading-relaxed text-[var(--muted)]">
                 Cortes, color, uñas y barbería con un equipo que cuida cada detalle. Reserva tu cita en línea en menos de
                 un minuto.
               </p>
-              <div className="rise d3 mt-9 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-4">
                 <a href="#reservar" className="group inline-flex items-center gap-2.5 rounded-full bg-[var(--rose)] px-7 py-3.5 font-semibold text-[#1a0f14] transition-all hover:bg-[var(--gold)]">
                   Reservar cita
                   <span className="transition-transform group-hover:translate-x-0.5"><Arrow /></span>
                 </a>
                 <a href="#servicios" className="inline-flex items-center gap-2 rounded-full border border-[var(--cream)]/25 px-7 py-3.5 font-semibold text-[var(--cream)] transition-colors hover:border-[var(--cream)]/50 hover:bg-[var(--cream)]/5">
-                  Ver servicios
+                  Ver la carta
                 </a>
               </div>
-            </div>
-            <div className="rise d2 relative">
-              <img
-                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80"
-                alt="Interior del salón de belleza"
-                className="h-[380px] w-full rounded-[2rem] object-cover shadow-2xl shadow-black/50 md:h-[480px]"
-              />
-              <div className="absolute -bottom-5 -left-5 rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-6 py-4">
-                <p className="display text-2xl font-semibold text-[var(--gold)]">+8 años</p>
-                <p className="text-xs text-[var(--muted)]">embelleciendo Santiago</p>
-              </div>
+              <p className="mt-8 border-t border-[var(--line)] pt-5 text-sm text-[var(--faint)]">
+                <span className="display text-xl font-semibold text-[var(--gold)]">+8 años</span> embelleciendo Santiago ·
+                walk-ins según disponibilidad
+              </p>
             </div>
           </div>
         </div>
@@ -167,15 +171,17 @@ export default function Page() {
               Todo para verte y <span className="italic text-[var(--gold)]">sentirte bien.</span>
             </h2>
           </div>
-          <div className="grid gap-px overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--line)] sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICIOS.map(([t, d, p]) => (
-              <div key={t} className="group flex flex-col bg-[var(--bg)] p-8 transition-colors hover:bg-[var(--panel)]">
-                <h3 className="display text-2xl font-medium text-[var(--cream)]">{t}</h3>
-                <p className="mt-3 flex-1 leading-relaxed text-[var(--muted)]">{d}</p>
-                <p className="mt-5 font-semibold text-[var(--rose)]">{p}</p>
+          <div className="border-t border-[var(--line)]">
+            {SERVICIOS.map(([t, d, p], i) => (
+              <div key={t} className="group grid gap-1.5 border-b border-[var(--line)] py-7 transition-colors hover:bg-[var(--panel)]/50 sm:grid-cols-12 sm:items-baseline sm:gap-6 sm:px-2">
+                <span className="text-xs tabular-nums text-[var(--faint)] sm:col-span-1">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="display text-2xl font-medium text-[var(--cream)] sm:col-span-4">{t}</h3>
+                <p className="leading-relaxed text-[var(--muted)] sm:col-span-5">{d}</p>
+                <p className="font-semibold text-[var(--rose)] sm:col-span-2 sm:text-right">{p}</p>
               </div>
             ))}
           </div>
+          <p className="mt-6 text-sm text-[var(--faint)]">Precios de referencia. Tu estilista confirma el costo exacto según largo y tratamiento.</p>
         </div>
       </section>
 
@@ -188,12 +194,15 @@ export default function Page() {
               Nuestro trabajo habla solo
             </h2>
           </div>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+          <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:-mx-8 sm:px-8" aria-label="Galería de trabajos">
             {GALERIA.map((src, i) => (
-              <div key={src} className={`group relative overflow-hidden rounded-2xl border border-[var(--line)] ${i === 0 ? "col-span-2 row-span-2" : ""}`}>
-                <img src={src} alt="Trabajo del salón" loading="lazy" className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06] ${i === 0 ? "min-h-[300px]" : "min-h-[145px]"}`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-              </div>
+              <img
+                key={src}
+                src={src}
+                alt="Trabajo del salón"
+                loading="lazy"
+                className={`h-72 shrink-0 snap-center rounded-2xl border border-[var(--line)] object-cover md:h-96 ${i % 2 === 0 ? "w-[70%] sm:w-[460px]" : "w-[55%] sm:w-[320px]"}`}
+              />
             ))}
           </div>
         </div>
