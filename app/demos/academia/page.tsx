@@ -197,15 +197,25 @@ export default function Page() {
                 </a>
               </div>
             </div>
-            <div className="rise d2 relative">
-              <img
-                src="https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Estudiantes en clase de inglés"
-                className="h-[380px] w-full rounded-[2rem] object-cover shadow-2xl shadow-black/10 md:h-[480px]"
-              />
-              <div className="absolute -bottom-5 -left-5 rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-6 py-4 shadow-xl shadow-black/5">
-                <p className="display text-2xl font-bold text-[var(--accent)]">+1,200</p>
-                <p className="text-xs text-[var(--muted)]">estudiantes graduados</p>
+            <div className="rise d2 relative lg:ml-6">
+              <div className="absolute -inset-5 -z-10 rounded-[2.5rem] bg-[var(--accent-soft)]" />
+              <div className="rounded-3xl border border-[var(--line)] bg-[var(--panel)] p-8 shadow-2xl shadow-black/10 md:p-10">
+                <span className="inline-flex rounded-full bg-[var(--accent-soft)] px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[var(--accent)]">Sin costo</span>
+                <h2 className="display mt-5 text-3xl font-semibold text-[var(--ink)]">Evaluación de nivel</h2>
+                <p className="mt-3 leading-relaxed text-[var(--muted)]">
+                  20 minutos, presencial u online. Sales sabiendo tu nivel exacto y el grupo donde empezarías.
+                </p>
+                <ul className="mt-7 space-y-3.5 border-t border-[var(--line)] pt-7">
+                  {["Resultado al momento", "Con profesor certificado", "Sin compromiso de inscripción"].map((t) => (
+                    <li key={t} className="flex items-center gap-3 text-[var(--ink)]/90">
+                      <Check cls="shrink-0 text-[var(--accent)]" /> {t}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#inscribete" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--accent)] py-4 font-semibold text-white transition-colors hover:bg-[var(--accent-deep)]">
+                  Agendar mi evaluación <Arrow />
+                </a>
+                <p className="mt-4 text-center text-xs text-[var(--faint)]">Cupos disponibles de lunes a sábado</p>
               </div>
             </div>
           </div>
@@ -221,6 +231,20 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* ── Banda de foto a sangre ─────────────────────────────────────── */}
+      <div className="relative">
+        <img
+          src="https://images.pexels.com/photos/5212703/pexels-photo-5212703.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Clase de inglés en la academia"
+          loading="lazy"
+          className="h-72 w-full object-cover object-[center_45%] md:h-96"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/85 via-[var(--ink)]/25 to-transparent" />
+        <p className="display absolute bottom-6 left-1/2 w-full -translate-x-1/2 px-5 text-center text-2xl font-semibold text-white md:bottom-10 md:text-4xl">
+          Hablas desde el <span className="italic">primer día.</span>
+        </p>
+      </div>
 
       {/* ── Cursos ─────────────────────────────────────────────────────── */}
       <section id="cursos" className="border-t border-[var(--line)] py-20 md:py-28">
@@ -252,15 +276,19 @@ export default function Page() {
               De cero a fluido, <span className="italic text-[var(--accent)]">paso a paso.</span>
             </h2>
           </div>
-          <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-            {METODO.map(([n, t, d]) => (
-              <div key={n} className="group relative border-t-2 border-[var(--line)] pt-7">
-                <span className="absolute left-0 top-0 h-0.5 w-12 -translate-y-px bg-[var(--accent)] transition-all duration-300 group-hover:w-20" />
-                <div className="display text-5xl font-bold text-[var(--accent)]/25">{n}</div>
-                <h3 className="display mb-2 mt-4 text-xl font-semibold text-[var(--ink)]">{t}</h3>
-                <p className="leading-relaxed text-[var(--muted)]">{d}</p>
-              </div>
-            ))}
+          <div className="relative">
+            <div className="absolute left-5 top-0 h-full w-px bg-[var(--line)] lg:left-0 lg:right-0 lg:top-5 lg:h-px lg:w-auto" aria-hidden="true" />
+            <div className="grid gap-y-12 pl-16 lg:grid-cols-4 lg:gap-x-10 lg:pl-0">
+              {METODO.map(([n, t, d]) => (
+                <div key={n} className="relative">
+                  <span className="absolute -left-16 top-0 z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--accent)] bg-[var(--bg-2)] text-sm font-bold text-[var(--accent)] lg:static lg:flex">
+                    {n}
+                  </span>
+                  <h3 className="display text-xl font-semibold text-[var(--ink)] lg:mt-6">{t}</h3>
+                  <p className="mt-2 leading-relaxed text-[var(--muted)]">{d}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
