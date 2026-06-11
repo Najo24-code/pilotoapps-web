@@ -505,7 +505,7 @@ export default function Home() {
                   {[
                     { src: "/shots/sua-dash.webp", cls: "translate-y-4" },
                     { src: "/shots/sua-cobros.webp", cls: "-translate-y-2 hidden sm:block" },
-                    { src: "/shots/sua-clientes.webp", cls: "translate-y-6 hidden md:block" },
+                    { src: "/shots/sua-prestamos.webp", cls: "translate-y-6 hidden md:block" },
                   ].map((p) => (
                     <div key={p.src} className={`w-40 overflow-hidden rounded-[1.75rem] border border-white/10 bg-stone-900 shadow-2xl shadow-black/50 sm:w-44 ${p.cls}`}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
