@@ -162,6 +162,132 @@ function BrowserFrame({ src, alt, panSrc, domain }: { src: string; alt: string; 
   );
 }
 
+
+/* Viñetas de UI en miniatura para las tarjetas de Servicios — visual sin
+   fotos de stock: cada servicio se ilustra con su interfaz típica. */
+function ServiceViz({ i }: { i: number }) {
+  if (i === 0)
+    return (
+      <div className="flex h-28 gap-2 p-3.5">
+        <div className="flex w-7 flex-col gap-1.5 rounded-md bg-white/[.04] p-1.5">
+          <span className="h-1.5 w-full rounded-sm bg-brand/70" />
+          <span className="h-1.5 w-full rounded-sm bg-white/15" />
+          <span className="h-1.5 w-full rounded-sm bg-white/15" />
+        </div>
+        <div className="flex flex-1 flex-col gap-2">
+          <div className="flex gap-2">
+            <div className="flex-1 rounded-md bg-white/[.05] p-1.5">
+              <p className="text-[8px] uppercase tracking-wide text-stone-500">Ventas hoy</p>
+              <p className="font-display text-[11px] font-bold text-white">RD$18,450</p>
+            </div>
+            <div className="flex-1 rounded-md bg-white/[.05] p-1.5">
+              <p className="text-[8px] uppercase tracking-wide text-stone-500">Stock bajo</p>
+              <p className="font-display text-[11px] font-bold text-brand">3 items</p>
+            </div>
+          </div>
+          <div className="flex flex-1 items-end gap-1.5 px-1">
+            {[40, 65, 50, 80, 58, 95, 70].map((h, j) => (
+              <span key={j} className={`flex-1 rounded-t-sm ${j === 5 ? "bg-brand" : "bg-white/15"}`} style={{ height: `${h}%` }} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  if (i === 1)
+    return (
+      <div className="flex h-28 flex-col">
+        <div className="flex items-center gap-1.5 border-b border-white/10 px-3 py-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+          <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+          <span className="ml-1 h-3 flex-1 rounded-full bg-white/[.06] px-2 text-[7px] leading-3 text-stone-500">tu-negocio.com</span>
+        </div>
+        <div className="flex flex-1 gap-3 p-3.5">
+          <div className="flex flex-1 flex-col justify-center gap-1.5">
+            <span className="h-2 w-4/5 rounded-sm bg-white/25" />
+            <span className="h-2 w-3/5 rounded-sm bg-white/15" />
+            <span className="mt-1.5 h-4 w-16 rounded-full bg-brand text-center text-[7px] font-bold leading-4 text-stone-950">RESERVAR</span>
+          </div>
+          <div className="w-2/5 rounded-md bg-gradient-to-br from-white/15 to-white/[.04]" />
+        </div>
+      </div>
+    );
+  if (i === 2)
+    return (
+      <div className="flex h-28 flex-col justify-center gap-2 p-3.5">
+        <div className="max-w-[85%] self-start rounded-lg rounded-bl-sm bg-white/[.07] px-2.5 py-1.5">
+          <p className="text-[9px] leading-snug text-stone-300">Hola María 👋 te recordamos tu cita mañana a las 10:00 AM</p>
+          <p className="mt-0.5 text-right text-[7px] text-stone-500">9:15 ✓✓</p>
+        </div>
+        <div className="self-end rounded-lg rounded-br-sm bg-brand/15 px-2.5 py-1.5 ring-1 ring-inset ring-brand/20">
+          <p className="text-[9px] text-brand-300">¡Confirmada! 👍</p>
+        </div>
+        <p className="self-start text-[7px] uppercase tracking-widest text-stone-600">Enviado automático</p>
+      </div>
+    );
+  if (i === 3)
+    return (
+      <div className="flex h-28 gap-3 p-3.5">
+        <div className="flex-1">
+          <p className="mb-2 text-[8px] font-semibold uppercase tracking-widest text-stone-500">Junio</p>
+          <div className="grid grid-cols-7 gap-1">
+            {Array.from({ length: 21 }).map((_, j) => (
+              <span
+                key={j}
+                className={`flex h-3.5 w-3.5 items-center justify-center rounded-full text-[7px] font-bold ${
+                  j === 12 ? "bg-brand text-stone-950" : j < 10 ? "bg-white/[.04] text-stone-600" : "bg-white/[.08] text-stone-400"
+                }`}
+              >
+                {j === 12 ? "13" : ""}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="flex w-[40%] flex-col justify-center gap-1.5">
+          {["9:00", "10:30", "4:15"].map((h, j) => (
+            <span key={h} className={`rounded-md px-2 py-1 text-[8px] font-semibold ${j === 1 ? "bg-brand/15 text-brand ring-1 ring-inset ring-brand/25" : "bg-white/[.05] text-stone-400"}`}>
+              {h} {j === 1 ? "· Reservado" : "· Libre"}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+  if (i === 4)
+    return (
+      <div className="flex h-28 flex-col gap-2.5 p-3.5">
+        <div className="flex h-5 items-center gap-1.5 rounded-full bg-white/[.06] px-2.5">
+          <svg className="h-2.5 w-2.5 text-stone-500" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+          <span className="text-[8px] text-stone-400">barbería cerca de mí</span>
+        </div>
+        <div className="rounded-md bg-white/[.04] p-2">
+          <p className="text-[9px] font-semibold text-brand-300">Tu Negocio — Reservas en línea</p>
+          <p className="mt-0.5 text-[8px] text-stone-500">tu-negocio.com · Abierto hasta las 8 PM</p>
+          <p className="mt-1 flex items-center gap-1 text-[8px] text-stone-400">
+            <span className="text-amber-400">★★★★★</span> 4.9 ·
+            <svg className="h-2 w-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.05 11.5 7.35 11.76a1 1 0 0 0 1.3 0C13 21.5 20 15.4 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" /></svg>
+            Santo Domingo
+          </p>
+        </div>
+      </div>
+    );
+  return (
+    <div className="flex h-28 flex-col justify-center gap-2 p-3.5">
+      <div className="flex items-center gap-2">
+        <span className="relative flex h-2 w-2">
+          <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400/60" />
+          <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
+        </span>
+        <p className="text-[9px] font-semibold text-stone-300">Sistema en línea · respaldo de anoche OK</p>
+      </div>
+      <div className="max-w-[85%] self-start rounded-lg rounded-bl-sm bg-white/[.07] px-2.5 py-1.5">
+        <p className="text-[9px] text-stone-300">¿Me agregas un campo en el reporte?</p>
+      </div>
+      <div className="self-end rounded-lg rounded-br-sm bg-brand/15 px-2.5 py-1.5 ring-1 ring-inset ring-brand/20">
+        <p className="text-[9px] text-brand-300">Claro, te lo subo hoy mismo ✓</p>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="bg-stone-950 text-stone-300">
@@ -360,13 +486,16 @@ export default function Home() {
             ].map((c, i) => (
               <Reveal key={c.t} delay={i * 0.08}>
                 <div className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[.02] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:bg-white/[.04]">
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand ring-1 ring-inset ring-brand/20 transition-colors group-hover:bg-brand group-hover:text-stone-950 group-hover:ring-brand">
-                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor">{c.icon}</svg>
+                  <div className="relative overflow-hidden rounded-xl border border-white/10 bg-stone-900/70 transition-colors group-hover:border-brand/20" aria-hidden="true">
+                    <ServiceViz i={i} />
+                  </div>
+                  <div className="mt-6 flex items-center justify-between">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand/10 text-brand ring-1 ring-inset ring-brand/20 transition-colors group-hover:bg-brand group-hover:text-stone-950 group-hover:ring-brand">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.7} stroke="currentColor">{c.icon}</svg>
                     </span>
                     <span className="font-display text-sm tabular-nums text-stone-600">0{i + 1}</span>
                   </div>
-                  <h3 className="mt-6 font-display text-2xl font-bold tracking-[-0.01em] text-white">{c.t}</h3>
+                  <h3 className="mt-4 font-display text-2xl font-bold tracking-[-0.01em] text-white">{c.t}</h3>
                   <p className="mt-3 leading-relaxed text-stone-400">{c.d}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {c.points.map((p) => (
