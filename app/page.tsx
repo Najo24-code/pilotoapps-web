@@ -31,6 +31,7 @@ const works = [
   {
     href: "/demos/clinica",
     img: "/shots/clinica.webp",
+    imgFull: "/shots/full/clinica.webp",
     kind: "Sistema de citas en línea",
     name: "Clínica dental",
     desc: "Web con agenda de citas: el paciente reserva desde el celular y la clínica lo ve todo en un panel.",
@@ -39,6 +40,7 @@ const works = [
   {
     href: "/demos/restaurante",
     img: "/shots/restaurante.webp",
+    imgFull: "/shots/full/restaurante.webp",
     kind: "Reservas + menú digital",
     name: "Restaurante",
     desc: "Sitio atractivo con menú por categorías y reserva de mesa en línea, listo para llenar el local.",
@@ -47,6 +49,7 @@ const works = [
   {
     href: "/demos/ferreteria",
     img: "/shots/ferreteria.webp",
+    imgFull: "/shots/full/ferreteria.webp",
     kind: "Catálogo + inventario",
     name: "Ferretería",
     desc: "Catálogo en línea con stock en tiempo real y cotización rápida, con entrega a domicilio.",
@@ -55,6 +58,7 @@ const works = [
   {
     href: "/demos/salon",
     img: "/shots/salon.webp",
+    imgFull: "/shots/full/salon.webp",
     kind: "Reservas para salón",
     name: "Salón & Barbería",
     desc: "Web con reserva de cita en línea por servicio y estilista, con galería y equipo.",
@@ -63,6 +67,7 @@ const works = [
   {
     href: "/demos/hotel",
     img: "/shots/hotel.webp",
+    imgFull: "/shots/full/hotel.webp",
     kind: "Reservas de hotel",
     name: "Hotel boutique",
     desc: "Sitio de hotel con habitaciones, amenidades y reserva en línea por fechas y huéspedes.",
@@ -71,6 +76,7 @@ const works = [
   {
     href: "/demos/gimnasio",
     img: "/shots/gimnasio.webp",
+    imgFull: "/shots/full/gimnasio.webp",
     kind: "Planes + captación para gimnasio",
     name: "Gimnasio",
     desc: "Web enérgica con planes y precios, clase de prueba y galería del espacio, lista para captar nuevos miembros.",
@@ -79,6 +85,7 @@ const works = [
   {
     href: "/demos/academia",
     img: "/shots/academia.webp",
+    imgFull: "/shots/full/academia.webp",
     kind: "Captación para academia",
     name: "Academia",
     desc: "Web que guía al estudiante del primer contacto a la inscripción, con programas, precios y proceso claro.",
@@ -87,6 +94,7 @@ const works = [
   {
     href: "/demos/taller",
     img: "/shots/taller.webp",
+    imgFull: "/shots/full/taller.webp",
     kind: "Captación para taller mecánico",
     name: "Taller mecánico",
     desc: "Web técnica que genera confianza, con servicios, presupuesto sin sorpresas y solicitud de cita.",
@@ -116,7 +124,7 @@ const EMBERS = [
   { left: "90%", top: "63%", s: "3px", dur: "7.1s", delay: "3s" },
 ];
 
-function BrowserFrame({ src, alt }: { src: string; alt: string }) {
+function BrowserFrame({ src, alt, panSrc }: { src: string; alt: string; panSrc?: string }) {
   return (
     <div className="browser overflow-hidden rounded-2xl border border-white/10 bg-stone-900">
       {/* Barra de navegador neutra (universal, no atada a ningún sistema) */}
@@ -131,8 +139,15 @@ function BrowserFrame({ src, alt }: { src: string; alt: string }) {
         </div>
         <svg className="h-3.5 w-3.5 shrink-0 text-stone-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0 0 12.8 5.3M19.5 12a7.5 7.5 0 0 0-12.8-5.3M4.5 12V7.5m0 4.5h4.5m10.5 0V16.5m0-4.5h-4.5" /></svg>
       </div>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={`${BP}${src}`} alt={alt} width={1760} height={1100} loading="lazy" className="h-auto w-full" />
+      {panSrc ? (
+        <div className="pan relative aspect-[8/5] overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`${BP}${panSrc}`} alt={alt} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        </div>
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={`${BP}${src}`} alt={alt} width={1760} height={1100} loading="lazy" className="h-auto w-full" />
+      )}
     </div>
   );
 }
@@ -415,11 +430,12 @@ export default function Home() {
               <Reveal key={w.href} delay={(idx % 2) * 0.08}>
                 <Link href={w.href} target="_blank" className="group block">
                   <div className="relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5">
-                    <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} />
-                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-950/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <span className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-stone-950 shadow-lg">
+                    <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} panSrc={w.imgFull} />
+                    {/* Pastilla en esquina: no tapa el recorrido de la captura */}
+                    <div className="pointer-events-none absolute bottom-3 right-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-xs font-semibold text-stone-950 shadow-lg">
                         Abrir demo
-                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
                       </span>
                     </div>
                   </div>

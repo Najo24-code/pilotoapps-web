@@ -185,3 +185,16 @@ summary:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Recorrido de demo en las tarjetas: la captura de página completa se desliza
+   dentro del marco al pasar el mouse (bajada lenta, regreso rápido). */
+.pan img {
+  object-position: center top;
+  transition: object-position 1.2s ease-out;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .group:hover .pan img {
+    object-position: center bottom;
+    transition: object-position 7s linear;
+  }
+}
