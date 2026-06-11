@@ -15,6 +15,7 @@ const works = [
   {
     href: "/demos/panel",
     img: "/shots/panel.webp",
+    domain: "panel.tu-negocio.com",
     kind: "Sistema de gestión interno",
     name: "Panel de negocio",
     desc: "El software por dentro: caja, ventas, citas e inventario de tu negocio en un solo panel y en tiempo real.",
@@ -23,6 +24,7 @@ const works = [
   {
     href: "/demos/pos",
     img: "/shots/pos.webp",
+    domain: "caja.tu-negocio.com",
     kind: "Punto de venta (caja)",
     name: "Caja / Punto de venta",
     desc: "Terminal de venta táctil: arma el ticket, cobra en efectivo, tarjeta o transferencia y descuenta del inventario.",
@@ -31,6 +33,7 @@ const works = [
   {
     href: "/demos/clinica",
     img: "/shots/clinica.webp",
+    domain: "clinicasonrisa.com.do",
     imgFull: "/shots/full/clinica.webp",
     kind: "Sistema de citas en línea",
     name: "Clínica dental",
@@ -40,6 +43,7 @@ const works = [
   {
     href: "/demos/restaurante",
     img: "/shots/restaurante.webp",
+    domain: "laterraza.com.do",
     imgFull: "/shots/full/restaurante.webp",
     kind: "Reservas + menú digital",
     name: "Restaurante",
@@ -49,6 +53,7 @@ const works = [
   {
     href: "/demos/ferreteria",
     img: "/shots/ferreteria.webp",
+    domain: "elconstructor.com.do",
     imgFull: "/shots/full/ferreteria.webp",
     kind: "Catálogo + inventario",
     name: "Ferretería",
@@ -58,6 +63,7 @@ const works = [
   {
     href: "/demos/salon",
     img: "/shots/salon.webp",
+    domain: "studiobella.com.do",
     imgFull: "/shots/full/salon.webp",
     kind: "Reservas para salón",
     name: "Salón & Barbería",
@@ -67,6 +73,7 @@ const works = [
   {
     href: "/demos/hotel",
     img: "/shots/hotel.webp",
+    domain: "villamarena.com",
     imgFull: "/shots/full/hotel.webp",
     kind: "Reservas de hotel",
     name: "Hotel boutique",
@@ -76,6 +83,7 @@ const works = [
   {
     href: "/demos/gimnasio",
     img: "/shots/gimnasio.webp",
+    domain: "powerfit.com.do",
     imgFull: "/shots/full/gimnasio.webp",
     kind: "Planes + captación para gimnasio",
     name: "Gimnasio",
@@ -85,6 +93,7 @@ const works = [
   {
     href: "/demos/academia",
     img: "/shots/academia.webp",
+    domain: "lingua.edu.do",
     imgFull: "/shots/full/academia.webp",
     kind: "Captación para academia",
     name: "Academia",
@@ -94,6 +103,7 @@ const works = [
   {
     href: "/demos/taller",
     img: "/shots/taller.webp",
+    domain: "autoprord.com",
     imgFull: "/shots/full/taller.webp",
     kind: "Captación para taller mecánico",
     name: "Taller mecánico",
@@ -124,7 +134,7 @@ const EMBERS = [
   { left: "90%", top: "63%", s: "3px", dur: "7.1s", delay: "3s" },
 ];
 
-function BrowserFrame({ src, alt, panSrc }: { src: string; alt: string; panSrc?: string }) {
+function BrowserFrame({ src, alt, panSrc, domain }: { src: string; alt: string; panSrc?: string; domain?: string }) {
   return (
     <div className="browser overflow-hidden rounded-2xl border border-white/10 bg-stone-900">
       {/* Barra de navegador neutra (universal, no atada a ningún sistema) */}
@@ -135,7 +145,7 @@ function BrowserFrame({ src, alt, panSrc }: { src: string; alt: string; panSrc?:
         </div>
         <div className="flex min-w-0 flex-1 items-center gap-1.5 rounded-md bg-white/5 px-2.5 py-1 text-xs text-stone-500">
           <svg className="h-3 w-3 shrink-0 text-brand/80" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
-          <span className="truncate">tu-negocio.com</span>
+          <span className="truncate">{domain || "tu-negocio.com"}</span>
         </div>
         <svg className="h-3.5 w-3.5 shrink-0 text-stone-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0 0 12.8 5.3M19.5 12a7.5 7.5 0 0 0-12.8-5.3M4.5 12V7.5m0 4.5h4.5m10.5 0V16.5m0-4.5h-4.5" /></svg>
       </div>
@@ -270,7 +280,7 @@ export default function Home() {
                 tabIndex={i >= works.length ? -1 : undefined}
                 className="block w-[280px] shrink-0 transition-transform hover:-translate-y-1.5 sm:w-[320px]"
               >
-                <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} />
+                <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} domain={w.domain} />
                 <p className="mt-3 text-sm text-stone-500">
                   <span className="text-brand">{w.kind}</span> · <span className="text-stone-300">{w.name}</span>
                 </p>
@@ -396,7 +406,7 @@ export default function Home() {
               <Reveal key={w.href}>
                 <Link href={w.href} target="_blank" className="group grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
                   <div className={`relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5 ${i === 1 ? "lg:order-2" : ""}`}>
-                    <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} />
+                    <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} domain={w.domain} />
                     <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-stone-950/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <span className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-stone-950 shadow-lg">
                         Abrir demo
@@ -430,7 +440,7 @@ export default function Home() {
               <Reveal key={w.href} delay={(idx % 2) * 0.08}>
                 <Link href={w.href} target="_blank" className="group block">
                   <div className="relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5">
-                    <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} panSrc={w.imgFull} />
+                    <BrowserFrame src={w.img} alt={`Demo ${w.name} de Forja`} panSrc={w.imgFull} domain={w.domain} />
                     {/* Pastilla en esquina: no tapa el recorrido de la captura */}
                     <div className="pointer-events-none absolute bottom-3 right-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <span className="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-xs font-semibold text-stone-950 shadow-lg">
@@ -444,6 +454,11 @@ export default function Home() {
                     <div className="min-w-0">
                       <p className="text-xs font-semibold uppercase tracking-widest text-brand">{w.kind}</p>
                       <h3 className="mt-1.5 font-display text-xl font-bold tracking-[-0.01em] text-white md:text-2xl">{w.name}</h3>
+                      <div className="mt-3 flex flex-wrap gap-1.5">
+                        {w.features.map((f) => (
+                          <span key={f} className="rounded-full border border-white/10 bg-white/[.03] px-2.5 py-0.5 text-[11px] text-stone-400">{f}</span>
+                        ))}
+                      </div>
                     </div>
                     <svg className="ml-auto h-5 w-5 shrink-0 self-center text-stone-600 transition-all group-hover:translate-x-1 group-hover:text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
