@@ -302,7 +302,7 @@ export default function Home() {
               },
               {
                 t: "Automatización",
-                d: "Recordatorios, reportes y tareas repetitivas en piloto automático — menos trabajo manual, menos errores.",
+                d: "Recordatorios, reportes y tareas repetitivas en piloto automático: menos trabajo manual, menos errores.",
                 points: ["Recordatorios por WhatsApp", "Reportes que llegan solos", "Alertas de stock bajo", "Menos tareas a mano"],
                 icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
@@ -604,8 +604,8 @@ export default function Home() {
                   trabajas día a día.
                 </p>
                 <p>
-                  No solo hacemos webs: mantenemos software propio operando en producción — como
-                  SuaPréstamos, la app que viste arriba — y ese mismo estándar de ingeniería va en
+                  No solo hacemos webs: mantenemos software propio operando en producción, como
+                  SuaPréstamos, la app que viste arriba. Ese mismo estándar de ingeniería va en
                   cada proyecto que entregamos, del más pequeño al más grande.
                 </p>
                 <p>
@@ -667,7 +667,7 @@ export default function Home() {
             <Reveal delay={0.08} className="lg:col-span-5">
               <p className="text-lg leading-relaxed text-stone-600 lg:pb-2">
                 Cuatro pasos, sin letra pequeña: en cada uno sabes qué recibes,
-                cuándo y cuánto cuesta — desde la primera conversación.
+                cuándo y cuánto cuesta desde la primera conversación.
               </p>
             </Reveal>
           </div>
@@ -769,7 +769,7 @@ export default function Home() {
                   },
                   {
                     q: "¿Y si necesito cambios sobre la marcha?",
-                    a: "Los ajustes dentro del alcance acordado van incluidos. Si el proyecto crece con ideas nuevas, te cotizamos la diferencia antes de hacerla — nunca verás una sorpresa en la factura.",
+                    a: "Los ajustes dentro del alcance acordado van incluidos. Si el proyecto crece con ideas nuevas, te cotizamos la diferencia antes de hacerla. Nunca verás una sorpresa en la factura.",
                   },
                   {
                     q: "¿Necesito saber de tecnología para usarlo?",
