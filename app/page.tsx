@@ -10,6 +10,9 @@ const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Quiero un sistema 
 const WHATSAPP =
   "https://wa.me/18495821328?text=" +
   encodeURIComponent("Hola Forja, quiero información sobre un sistema para mi negocio.");
+const WHATSAPP_SUA =
+  "https://wa.me/18495821328?text=" +
+  encodeURIComponent("Hola Forja, manejo préstamos y me interesa SuaPréstamos para mi negocio.");
 
 const works = [
   {
@@ -343,18 +346,21 @@ export default function Home() {
           <div className="mt-10 grid gap-10 border-t border-white/10 pt-8 lg:grid-cols-12 lg:gap-12">
             <Reveal delay={0.1} className="lg:col-span-6">
               <p className="max-w-md text-lg leading-relaxed text-stone-400 md:text-xl">
-                Saca tu negocio del cuaderno y el Excel. Te construimos un sistema a la
-                medida que manejas completo desde el celular.
+                Saca tu negocio del cuaderno y el Excel. Construimos software a la medida
+                para negocios en República Dominicana, sistemas que manejas completos
+                desde el celular.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="#contacto"
-                  className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-semibold text-stone-950 transition-all hover:scale-[1.02] hover:bg-brand-300"
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 font-semibold text-white transition-all hover:scale-[1.02] hover:bg-[#1fc05a]"
                 >
-                  Cuéntanos tu caso
-                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.989-1.045a9.866 9.866 0 0 0 .002-.001zm5.49-7.713c-.13-.218-.477-.349-.998-.61-.52-.26-3.077-1.519-3.554-1.692-.477-.174-.825-.26-1.172.26-.347.521-1.345 1.692-1.649 2.04-.303.347-.607.39-1.128.13-.521-.26-2.199-.811-4.188-2.585-1.549-1.382-2.595-3.089-2.899-3.61-.303-.521-.032-.802.228-1.061.234-.234.521-.609.782-.913.26-.304.347-.522.521-.869.174-.347.087-.651-.043-.911-.13-.26-1.172-2.823-1.606-3.866-.423-1.015-.853-.878-1.172-.894l-1-.017c-.347 0-.911.13-1.388.652-.477.52-1.822 1.779-1.822 4.342 0 2.562 1.866 5.038 2.126 5.385.26.347 3.673 5.608 8.901 7.862 1.243.537 2.213.857 2.969 1.097 1.248.396 2.383.34 3.281.206.999-.149 3.077-1.258 3.511-2.474.434-1.215.434-2.258.304-2.474z" />
                   </svg>
+                  Escríbenos por WhatsApp
                 </a>
                 <a
                   href="#trabajos"
@@ -657,6 +663,26 @@ export default function Home() {
                   </span>
                   En producción · operando a diario
                 </p>
+
+                {/* Oferta de producto: la misma app, instalada para el negocio del visitante */}
+                <div className="mt-8 max-w-md rounded-2xl border border-white/10 bg-white/[.03] p-6">
+                  <p className="font-display text-lg font-semibold text-white">
+                    ¿Manejas préstamos? Esta app puede ser tuya.
+                  </p>
+                  <p className="mt-2 leading-relaxed text-stone-400">
+                    Instalamos SuaPréstamos para tu negocio: con tu marca, tus reglas de
+                    cobro y tus datos en una instancia solo tuya. Lista en días, no en meses.
+                  </p>
+                  <a
+                    href={WHATSAPP_SUA}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mt-4 inline-flex items-center gap-2 font-semibold text-white underline decoration-brand/50 underline-offset-4 transition-colors hover:decoration-brand"
+                  >
+                    Pregúntanos por WhatsApp
+                    <svg className="h-4 w-4 text-brand transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  </a>
+                </div>
               </div>
 
               <div className="relative lg:col-span-6">
@@ -916,6 +942,10 @@ export default function Home() {
                     a: "Cada proyecto se cotiza por su alcance: no cuesta lo mismo una web profesional que un sistema de gestión completo. Lo que sí es fijo es la forma: el precio se cierra por escrito antes de empezar y no cambia a mitad de camino. Cuéntanos tu caso y te preparamos una propuesta sin compromiso, con números claros.",
                   },
                   {
+                    q: "¿Venden sistemas ya hechos o solo a la medida?",
+                    a: "Las dos cosas. SuaPréstamos, nuestra app de préstamos y cobros que ya opera en producción, se instala para tu negocio con tu marca y tus datos en una instancia solo tuya, lista en días. Y si tu negocio necesita algo distinto, lo construimos a la medida desde cero.",
+                  },
+                  {
                     q: "¿En cuánto tiempo está listo?",
                     a: "Depende del tamaño: una web profesional queda lista en cuestión de días; un sistema de gestión completo toma semanas. Antes de empezar te damos una fecha de entrega y te mantenemos al tanto del avance en cada paso.",
                   },
@@ -1020,15 +1050,64 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 py-12">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 sm:px-6 md:flex-row lg:px-8">
-          <ForjaWord className="text-xl" />
-          <p className="text-sm text-stone-500">Software a la medida para PYMEs · República Dominicana</p>
-          <a href={MAILTO} className="text-sm text-stone-400 transition-colors hover:text-white">
-            {EMAIL}
-          </a>
+      <footer className="border-t border-white/10 pt-14 pb-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-5">
+              <ForjaWord className="text-2xl" />
+              <p className="mt-4 max-w-xs leading-relaxed text-stone-400">
+                Software a la medida para negocios en República Dominicana. Sistemas de
+                citas, inventario, cobros y web profesional.
+              </p>
+              <p className="mt-5 inline-flex items-center gap-2 text-sm text-stone-500">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                Hecho en Santo Domingo, RD
+              </p>
+            </div>
+            <div className="md:col-span-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Mapa</p>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {[
+                  ["#servicios", "Servicios"],
+                  ["#trabajos", "Trabajos"],
+                  ["#reales", "Proyectos reales"],
+                  ["#proceso", "Proceso"],
+                  ["#faq", "Preguntas frecuentes"],
+                  ["#contacto", "Contacto"],
+                ].map(([href, label]) => (
+                  <li key={href}>
+                    <a href={href} className="text-stone-400 transition-colors hover:text-white">
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="md:col-span-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Hablemos</p>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                <li>
+                  <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="text-stone-400 transition-colors hover:text-white">
+                    WhatsApp: 849 582 1328
+                  </a>
+                </li>
+                <li>
+                  <a href={MAILTO} className="text-stone-400 transition-colors hover:text-white">
+                    {EMAIL}
+                  </a>
+                </li>
+              </ul>
+              <ul className="mt-6 space-y-2 border-t border-white/10 pt-5 text-sm text-stone-500">
+                <li>Te respondemos en menos de 24 horas.</li>
+                <li>El código, el dominio y tus datos siempre son tuyos.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 sm:flex-row">
+            <p className="text-xs text-stone-600">© 2026 Forja. Todos los derechos reservados.</p>
+            <p className="text-xs text-stone-600">Convierte tu negocio en un sistema.</p>
+          </div>
         </div>
-        <p className="mt-8 text-center text-xs text-stone-600">© 2026 Forja. Todos los derechos reservados.</p>
       </footer>
 
       <WhatsAppFab />

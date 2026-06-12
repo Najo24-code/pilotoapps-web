@@ -19,7 +19,7 @@ const bricolage = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE + "/"),
-  title: "Forja | Software a la medida para tu negocio",
+  title: "Forja | Software a la medida en República Dominicana",
   description:
     "Desarrollo de software a la medida para PYMEs en República Dominicana: sistemas de citas, inventario, ventas y web profesional.",
   alternates: { canonical: "/" },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: "es_DO",
     url: SITE,
     siteName: "Forja",
-    title: "Forja | Software a la medida para tu negocio",
+    title: "Forja | Software a la medida en República Dominicana",
     description:
       "Sistemas de citas, inventario, ventas y web profesional para PYMEs en República Dominicana. Rápido, a tu medida y con trato directo.",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Forja | Software a la medida para tu negocio",
+    title: "Forja | Software a la medida en República Dominicana",
     description:
       "Sistemas de citas, inventario, ventas y web profesional para PYMEs en República Dominicana.",
     images: [SITE + "/og.png"],
