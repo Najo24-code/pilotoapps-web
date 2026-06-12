@@ -9,6 +9,9 @@ export const WHATSAPP =
 export const WHATSAPP_SUA =
   "https://wa.me/18495821328?text=" +
   encodeURIComponent("Hola Forja, manejo préstamos y me interesa SuaPréstamos para mi negocio.");
+export const WHATSAPP_CAJAFIT =
+  "https://wa.me/18495821328?text=" +
+  encodeURIComponent("Hola Forja, tengo un gimnasio y me interesa CajaFit.");
 
 // ── Demos ───────────────────────────────────────────────────────────────────
 export const works = [

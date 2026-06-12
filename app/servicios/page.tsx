@@ -165,7 +165,7 @@ export default function Servicios() {
                   },
                   {
                     q: "¿Venden sistemas ya hechos o solo a la medida?",
-                    a: "Las dos cosas. SuaPréstamos, nuestra app de préstamos y cobros que ya opera en producción, se instala para tu negocio con tu marca y tus datos en una instancia solo tuya, lista en días. Y si tu negocio necesita algo distinto, lo construimos a la medida desde cero.",
+                    a: "Las dos cosas. Tenemos dos sistemas que ya operan en producción y se instalan para tu negocio con tu marca, listos en días: SuaPréstamos, para préstamos y cobros, y CajaFit, la caja para gimnasios. Y si tu negocio necesita algo distinto, lo construimos a la medida desde cero.",
                   },
                   {
                     q: "¿En cuánto tiempo está listo?",

@@ -3,17 +3,17 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 import WhatsAppFab from "../components/WhatsAppFab";
-import { WHATSAPP_SUA, WhatsAppIcon, SectionTag, LiveBadge } from "../lib/data";
+import { WHATSAPP, WHATSAPP_SUA, WHATSAPP_CAJAFIT, WhatsAppIcon, SectionTag, LiveBadge } from "../lib/data";
 import { BP, SITE } from "../site";
 
 export const metadata: Metadata = {
-  title: "SuaPréstamos | Sistema de préstamos y cobros en República Dominicana",
+  title: "Sistemas listos | Forja, software a la medida en República Dominicana",
   description:
-    "App para prestamistas: clientes, préstamos, cuotas, mora y cobros desde el celular. En producción, operando a diario. Se instala para tu negocio con tu propia marca.",
-  alternates: { canonical: "/suaprestamos/" },
+    "Dos sistemas en producción que instalamos para tu negocio con tu marca: SuaPréstamos, para préstamos y cobros, y CajaFit, la caja para gimnasios. Operando a diario.",
+  alternates: { canonical: "/sistemas/" },
 };
 
-const FEATURES = [
+const SUA_FEATURES = [
   {
     t: "Clientes y garantes",
     d: "La ficha completa de cada cliente con sus préstamos, pagos y garantes, en un solo lugar.",
@@ -40,17 +40,58 @@ const FEATURES = [
   },
 ];
 
-export default function SuaPrestamos() {
+const CAJAFIT_FEATURES = [
+  {
+    t: "Caja del día",
+    d: "Cada cobro en dos toques, con recibo, hora y método de pago. El cierre del día es un clic.",
+  },
+  {
+    t: "Mensualidades con semáforo",
+    d: "Ves al instante quién está al día, quién está por vencer y quién ya venció.",
+  },
+  {
+    t: "Entrenamiento personal",
+    d: "Los clientes de entrenamiento personal con sus pagos llevados aparte.",
+  },
+  {
+    t: "Tienda e inventario",
+    d: "La tienda de mostrador del gimnasio con sus productos y su stock controlado.",
+  },
+  {
+    t: "Reportes del mes",
+    d: "El dueño ve su mes completo, cobro por cobro, sin tocar un cuaderno.",
+  },
+  {
+    t: "Tu marca en el panel",
+    d: "Tu gimnasio entra a su propio panel, con su nombre y sus datos aparte.",
+  },
+];
+
+export default function Sistemas() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "SuaPréstamos",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Android, Web",
-    description:
-      "Sistema de gestión de préstamos y cobros para prestamistas en República Dominicana: clientes, cuotas, mora y cartera en tiempo real.",
-    url: SITE + "/suaprestamos/",
-    publisher: { "@type": "Organization", name: "Forja" },
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        name: "SuaPréstamos",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Android, Web",
+        description:
+          "Sistema de gestión de préstamos y cobros para prestamistas en República Dominicana: clientes, cuotas, mora y cartera en tiempo real.",
+        url: SITE + "/sistemas/",
+        publisher: { "@type": "Organization", name: "Forja" },
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "CajaFit",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        description:
+          "Sistema de caja para gimnasios en República Dominicana: caja del día, mensualidades con semáforo de vencimiento, entrenamiento personal e inventario.",
+        url: SITE + "/sistemas/",
+        publisher: { "@type": "Organization", name: "Forja" },
+      },
+    ],
   };
 
   return (
@@ -58,26 +99,40 @@ export default function SuaPrestamos() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
 
-      {/* HERO DE PRODUCTO */}
-      <section className="grain relative overflow-hidden pt-28 pb-16 md:pt-36">
+      {/* CABECERA */}
+      <section className="grain relative overflow-hidden pt-28 pb-4 md:pt-36">
         <div className="mesh absolute inset-0" />
         <div className="absolute -top-44 right-[-8rem] h-[680px] w-[680px] rounded-full bg-brand/10 blur-[150px]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-stone-950 to-transparent" />
-
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="max-w-3xl">
+            <SectionTag n="01" label="Sistemas listos" />
+            <h1 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
+              Software probado, listo para estrenar con tu marca.
+            </h1>
+            <p className="mt-6 text-lg text-stone-400 md:text-xl">
+              Dos sistemas nuestros operan en producción todos los días. Los instalamos
+              para tu negocio con tu nombre, tus reglas y tus datos aparte, en días, no en meses.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SUAPRÉSTAMOS */}
+      <section id="suaprestamos" className="scroll-mt-24 py-14 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-6">
               <LiveBadge>En producción · operando a diario</LiveBadge>
-              <h1 className="mt-6 font-display text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-white md:text-7xl">
+              <h2 className="mt-6 font-display text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-white md:text-6xl">
                 SuaPréstamos<span className="text-brand">.</span>
-              </h1>
+              </h2>
               <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-brand">
                 Sistema de préstamos y cobros
               </p>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-stone-400 md:text-xl">
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-stone-400">
                 Saca tu cartera de préstamos del cuaderno: clientes, cuotas, mora y
-                cobros manejados completos desde el celular. Y puede ser tuya, con tu
-                propia marca.
+                cobros manejados completos desde el celular. Se instala en tu Android
+                directo desde el navegador y funciona también como web.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -93,9 +148,7 @@ export default function SuaPrestamos() {
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-stone-500">
                 <span>Se instala en Android</span>
                 <span className="h-1 w-1 rounded-full bg-stone-600" />
-                <span>Funciona también como web</span>
-                <span className="h-1 w-1 rounded-full bg-stone-600" />
-                <span>Tu instancia, tus datos</span>
+                <span>Tu instancia separada, solo tuya</span>
               </div>
             </Reveal>
 
@@ -115,61 +168,13 @@ export default function SuaPrestamos() {
               </div>
             </Reveal>
           </div>
-        </div>
-      </section>
 
-      {/* CASO: PROBLEMA → SOLUCIÓN → RESULTADO */}
-      <section className="border-t border-white/10 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="max-w-3xl">
-            <SectionTag n="01" label="La historia" />
-            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
-              Nació de un problema real, no de una idea de oficina.
-            </h2>
-          </Reveal>
-          <div className="mt-12 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-3 md:gap-12">
-            <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">El problema</p>
-              <p className="mt-3 leading-relaxed text-stone-400">
-                Una cartera de préstamos llevada en cuaderno y Excel: cuotas que se escapan,
-                mora que se descubre tarde y las cuentas viviendo en la cabeza del prestamista.
-              </p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Lo que construimos</p>
-              <p className="mt-3 leading-relaxed text-stone-400">
-                Una app móvil que gestiona clientes, préstamos, cuotas, mora y cobros, con un
-                dashboard que muestra la cartera en tiempo real.
-              </p>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand">El resultado</p>
-              <p className="mt-3 leading-relaxed text-stone-300">
-                La operación completa se maneja desde el celular: cada cuota tiene fecha y
-                estado, la mora se ve al instante y nada depende de la memoria. Hoy está en
-                producción, operando todos los días.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* QUÉ INCLUYE */}
-      <section className="border-t border-white/10 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="max-w-3xl">
-            <SectionTag n="02" label="Qué incluye" />
-            <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
-              Todo lo que una operación de préstamos necesita.
-            </h2>
-          </Reveal>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {FEATURES.map((f, i) => (
-              <Reveal key={f.t} delay={i * 0.06}>
-                <div className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[.02] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:bg-white/[.04]">
-                  <span className="font-display text-sm tabular-nums text-stone-600">0{i + 1}</span>
-                  <h3 className="mt-3 font-display text-xl font-bold tracking-[-0.01em] text-white">{f.t}</h3>
-                  <p className="mt-3 leading-relaxed text-stone-400">{f.d}</p>
+          <div className="mt-14 grid gap-x-10 gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+            {SUA_FEATURES.map((f, i) => (
+              <Reveal key={f.t} delay={i * 0.05}>
+                <div>
+                  <h3 className="font-display text-lg font-bold tracking-[-0.01em] text-white">{f.t}</h3>
+                  <p className="mt-2 leading-relaxed text-stone-400">{f.d}</p>
                 </div>
               </Reveal>
             ))}
@@ -177,20 +182,84 @@ export default function SuaPrestamos() {
         </div>
       </section>
 
-      {/* TUYA, CON TU MARCA — banda clara */}
+      {/* CAJAFIT */}
+      <section id="cajafit" className="scroll-mt-24 border-t border-white/10 py-14 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
+            <Reveal className="relative pb-10 lg:order-1 lg:col-span-6">
+              <div className="absolute -inset-4 -z-10 rounded-[3rem] bg-brand/10 blur-3xl" />
+              <div className="relative">
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-stone-900 shadow-2xl shadow-black/50">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`${BP}/shots/cajafit-caja.webp`} alt="Caja del día en CajaFit" loading="lazy" className="h-auto w-full" />
+                </div>
+                <div className="absolute -bottom-10 -right-3 hidden w-3/5 overflow-hidden rounded-xl border border-white/10 bg-stone-900 shadow-2xl shadow-black/50 sm:block">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`${BP}/shots/cajafit-mensuales.webp`} alt="Mensualidades con semáforo de vencimiento en CajaFit" loading="lazy" className="h-auto w-full" />
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1} className="lg:order-2 lg:col-span-6">
+              <LiveBadge>En producción · operando a diario</LiveBadge>
+              <h2 className="mt-6 font-display text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-white md:text-6xl">
+                CajaFit<span className="text-brand">.</span>
+              </h2>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-brand">
+                Sistema de caja para gimnasios
+              </p>
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-stone-400">
+                La caja de tu gimnasio sin cuaderno: cobros del día, mensualidades con
+                semáforo de vencimiento, entrenamiento personal y la tienda de mostrador
+                con inventario. Hoy opera la caja diaria de un gimnasio real.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href={WHATSAPP_CAJAFIT}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 font-semibold text-white transition-all hover:scale-[1.02] hover:bg-[#1fc05a]"
+                >
+                  <WhatsAppIcon />
+                  Lo quiero para mi gimnasio
+                </a>
+              </div>
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-stone-500">
+                <span>Funciona como web, sin instalar nada</span>
+                <span className="h-1 w-1 rounded-full bg-stone-600" />
+                <span>Tu panel, con tu marca</span>
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="mt-14 grid gap-x-10 gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+            {CAJAFIT_FEATURES.map((f, i) => (
+              <Reveal key={f.t} delay={i * 0.05}>
+                <div>
+                  <h3 className="font-display text-lg font-bold tracking-[-0.01em] text-white">{f.t}</h3>
+                  <p className="mt-2 leading-relaxed text-stone-400">{f.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TUYO, CON TU MARCA — banda clara */}
       <section className="bg-[#f3efe9] py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-end gap-6 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-7">
-              <SectionTag n="03" label="Tuya, con tu marca" light />
+              <SectionTag n="02" label="Tuyo, con tu marca" light />
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-stone-900 md:text-6xl">
                 No alquilas un sistema ajeno: estrenas el tuyo.
               </h2>
             </Reveal>
             <Reveal delay={0.08} className="lg:col-span-5">
               <p className="text-lg leading-relaxed text-stone-600 lg:pb-2">
-                Instalamos SuaPréstamos para tu negocio en una instancia separada, solo
-                tuya. No compartes servidor ni base de datos con nadie.
+                Configuramos el sistema para tu negocio con tu nombre comercial y tus
+                reglas. Tus datos van aparte: tu cartera, tus clientes y tus números
+                son solo tuyos.
               </p>
             </Reveal>
           </div>
@@ -202,12 +271,12 @@ export default function SuaPrestamos() {
                 r: "Cotización clara y por escrito, por WhatsApp.",
               },
               {
-                n: "02", t: "La configuramos",
-                d: "Tu nombre comercial, tus reglas de préstamo y tu instancia propia con tus datos aparte.",
+                n: "02", t: "Lo configuramos",
+                d: "Tu nombre comercial, tus reglas y tu espacio propio con tus datos aparte.",
                 r: "El sistema con tu marca, listo para probar.",
               },
               {
-                n: "03", t: "La estrenas",
+                n: "03", t: "Lo estrenas",
                 d: "En días estás cobrando con el sistema. Te enseñamos a usarlo y quedamos para soporte.",
                 r: "Tu operación corriendo, con capacitación incluida.",
               },
@@ -231,7 +300,7 @@ export default function SuaPrestamos() {
           <Reveal className="mt-16 flex flex-col gap-5 border-t border-stone-900/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-stone-600">Sin planes publicados ni letra pequeña: el precio se conversa y se cierra por escrito.</p>
             <a
-              href={WHATSAPP_SUA}
+              href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-semibold text-stone-900 transition-colors hover:text-brand-600"
@@ -243,18 +312,18 @@ export default function SuaPrestamos() {
         </div>
       </section>
 
-      {/* FAQ DEL PRODUCTO */}
+      {/* FAQ DE LOS SISTEMAS */}
       <section className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
-              <SectionTag n="04" label="Preguntas frecuentes" />
+              <SectionTag n="03" label="Preguntas frecuentes" />
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
-                Lo que preguntan los prestamistas.
+                Lo que todos preguntan antes de estrenar.
               </h2>
               <p className="mt-6 text-lg text-stone-400">
                 ¿Tienes otra duda?{" "}
-                <a href={WHATSAPP_SUA} target="_blank" rel="noopener noreferrer" className="font-medium text-white underline decoration-brand/50 underline-offset-4 transition-colors hover:decoration-brand">
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="font-medium text-white underline decoration-brand/50 underline-offset-4 transition-colors hover:decoration-brand">
                   Escríbenos por WhatsApp
                 </a>{" "}
                 y te respondemos directo.
@@ -264,20 +333,20 @@ export default function SuaPrestamos() {
               <div className="divide-y divide-white/10 border-y border-white/10">
                 {[
                   {
-                    q: "¿Cómo se instala?",
-                    a: "Se instala en tu Android directo desde el navegador, sin pasar por una tienda de aplicaciones, y también funciona como web en cualquier computadora. Tú y tus cobradores la abren desde el celular.",
+                    q: "¿Cómo se usan?",
+                    a: "SuaPréstamos se instala en tu Android directo desde el navegador, sin pasar por una tienda de aplicaciones, y funciona también como web. CajaFit funciona como web: se abre desde cualquier navegador, en la computadora del local o en el celular.",
                   },
                   {
                     q: "¿Mis datos se mezclan con los de otros negocios?",
-                    a: "No. Cada negocio recibe su instancia separada, con su propia base de datos. Tu cartera, tus clientes y tus números son solo tuyos.",
+                    a: "No. Cada negocio tiene su espacio con sus datos aparte. Tu cartera, tus clientes y tus números son solo tuyos.",
                   },
                   {
-                    q: "¿Puedo verla funcionando antes de decidir?",
-                    a: "Sí. Te la mostramos en vivo con datos de ejemplo, por videollamada o con un acceso de prueba, para que la toques tú mismo antes de hablar de números.",
+                    q: "¿Puedo verlos funcionando antes de decidir?",
+                    a: "Sí. Te los mostramos en vivo con datos de ejemplo, por videollamada o con un acceso de prueba, para que los toques tú mismo antes de hablar de números.",
                   },
                   {
-                    q: "¿Cuánto cuesta?",
-                    a: "Depende del tamaño de tu operación. Escríbenos por WhatsApp, cuéntanos cuántos clientes manejas y te preparamos una cotización clara, cerrada por escrito antes de empezar.",
+                    q: "¿Cuánto cuestan?",
+                    a: "Depende del tamaño de tu operación. Escríbenos por WhatsApp, cuéntanos tu caso y te preparamos una cotización clara, cerrada por escrito antes de empezar.",
                   },
                 ].map((f) => (
                   <details key={f.q} className="group">
@@ -303,16 +372,16 @@ export default function SuaPrestamos() {
             <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-7">
                 <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
-                  Deja el cuaderno. Tu cartera cabe en tu bolsillo.
+                  Deja el cuaderno. Tu negocio cabe en tu bolsillo.
                 </h2>
                 <p className="mt-5 max-w-lg text-lg text-stone-400">
-                  Cuéntanos cómo manejas tus préstamos hoy y te enseñamos SuaPréstamos
+                  Cuéntanos cómo manejas tu negocio hoy y te enseñamos el sistema
                   funcionando, sin compromiso.
                 </p>
               </div>
               <div className="flex lg:col-span-5 lg:justify-end">
                 <a
-                  href={WHATSAPP_SUA}
+                  href={WHATSAPP}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 font-semibold text-white transition-all hover:scale-[1.02] hover:bg-[#1fc05a]"

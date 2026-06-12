@@ -5,7 +5,7 @@ import { EMAIL, MAILTO, WHATSAPP } from "../lib/data";
 const MAP = [
   ["/servicios", "Servicios"],
   ["/trabajos", "Trabajos"],
-  ["/suaprestamos", "SuaPréstamos"],
+  ["/sistemas", "Sistemas"],
   ["/#sobre", "El estudio"],
   ["/contacto", "Contacto"],
 ];

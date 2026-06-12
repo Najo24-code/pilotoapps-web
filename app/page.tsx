@@ -213,7 +213,7 @@ export default function Home() {
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {/* SuaPréstamos */}
             <Reveal>
-              <Link href="/suaprestamos" className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.02] transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:bg-white/[.04]">
+              <Link href="/sistemas#suaprestamos" className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.02] transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:bg-white/[.04]">
                 <div className="relative h-64 overflow-hidden bg-stone-900/60">
                   <div className="absolute -inset-4 rounded-[3rem] bg-brand/10 blur-3xl" />
                   <div className="absolute inset-x-0 top-8 flex justify-center gap-4">
@@ -246,7 +246,7 @@ export default function Home() {
 
             {/* CajaFit */}
             <Reveal delay={0.08}>
-              <Link href="/trabajos#cajafit" className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.02] transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:bg-white/[.04]">
+              <Link href="/sistemas#cajafit" className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.02] transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:bg-white/[.04]">
                 <div className="relative h-64 overflow-hidden bg-stone-900/60">
                   <div className="absolute -inset-4 rounded-[3rem] bg-brand/10 blur-3xl" />
                   <div className="absolute inset-x-6 top-8 overflow-hidden rounded-t-xl border border-white/10 bg-stone-900 shadow-2xl shadow-black/50">
@@ -265,7 +265,7 @@ export default function Home() {
                   <div className="mt-5 flex items-center justify-between gap-4 border-t border-white/10 pt-5">
                     <LiveBadge>En producción</LiveBadge>
                     <span className="inline-flex items-center gap-2 font-semibold text-white">
-                      Ver el caso
+                      Conócelo
                       <ArrowIcon className="h-4 w-4 text-brand transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
