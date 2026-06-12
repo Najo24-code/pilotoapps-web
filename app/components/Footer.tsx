@@ -3,6 +3,7 @@ import { ForjaWord } from "./Navbar";
 import { EMAIL, MAILTO, WHATSAPP } from "../lib/data";
 
 const MAP = [
+  ["/", "Inicio"],
   ["/servicios", "Servicios"],
   ["/trabajos", "Trabajos"],
   ["/sistemas", "Sistemas"],
