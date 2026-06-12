@@ -939,7 +939,7 @@ export default function Home() {
                 {[
                   {
                     q: "¿Cuánto cuesta un sistema a la medida?",
-                    a: "Cada proyecto se cotiza por su alcance: no cuesta lo mismo una web profesional que un sistema de gestión completo. Lo que sí es fijo es la forma: el precio se cierra por escrito antes de empezar y no cambia a mitad de camino. Cuéntanos tu caso y te preparamos una propuesta sin compromiso, con números claros.",
+                    a: "Cada proyecto se cotiza por su alcance: no cuesta lo mismo una web profesional que un sistema de gestión completo. Como referencia, los proyectos parten desde RD$15,000. Lo que sí es fijo es la forma: el precio se cierra por escrito antes de empezar y no cambia a mitad de camino. Cuéntanos tu caso y te preparamos una propuesta sin compromiso, con números claros.",
                   },
                   {
                     q: "¿Venden sistemas ya hechos o solo a la medida?",
