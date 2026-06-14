@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 const SUA_FEATURES = [
   {
-    t: "Clientes y garantes",
-    d: "La ficha completa de cada cliente con sus préstamos, pagos y garantes, en un solo lugar.",
+    t: "Clientes y referencias",
+    d: "La ficha completa de cada cliente con sus préstamos, pagos y su contacto de referencia, en un solo lugar.",
   },
   {
     t: "Préstamos y cuotas",
