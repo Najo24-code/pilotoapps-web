@@ -73,9 +73,12 @@ export default function Home() {
           <div className="mt-10 grid gap-10 border-t border-white/10 pt-8 lg:grid-cols-12 lg:gap-12">
             <Reveal delay={0.1} className="lg:col-span-6">
               <p className="max-w-md text-lg leading-relaxed text-stone-400 md:text-xl">
-                Saca tu negocio del cuaderno y el Excel. Construimos software a la medida
-                para negocios en República Dominicana, sistemas que manejas completos
-                desde el celular.
+                Te construimos la app a la medida para llevar tu negocio completo
+                desde el celular. Sin cuaderno y sin Excel.
+              </p>
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-stone-500">
+                Para barberías, gimnasios, colmados, prestamistas y talleres de
+                República Dominicana que quieren dejar el papel.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -147,12 +150,90 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* ECOSISTEMA — mapa de todo Forja, la entrada única a cada cosa */}
+      <section className="border-t border-white/10 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-end gap-6 lg:grid-cols-12 lg:gap-16">
+            <Reveal className="lg:col-span-7">
+              <SectionTag n="01" label="El ecosistema Forja" />
+              <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
+                Todo lo nuestro, en un solo lugar.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.08} className="lg:col-span-5">
+              <p className="text-lg leading-relaxed text-stone-400 lg:pb-2">
+                Construimos a tu medida, operamos software propio en producción y lo
+                mostramos abierto para que lo toques. Empieza por donde quieras.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {/* Construimos */}
+            <Reveal>
+              <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[.02] p-7 transition-colors hover:border-white/20">
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand">Construimos</p>
+                <h3 className="mt-3 font-display text-2xl font-bold tracking-[-0.01em] text-white">Software a tu medida</h3>
+                <p className="mt-3 flex-1 leading-relaxed text-stone-400">
+                  Sistemas de citas, inventario y cobros, más la web que te trae clientes. Desde cero, no plantillas.
+                </p>
+                <Link href="/servicios" className="group mt-6 inline-flex items-center gap-2 font-semibold text-white">
+                  Ver servicios
+                  <ArrowIcon className="h-4 w-4 text-brand transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </Reveal>
+
+            {/* Operamos — centro: con la app en vivo */}
+            <Reveal delay={0.06}>
+              <div className="flex h-full flex-col rounded-2xl border border-brand/30 bg-brand/[.04] p-7 transition-colors hover:border-brand/50">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-brand">Operamos</p>
+                  <LiveBadge>En producción</LiveBadge>
+                </div>
+                <h3 className="mt-3 font-display text-2xl font-bold tracking-[-0.01em] text-white">Sistemas en producción</h3>
+                <p className="mt-3 flex-1 leading-relaxed text-stone-300">
+                  SuaPréstamos y CajaFit corren a diario. Los instalamos para tu negocio con tu propia marca.
+                </p>
+                <Link href="/sistemas" className="group mt-6 inline-flex items-center gap-2 font-semibold text-white">
+                  Conoce los dos sistemas
+                  <ArrowIcon className="h-4 w-4 text-brand transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </Reveal>
+
+            {/* Mostramos */}
+            <Reveal delay={0.12}>
+              <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[.02] p-7 transition-colors hover:border-white/20">
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand">Mostramos</p>
+                <h3 className="mt-3 font-display text-2xl font-bold tracking-[-0.01em] text-white">Diez demos navegables</h3>
+                <p className="mt-3 flex-1 leading-relaxed text-stone-400">
+                  Webs y apps reales que puedes abrir y tocar ahora mismo, sin pedir permiso a nadie.
+                </p>
+                <Link href="/trabajos" className="group mt-6 inline-flex items-center gap-2 font-semibold text-white">
+                  Ver trabajos
+                  <ArrowIcon className="h-4 w-4 text-brand transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-stone-400">¿Listo para empezar? La primera conversación es gratis y sin compromiso.</p>
+            <Link href="/contacto" className="group inline-flex shrink-0 items-center gap-2 font-semibold text-white">
+              Hablemos
+              <ArrowIcon className="h-4 w-4 text-brand transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
       {/* QUÉ HACEMOS — sumario que lleva a /servicios */}
       <section className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-end gap-6 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-7">
-              <SectionTag n="01" label="Qué hacemos" />
+              <SectionTag n="02" label="Qué hacemos" />
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
                 Software a tu medida, no plantillas.
               </h2>
@@ -197,7 +278,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-end gap-6 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-7">
-              <SectionTag n="02" label="Software en producción" />
+              <SectionTag n="03" label="Software en producción" />
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
                 No solo demos: apps operando a diario.
               </h2>
@@ -281,7 +362,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-6">
-              <SectionTag n="03" label="Detrás de Forja" />
+              <SectionTag n="04" label="Detrás de Forja" />
               <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
                 Hablas directo con quienes construyen tu sistema.
               </h2>
