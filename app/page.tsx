@@ -228,34 +228,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* QUÉ HACEMOS — sumario que lleva a /servicios */}
-      <section className="border-t border-white/10 py-16 md:py-24">
+      {/* QUÉ HACEMOS — banda clara cálida (alterna el tono en la mitad de arriba) */}
+      <section className="bg-[#f3efe9] py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-end gap-6 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-7">
-              <SectionTag n="02" label="Qué hacemos" />
-              <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-6xl">
+              <SectionTag n="02" label="Qué hacemos" light />
+              <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-stone-900 md:text-6xl">
                 Software a tu medida, no plantillas.
               </h2>
             </Reveal>
             <Reveal delay={0.08} className="lg:col-span-5">
-              <p className="text-lg leading-relaxed text-stone-400 lg:pb-2">
+              <p className="text-lg leading-relaxed text-stone-600 lg:pb-2">
                 Seis frentes que cubren el negocio completo: del sistema interno a la
                 web que te trae clientes.
               </p>
             </Reveal>
           </div>
           <Reveal className="mt-10">
-            <ul className="grid border-t border-white/10 sm:grid-cols-2 sm:gap-x-12">
+            <ul className="grid border-t border-stone-900/15 sm:grid-cols-2 sm:gap-x-12">
               {SERVICES.map((s, i) => (
-                <li key={s.t} className="border-b border-white/10">
+                <li key={s.t} className="border-b border-stone-900/10">
                   <Link href="/servicios" className="group flex items-baseline gap-5 py-5">
-                    <span className="font-display text-sm font-bold tabular-nums text-brand">0{i + 1}</span>
+                    <span className="font-display text-sm font-bold tabular-nums text-brand-600">0{i + 1}</span>
                     <span className="min-w-0">
-                      <span className="block font-display text-xl font-semibold text-white transition-colors group-hover:text-brand-300 md:text-2xl">{s.t}</span>
-                      <span className="mt-1 block text-sm leading-relaxed text-stone-500">{s.d}</span>
+                      <span className="block font-display text-xl font-semibold text-stone-900 transition-colors group-hover:text-brand-600 md:text-2xl">{s.t}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-stone-600">{s.d}</span>
                     </span>
-                    <ArrowIcon className="ml-auto h-4 w-4 shrink-0 self-center text-stone-600 transition-all group-hover:translate-x-1 group-hover:text-brand" />
+                    <ArrowIcon className="ml-auto h-4 w-4 shrink-0 self-center text-stone-400 transition-all group-hover:translate-x-1 group-hover:text-brand-600" />
                   </Link>
                 </li>
               ))}
@@ -264,7 +264,7 @@ export default function Home() {
           <Reveal className="mt-10">
             <Link
               href="/servicios"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 font-semibold text-white transition-colors hover:border-brand hover:bg-brand hover:text-stone-950"
+              className="group inline-flex items-center gap-2 rounded-full border border-stone-900/20 px-7 py-3.5 font-semibold text-stone-900 transition-colors hover:border-brand-600 hover:bg-brand-600 hover:text-white"
             >
               Servicios, proceso y precios
               <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
