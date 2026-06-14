@@ -77,8 +77,8 @@ export default function Home() {
                 desde el celular. Sin cuaderno y sin Excel.
               </p>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-stone-500">
-                Para barberías, gimnasios, colmados, prestamistas y talleres de
-                República Dominicana que quieren dejar el papel.
+                Para barberías, gimnasios, colmados, prestamistas, talleres y
+                cualquier negocio de República Dominicana que todavía lo lleva en papel.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
