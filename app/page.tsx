@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Navbar, { ForjaWord } from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import Reveal from "./components/Reveal";
 import WhatsAppFab from "./components/WhatsAppFab";
 import Footer from "./components/Footer";
@@ -357,16 +357,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOBRE EL ESTUDIO */}
-      <section id="sobre" className="border-t border-white/10 py-16 md:py-24">
+      {/* SOBRE EL ESTUDIO — banda clara cálida: cambia el tono y humaniza el estudio */}
+      <section id="sobre" className="bg-[#f3efe9] py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-6">
-              <SectionTag n="04" label="Detrás de Forja" />
-              <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-white md:text-5xl">
+              <SectionTag n="04" label="Detrás de Forja" light />
+              <h2 className="font-display text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-stone-900 md:text-5xl">
                 Hablas directo con quienes construyen tu sistema.
               </h2>
-              <div className="mt-8 space-y-6 text-lg leading-relaxed text-stone-400">
+              <div className="mt-8 space-y-6 text-lg leading-relaxed text-stone-700">
                 <p>
                   Forja es un estudio dominicano de desarrollo de software. Sin plantillas ni
                   intermediarios: construimos tu sistema desde cero, a la medida de tu PYME y de cómo
@@ -384,20 +384,22 @@ export default function Home() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.1} className="lg:col-span-6 lg:border-l lg:border-white/10 lg:pl-12">
+            <Reveal delay={0.1} className="lg:col-span-6 lg:border-l lg:border-stone-900/15 lg:pl-12">
               <div>
-                <ForjaWord className="text-2xl" />
-                <p className="mt-1.5 text-sm text-stone-400">Estudio de desarrollo de software · República Dominicana</p>
+                <span className="font-display text-2xl font-bold tracking-tight text-stone-900">
+                  Forja<span className="text-brand-600">.</span>
+                </span>
+                <p className="mt-1.5 text-sm text-stone-500">Estudio de desarrollo de software · República Dominicana</p>
               </div>
-              <ul className="mt-8 divide-y divide-white/10 border-t border-white/10">
+              <ul className="mt-8 divide-y divide-stone-900/10 border-t border-stone-900/15">
                 {[
                   "Trato directo 1:1, sin intermediarios ni vendedores",
                   "Tecnología moderna, a la escala de tu PYME",
                   "El sistema, el código y los datos son tuyos",
                   "Te lo entregamos funcionando y te capacitamos para usarlo",
                 ].map((h) => (
-                  <li key={h} className="flex items-start gap-3 py-3.5 text-stone-300">
-                    <svg className="mt-1 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
+                  <li key={h} className="flex items-start gap-3 py-3.5 text-stone-700">
+                    <svg className="mt-1 h-4 w-4 shrink-0 text-brand-600" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                     </svg>
                     {h}
@@ -406,11 +408,11 @@ export default function Home() {
               </ul>
             </Reveal>
           </div>
-          <Reveal className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <Reveal className="mt-12 flex flex-col gap-4 border-t border-stone-900/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="shrink-0 text-xs font-semibold uppercase tracking-widest text-stone-500">Stack con el que trabajamos</p>
             <div className="flex flex-wrap gap-2.5">
               {stack.map((s) => (
-                <span key={s} className="rounded-lg border border-white/10 bg-white/[.03] px-3.5 py-1.5 text-sm font-medium text-stone-200">
+                <span key={s} className="rounded-lg border border-stone-900/15 bg-stone-900/[.03] px-3.5 py-1.5 text-sm font-medium text-stone-700">
                   {s}
                 </span>
               ))}
