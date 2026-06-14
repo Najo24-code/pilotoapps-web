@@ -273,6 +273,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MANIFIESTO — momento de firma: la marca habla, eco del hero (fragua) + prueba honesta */}
+      <section className="relative overflow-hidden border-t border-white/10 py-20 md:py-28">
+        <div className="forge-glow absolute inset-0" />
+        <div className="dotgrid absolute inset-0 opacity-20" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          {EMBERS.slice(0, 8).map((e, i) => (
+            <span
+              key={i}
+              className="ember"
+              style={{
+                left: e.left,
+                top: e.top,
+                width: e.s,
+                height: e.s,
+                ["--dur" as string]: e.dur,
+                ["--delay" as string]: e.delay,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <Reveal>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500 sm:text-xs">
+              Nuestra forma de trabajar
+            </p>
+            <h2 className="mx-auto mt-5 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-white md:text-6xl">
+              No vendemos software enlatado. <span className="ember-text">Forjamos</span> el tuyo, pieza por pieza.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <dl className="mx-auto mt-14 grid max-w-3xl divide-y divide-white/10 overflow-hidden rounded-2xl border border-white/10 bg-white/[.02] sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
+              {[
+                ["10", "demos que puedes abrir y tocar"],
+                ["1 a 1", "hablas directo con quien construye"],
+                ["100%", "tuyo: el código, el dominio y los datos"],
+              ].map(([n, t]) => (
+                <div key={t} className="px-6 py-8">
+                  <dt className="font-display text-4xl font-bold tracking-[-0.02em] text-white md:text-5xl">{n}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-stone-400">{t}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
+        </div>
+      </section>
+
       {/* SOFTWARE EN PRODUCCIÓN — los dos casos, compactos */}
       <section className="border-t border-white/10 py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
